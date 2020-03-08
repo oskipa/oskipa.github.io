@@ -1,0 +1,51 @@
+body {
+ max-width: 35em;
+ margin-right: auto;
+ margin-left: auto;
+
+ font-size: 20px;
+
+ font-family: Verdana, Verdana, Geneva, sans-serif;
+}
+
+code {
+  display: block;
+  margin: 1em;
+}
+
+h2,
+h3,
+h2 a:link,
+h2 a:visited,
+h2 a:active,
+h2 a:hover {
+  color: #666666;
+}
+
+.footer {
+  font-size: smaller;
+  border-top-style: dotted;
+  border-top-width: 2px;
+  border-top-color: gray;
+
+  margin-top: 2em;
+  padding-top: 1en;
+}
+
+.site-name, 
+.site-name a:link, 
+.site-name a:visited, 
+.site-name a:active,
+.site-name a:hover {
+  color: #404040;
+  font-size: 26pt;
+}
+
+.summary {
+  font-size: larger;
+}
+
+.tags {
+  font-size: smaller;
+}
+

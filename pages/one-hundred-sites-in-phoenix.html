@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Dada Structures and Algorithms - One hundred Sites in Phoenix</title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="http://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+          <!--
+      <ul>
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+      </ul>
+          -->
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+    <h1>One hundred Sites in Phoenix</h1>
+    
+
+    <h2>Possible future</h2>
+<ul>
+<li>Fraudomatic</li>
+<li>Live Texas Hold Them -live</li>
+<li>Oca Game -- live and umbrella </li>
+<li>Chatboard -- channels</li>
+</ul>
+<h2>Site 7: Moderated confessions</h2>
+<p>A site where you can write anonymous confessions. Yet these have to be a pproved by an adminstrator.</p>
+<h3>What I learned</h3>
+<p>The main point on this one is to practice authentication again.</p>
+<h2>Site 6: World Clocks</h2>
+<p>This is a site that uses LiveView and displays clocks and dates in different formats. Learning Live View along with basic use of Timex</p>
+<h3>What I learned</h3>
+<p>The big one here is how to install and get going with something simple with LiveView.</p>
+<h2>There is a Tzdata library for Elixir</h2>
+<p>Talk about convenience! This library has a function that gives you all of the allowed timezones.</p>
+<p>https://hexdocs.pm/tzdata/Tzdata.html#content</p>
+<h4>It is complex to set up live view</h4>
+<p>LiveView ended up being complex to set up. I wanted to set it up myself to understand how it works. </p>
+<p>I can see why in the contest they would have you fork one with the setup and then start working.</p>
+<p>I enjoyed that liveview seems to be a genserver. So You are working directly with that.</p>
+<h4>Timex is very easy to use</h4>
+<p>I thought I was going to have to spend a lot of time here. I didn't have to. It was easy to work with. I hope they include this into the default Elixir libraries.</p>
+<h4>Installing the dependencies</h4>
+<p>Floki is some kind of jQuery for Elixir.</p>
+<div class="highlight"><pre><span></span>{:phoenix_live_view, &quot;~&gt; 0.6.0&quot;},
+{:floki, &quot;&gt;= 0.0.0&quot;, only: :test}
+</pre></div>
+
+
+<h4>References</h4>
+<p><a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html">How to use it</a></p>
+<p><a href="https://hexdocs.pm/phoenix_live_view/installation.html#content">Installation</a></p>
+<h2>Site 5: Login to see a panda</h2>
+<p>This site let's you register and login into it. Once you log in, you will see a panda. </p>
+<h3>What I learned</h3>
+<p>For this one, I am working very fast through "Programming Phoenix" chapter on authentication. It is a long, but necessary chapter in the book.</p>
+<p>I think I will have to do this one again without working through the tutorial.</p>
+<h4>Understanding plugs</h4>
+<p>A module plug needs two functions <code>init()</code> and <code>call()</code>. <code>init()</code> is to setup work that we need for the connection transformation. It is called only once at startup in production. <code>call/2</code> uses output of init as the configurations.</p>
+<h4>Exploring Context</h4>
+<p>So an account is a meta module that keeps connected  models together. This is very cool.</p>
+<h2>Site 4: Vox Populi</h2>
+<p>This a site where anyone can write a message and it appears on a page. It is like an unmoderated confession page.</p>
+<h3>What I learned</h3>
+<p>This time I wanted to use the generator, which I haven't used for a long time. I also wanted to see what Context does.</p>
+<h4>I guess I need to use Timex</h4>
+<p>I didn't use it here. But I found that the native support to format dates to be pretty weak. If this is the case, timex will become another basic dependency. </p>
+<p>So far the ones that I collected are ecto, timex, and Decimal</p>
+<h4>The timestamps() fields</h4>
+<p><code>:inserted_at</code> and <code>:updated_at</code>.</p>
+<p>I knew that it generated something like this. Now I know exactly what it generates.</p>
+<h4>Understanding routes</h4>
+<p>I initially wanted to route it like this</p>
+<div class="highlight"><pre><span></span>get &quot;/&quot;, PostController, :index
+get &quot;/vox&quot;, PostController, :new
+post &quot;/vox&quot;, PostController, :create
+</pre></div>
+
+
+<p>This didn't work. After doing some pattern comparing and troubleshooting, I got it working with this</p>
+<div class="highlight"><pre><span></span>get &quot;/&quot;, PostController, :index
+get &quot;/new&quot;, PostController, :new
+post &quot;/&quot;, PostController, :create
+</pre></div>
+
+
+<p>I asked.  I believe that it has to do with the links that are generated in the template. If they are not there, then you get an error.</p>
+<h4>Using the phx.gen.html generator</h4>
+<p>I usually avoid generators because the documentation for them tend to be weak. It is hard to find how you are supposed to construct the models. It is ironic because they are often described as being user friendly. </p>
+<p>Recently I read the documentation for Ecto SQL. This is the module that has the documentation on how the migration types work. I also had had a deeper dive into how ecto schemas work in Phoenix.</p>
+<p>So coming back to the generator, I found it now very easy and handy. I will probably be using generators a lot more now since I know what is going on and it will save me typing.</p>
+<p>The first thing I did once I had the generator create the supporting files was delete all of the endpoints that I don't care to support</p>
+<p>Reference: 
+<a href="https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Gen.Html.html#content">mix phx.gen.html</a></p>
+<h4>Ecto SQL migration methods up() down() and change()</h4>
+<p>up() will add changes to the database. down() will remove it. And change() will take care of up() and down() in a simple function.</p>
+<p><a href="https://hexdocs.pm/ecto_sql/Ecto.Migration.html">Reference: Ecto Sql Migration</a></p>
+<h2>Site 3: Lotto number generator</h2>
+<p>The site uses simple jQuery to generate a set of lotto numbers.</p>
+<p>As of the writing of this post, to play <a href="https://powerball.com">powerball</a> you pick 5 number between 1 and 69 and one number between 1 and 26 for the red powerball. </p>
+<h3>What I learned</h3>
+<p>I wanted to learn how to use or add jQuery in phoenix. I like jQuery because it is the right tool for most html page driven apps. It is also a nice way to learn how to include different javascript libraries. How to include frameworks will come later.</p>
+<ol>
+<li>
+<p>In the <code>assets</code> directory, run <code>npm install jquery</code></p>
+</li>
+<li>
+<p>In <code>assets/webpack.config</code>, on the top, add </p>
+<p><code>webpack = require('webpack')</code></p>
+</li>
+</ol>
+<p>This is to have access to default webpack plugins.</p>
+<ol>
+<li>
+<p>In the same file, in the <code>plugins</code> section, add the following code as an entry</p>
+<p>new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+  }),</p>
+</li>
+</ol>
+<p>This should add <code>$</code> and <code>jQuery</code> as a global value on the browser. </p>
+<p>ProvidePlugin loads the module automatically everywhere. The argument is a hash with an <code>identifier : 'module'</code>, where the identifier is the variable name that you want to use in the scripts in the browser along with the module name. You can also export this way just a function. See the documenation to see how that happens.</p>
+<ol>
+<li>
+<p>Now under <code>assets/js/app.js</code> you need to add the following</p>
+<p>import $ from 'jquery';
+  window.$ = $;
+  window.jQuery = $;</p>
+</li>
+</ol>
+<p>And this will make it available on the site</p>
+<p><a href="https://stackoverflow.com/questions/58714479/phoenix-framework-jquery-connection">Reference: adding jQuery to Phoenix, SO</a></p>
+<p><a href="https://webpack.js.org/plugins/provide-plugin/">Reference: webpack plugin provide-plugin </a>
+<a href="http://blog.plataformatec.com.br/2016/03/using-gettext-to-internationalize-a-phoenix-application/">gettext</a> is the multilanguage tool.</p>
+<h2>Site 2: Hello Word, non static</h2>
+<p>This should have been day 1. Have a controller that uses a view and displays, hello world.</p>
+<h2>Site 1: Hello World</h2>
+<p>Creating a static site that returns "hello, world". I don't need a database or JavaScript. Just the server.</p>
+<h3>What I learned</h3>
+<p>You can create a new phoenix site without a number of components. To create it without a database, we can use some of the <a href="https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html#content">mix phx.new</a>'s options. I ran</p>
+<div class="highlight"><pre><span></span>    mix phx.new hello_world --no-html --no-webpack --no-ecto
+</pre></div>
+
+
+<p>Then I created the static page under <code>priv/static/hello.html</code>.</p>
+<p>I had to add <code>hello.html</code> to <code>lib/hello_world_web/endpoint.ex</code>'s Plug.Static <code>only:</code> config. That got html being served.</p>
+<p>To be able to set the root route to this page I had to create a controller whose index method redirect to the static page.</p>
+<div class="highlight"><pre><span></span>  def index(conn, _params) do
+      redirect(conn, to: &quot;hello.html&quot;)
+  end
+</pre></div>
+
+ </div> 
+ 
+ <footer class="footer">
+
+         <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> I am a software developer. I code in Ruby, Elixir, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+      </footer>
+
+</body>
+</html>

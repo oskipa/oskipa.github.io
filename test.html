@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1> 
+        <a class="home-link" href="http://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+          <!--
+      <ul>
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+      </ul>
+          -->
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Ruby needs better tools</h2>
+  <h3>The lack of an minimal IDE is hurting Ruby's reputation and adoption</h3>
+  <label>01 March, 2020</label>
+  <p>I have been studying Smalltalk. Smalltalk is the language, but also the programming environment. And Smalltalk has an amazing environment and set of tools. I am impressed by its development tools.</p>
+<p>So a natural question arises: why don't we have Smalltalk quality tools in Ruby? In particular, why don't we have an object browser or a finder that quickly takes us to where some code is defined?   </p>
+<p>The method names are similar. The object model and dispatching is similar. Even the image based system, perhaps the most jarring different between Smalltalk and other languages is now becoming similar too, slowly being built out via package managers and Ruby version managers like Bundler and RVM.</p>
+<p>Yet we don't have good standard tools. There is RubyMine, and then there isn't anything else.</p>
+<p>Why? It seems to be a cultural issue. You can write Ruby for a long time without needing to use an IDE. The language and its standard library is so powerful that you can build a relatively complex system with a text editor and a few lines of code. Furthermore, The tooling that we do have, irb, gems, Bundler, rake, extends this minimalism even more. They do the work that in other languages IDEs would be doing.</p>
+<p>For example, the lack of an object browser is compensated by irb along with knowledge of Ruby's object model and its reflection methods. So if you need to know where a method was define, a few keystroke on an interactive console will get you that information. </p>
+<p>The lack of tools is a triump for Ruby and its community. You have a language and an library ecosystem that is so simple that you can go without an IDE for so long. </p>
+<p>So what is the problem then? The language is powerful. The community friendly and helpful. If we as a community have not adopted tools, it is clearly because we don't need them.</p>
+<p>Except when we do. The lack of tools hurt beginners, adoption, and even Rubyists. Especially when we are tasked to support and existing rails application. </p>
+<p>Beginners who are social will find a friendly community that can guide and help them. But if they are not outgoing enough to go to meetups, ask in twitter or on internet forums, they will not be able to find them.</p>
+<p>Smalltalk's object browser makes the system learnable and discoverable. You don't need to know how an object in implemented. But if you are curious or you need to find that information, a few clicks will give you the source code.</p>
+<p>It is so much harder to do this with Ruby. If you haven't been told about reflection methods, you will spend a lot of time greppging methods, hoping that you can find the place where it is defined. if you can't find it, then you would need to know to search on google, or grep the invisible .bundle directory. If you are lucky to get a number of results, you need to go one by one to find the correct file. Even then you may need to write a puts line to confirm that is actually the method that is being called when you run the system. This can take several minutes.</p>
+<p>Again, several minutes in Ruby versus a few clicks in Smalltalk. </p>
+<p>To be as good as the smalltalk system, you need to know the ruby method dispatch system. You need to know that ruby has reflection. You need to know those methods. You need to know which interactive session to run, irb vs rails console. You need to understand how metapgrogramming works. We are talking about reading several blog entries, perhaps a book, and spending some time exploring it. About an investment of about 8 hours.</p>
+<p>We learn how to use the Smalltalk browser in about 15 minutes. Probably less. And you don't need to know about method disptach or the Smalltalk object model. The system makes it discoverable. If something doesn't make sense, then you look the other information up in the right context.</p>
+<p>Something as simple as a primitive object browser that connects to byebug would be super helpful. It would make ruby discoverable. It would help to grapphically teach Ruby's object system. And it would increase productivity for experienced developers new to ruby. It will increase productivity to regular developers. </p>
+<p>RubyMine would still be the professional IDE. This theoretical object broswer would be like IDLE for Ruby. The thing that you use to try it out before you adopt professional tools.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+         <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> I am a software developer. I code in Ruby, Elixir, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+      </footer>
+
+</body>
+</html>
