@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>Dada Structures and Algorithms - log category</title>
+ <title></title>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  <meta id="keywords" name="keywords" content="">
@@ -32,21 +32,21 @@
  <div class="container">
 <div class="row">
  <div class="col-md-8">
-   <h2><a href="/when-you-are-new-to-rails.html">When you Are New To Rails</a></h2>
-   <label>09 March, 2020</label>
-   <p>Are you an experienced developer? Have you been tasked to help out in a Rails project? Do you feel confused because there are not include statements and variables seem to mushroom out of nowhere? Does...
-   <h2><a href="/using-pelican.html">Using Pelican</a></h2>
-   <label>08 March, 2020</label>
-   <p>I am in the process of cleaning up the site so that I can start writing again. I have decided that I do two kinds of writting. One is very careful; it is essentially writting what should be real...
-   <h2><a href="/django-first-impressions.html">Django, first impressions</a></h2>
-   <label>07 March, 2020</label>
-   <p>I am working through the Django tutorial. Here are some thoughts.</p>
-<p>There really isn't any controllers. Interesting.</p>
-<p>The instant admin area is amazing. </p>
-<p>Pluggable apps is such a great...
-   <h2><a href="/ruby-gui-debugger.html">A Friendly GUI Debugger for Ruby</a></h2>
-   <label>01 March, 2020</label>
-   <p>I have been learning Smalltalk. Smalltalk is very similar to Ruby. And Smalltalk have these great programming tools. I am particularly impressed by the object browser and it debugger. Smalltalk was...
+  <h2>Survival Ruby Reflection</h2>
+  <h3>Some basic Ruby reflection methods to make your life easier</h3>
+  <label>10 March, 2020</label>
+  <p>Ruby has a strong reflection system. This is useful when you are debugging. You can read this blog post to learn more about it. Let me share some of the most useful</p>
+<p>my_object.inspect</p>
+<p>This will give you a string representation of the object. Useful when debugging.</p>
+<p>my_object.respond_to? :method_name</p>
+<p>This one will tell you if the object can respond to a method. So Let's say that you want to call <code>batman.swing</code>. But can you? You can query the object with <code>batman.respond_to?(:swing)</code> and it will answer with true or false. Notice how you need to use the colon for the method name when sent as a parameter.</p>
+<p>my_object.methods
+   my_object.methods.sort
+   (my_object.methods - Object.new.methods).sort</p>
+<p>This will list all the methods that the object can respond to. The second one sorts the methods so it is easy to scan for one. The last version will remove all of the methods that are inherited by Object, the root parent object that most object descend from.</p>
+<p>my_object.method(:method_name).source_location</p>
+<p>This is perhaps the most useful one when looking for code. This incantation will give you the source location for the method that the object responds to.</p>
+<p>There are other useful one, but these should keep you productive.</p>
  </div>
 </div>
  </div> 
