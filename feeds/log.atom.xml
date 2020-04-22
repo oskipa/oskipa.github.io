@@ -27,7 +27,7 @@ end
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;If you feel functional, then you can use one of the Enumerable objects&lt;/p&gt;
+&lt;p&gt;If you feel functional, then you can use one of the Enumerable methods.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.map do |beast|
   beast.roar
 end
@@ -44,11 +44,14 @@ end
 
 
 &lt;p&gt;Yet every so often you will get to some problem where a classic for loop would be perfect. This is where it becomes awkward. Ruby doesn't have a classic for loop.&lt;/p&gt;
-&lt;p&gt;There is a for loop. But it is not C style for loop. Instead it loops over an collection. Usually a list or a range.&lt;/p&gt;
+&lt;p&gt;There is a for loop. But it is not C style for loop. Instead it loops over a collection. Usually a list or a range.&lt;/p&gt;
 &lt;p&gt;This is how it works. This will go by each element.&lt;/p&gt;
-&lt;p&gt;for i in list do
-    puts i
-  end&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;for i in list do
+  puts i
+end
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;In effect it is a wordy version of #each. Therefore most people use #each.&lt;/p&gt;
 &lt;p&gt;But we want a C style for! Because sometimes using indices is the right solution to a problem. Even though we don't have something just like it, we can build something close to it.&lt;/p&gt;
 &lt;p&gt;Let's say you want something like this from C#&lt;/p&gt;
@@ -65,7 +68,7 @@ end
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to do that, we would have written (0..list.length), but this would throw and out of range error when it got to the last item.&lt;/p&gt;
+&lt;p&gt;Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to include the last , we would have written (0..list.length), but this would throw and out of range error when it got to the last item.&lt;/p&gt;
 &lt;p&gt;But what do you do when you want to go backwards? We can come up with something as well.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;for i in (0...list.length).to_a.reverse do
   puts list[i]
