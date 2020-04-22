@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+          <!--
+      <ul>
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+      </ul>
+          -->
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Getting Started With Byebug</h2>
+  <h3>The bare minimum to start using Byebug</h3>
+  <label>20 April, 2021</label>
+  <p>This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.</p>
+<h2>Installing byebug</h2>
+<div class="highlight"><pre><span></span>gem install byebug
+</pre></div>
+
+
+<p>Or add to your Gemfile</p>
+<div class="highlight"><pre><span></span>gem byebug
+</pre></div>
+
+
+<h2>Setting a breakpoint and starting a session</h2>
+<p>To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,</p>
+<div class="highlight"><pre><span></span>def my_awesome_function()
+  process
+  log
+end
+</pre></div>
+
+
+<p>You would set the breakpoint like this</p>
+<div class="highlight"><pre><span></span>def my_awesome_function()
+  byebug
+  process
+  log
+end
+</pre></div>
+
+
+<p>If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.</p>
+<h2>The debugger screen</h2>
+<p>Once byebug starts its session, you will see the debugger screen. This screen will give you the file name, and then some lines of the code. There will be a arrow showing you the current place where the code execution has stopped.</p>
+<p>To step over the next line of code, enter "next".</p>
+<p>To step into the next line of code, enter "step"</p>
+<p>To step out, enter, "finish". This last one doesn't seem to work as I would want it to, so sometimes I have to enter it several times.</p>
+<p>If by querying values you can't see the code where you are sstopped, you can get the listing back by typing "list =".</p>
+<p>To let the program run, type "continue".</p>
+<h2>Navigating the Stack Trace</h2>
+<p>To see the stack trace, type "backtrack". This should give you a pretty output of the stacktrace.</p>
+<p>If you want to go back in the strack trace so that you can query the environment at a previous point in the execution, type "up".</p>
+<p>Once you are done doing your exploring, you can come back to later points by typing "down".</p>
+<h2>Querying current values</h2>
+<p>Perhaps one of the most important things you can do in the ddebugging console is to query the value of different variables.</p>
+<p>You can examine variables by typing their name and hitting enter.</p>
+<div class="highlight"><pre><span></span>(byebug) name
+&quot;My name&quot;
+</pre></div>
+
+
+<h2>Trying out solutions</h2>
+<p>If you think you found a way to solve your bug, you can try the solution directly in the console to see if it works out.</p>
+<h2>Learning more</h2>
+<p>The debugger becomes a better tool if your add to it an understanding on Ruby's object model and method dispatch. Havinga good command on Ruby's reflection methods also helps.</p>
+<p>For more information on Byebug itself and to explore other command, look at its documentation on github https://github.com/deivid-rodriguez/byebug</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
