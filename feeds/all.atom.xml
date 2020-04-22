@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-03-14T00:00:00-04:00</updated><entry><title>Functional Programming in Ocaml, 1-2</title><link href="https://oskipa.github.io/functional-programming-in-ocaml-1-2.html" rel="alternate"></link><published>2020-03-14T00:00:00-04:00</published><updated>2020-03-14T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-14:/functional-programming-in-ocaml-1-2.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2021-04-20T00:00:00-04:00</updated><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2021-04-20T00:00:00-04:00</published><updated>2021-04-20T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2021-04-20:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;h2&gt;Installing byebug&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gem install byebug
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Or add to your Gemfile&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gem byebug
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
+&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;h2&gt;Installing byebug&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gem install byebug
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Or add to your Gemfile&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gem byebug
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
+&lt;p&gt;To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def my_awesome_function()
+  process
+  log
+end
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You would set the breakpoint like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def my_awesome_function()
+  byebug
+  process
+  log
+end
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.&lt;/p&gt;
+&lt;h2&gt;The debugger screen&lt;/h2&gt;
+&lt;p&gt;Once byebug starts its session, you will see the debugger screen. This screen will give you the file name, and then some lines of the code. There will be a arrow showing you the current place where the code execution has stopped.&lt;/p&gt;
+&lt;p&gt;To step over the next line of code, enter "next".&lt;/p&gt;
+&lt;p&gt;To step into the next line of code, enter "step"&lt;/p&gt;
+&lt;p&gt;To step out, enter, "finish". This last one doesn't seem to work as I would want it to, so sometimes I have to enter it several times.&lt;/p&gt;
+&lt;p&gt;If by querying values you can't see the code where you are sstopped, you can get the listing back by typing "list =".&lt;/p&gt;
+&lt;p&gt;To let the program run, type "continue".&lt;/p&gt;
+&lt;h2&gt;Navigating the Stack Trace&lt;/h2&gt;
+&lt;p&gt;To see the stack trace, type "backtrack". This should give you a pretty output of the stacktrace.&lt;/p&gt;
+&lt;p&gt;If you want to go back in the strack trace so that you can query the environment at a previous point in the execution, type "up".&lt;/p&gt;
+&lt;p&gt;Once you are done doing your exploring, you can come back to later points by typing "down".&lt;/p&gt;
+&lt;h2&gt;Querying current values&lt;/h2&gt;
+&lt;p&gt;Perhaps one of the most important things you can do in the ddebugging console is to query the value of different variables.&lt;/p&gt;
+&lt;p&gt;You can examine variables by typing their name and hitting enter.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(byebug) name
+&amp;quot;My name&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Trying out solutions&lt;/h2&gt;
+&lt;p&gt;If you think you found a way to solve your bug, you can try the solution directly in the console to see if it works out.&lt;/p&gt;
+&lt;h2&gt;Learning more&lt;/h2&gt;
+&lt;p&gt;The debugger becomes a better tool if your add to it an understanding on Ruby's object model and method dispatch. Havinga good command on Ruby's reflection methods also helps.&lt;/p&gt;
+&lt;p&gt;For more information on Byebug itself and to explore other command, look at its documentation on github https://github.com/deivid-rodriguez/byebug&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category><category term="byebug"></category></entry><entry><title>Functional Programming in Ocaml, 1-2</title><link href="https://oskipa.github.io/functional-programming-in-ocaml-1-2.html" rel="alternate"></link><published>2020-03-14T00:00:00-04:00</published><updated>2020-03-14T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-14:/functional-programming-in-ocaml-1-2.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
 &lt;p&gt;I enjoyed reading chapter one. They explain the goals and purpose of the class that the book supports. It also has a great section on the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
 &lt;p&gt;I enjoyed reading chapter one. They explain the goals and purpose of the class that the book supports. It also has a great section on the history of the  book and the course. It tells how the class was originally based on &lt;a href="http://sarabander.github.io/sicp/html/index.xhtml#SEC_Contents"&gt;Structure and Interpretation of Computer Programs&lt;/a&gt;, (SICP). From the challenges of teaching SICP, they changed languages, from Scheme to OCaml, and they developed the textbook from their class notes. This is fascinating because it is a similar experience that lead to the development of &lt;a href="https://racket-lang.org/"&gt;Racket&lt;/a&gt; and the supporting book &lt;a href="https://htdp.org/"&gt;How To Design Programs&lt;/a&gt;. I will probably talk more about how SICP, a beloved textbook, lead to the creation of other books in a future entry.&lt;/p&gt;
 &lt;p&gt;Chapter 2 is an introduction to OCaml as a language. I have read a number of tutorials and several chapters on other OCaml books, and "Functional Programming in Ocaml" seems to be one of the clearest explanations on the basics of OCaml. If for some reason you didn't understand the topic well enough from this text, at the end of the chapter the authors tell you which chapters from others OCaml books you should read to get an alternate explanation of the same topics.&lt;/p&gt;
