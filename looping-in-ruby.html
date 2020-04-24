@@ -90,7 +90,7 @@ end
 </pre></div>
 
 
-<p>Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to include the last , we would have written (0..list.length), but this would throw and out of range error when it got to the last item.</p>
+<p>Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to include the last number, we would have written (0..list.length), but this would throw and out of range error when it got to the last item.</p>
 <p>But what do you do when you want to go backwards? We can come up with something as well.</p>
 <div class="highlight"><pre><span></span>for i in (0...list.length).to_a.reverse do
   puts list[i]
