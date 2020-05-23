@@ -9,80 +9,80 @@
 &lt;p&gt;If this cheating? No. Problem solving is about pattern recognition. If you couldn't find a solution, you couldn't find a pattern. That means you haven't learned that pattern.&lt;/p&gt;
 &lt;p&gt;By spending those earnest five minutes trying to solve the problem, you will understand the problem well. You will understand why your natural solution didn't work. When you look at the solution, it is meaningful. Your emotional reaction to seeing the solution will make it easier for you to remember it, creating that desire pattern for you to recognize the next time you see a similar problem.&lt;/p&gt;
 &lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight. The idiomatic way of doing it is via #each on &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.each do |beast|
-  beast.roar
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each do |beast|&lt;/span&gt;
+&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Sometimes you need the index. So you call in #each_with_index&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.each_with_index do |beast, index|
-  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each_with_index do |beast, index|&lt;/span&gt;
+&lt;span class="err"&gt;  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;If you feel functional …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight. The idiomatic way of doing it is via #each on &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.each do |beast|
-  beast.roar
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each do |beast|&lt;/span&gt;
+&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Sometimes you need the index. So you call in #each_with_index&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.each_with_index do |beast, index|
-  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each_with_index do |beast, index|&lt;/span&gt;
+&lt;span class="err"&gt;  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;If you feel functional, then you can use one of the Enumerable methods.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;animals.map do |beast|
-  beast.roar
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.map do |beast|&lt;/span&gt;
+&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;For 90% of your looping needs, #each, or an Enumerable, #map, #select, #any?, #all?, etc, will do.&lt;/p&gt;
 &lt;p&gt;If you are working with a queue or a stack, you can always usse the classic where loop&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;where !stack.empty?
-  ghost = stack.pop
-  pacman.chomp(ghost)
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;where !stack.empty?&lt;/span&gt;
+&lt;span class="err"&gt;  ghost = stack.pop&lt;/span&gt;
+&lt;span class="err"&gt;  pacman.chomp(ghost)&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Yet every so often you will get to some problem where a classic for loop would be perfect. This is where it becomes awkward. Ruby doesn't have a classic for loop.&lt;/p&gt;
 &lt;p&gt;There is a for loop. But it is not C style for loop. Instead it loops over a collection. Usually a list or a range.&lt;/p&gt;
 &lt;p&gt;This is how it works. This will go by each element.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;for i in list do
-  puts i
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;for i in list do&lt;/span&gt;
+&lt;span class="err"&gt;  puts i&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;In effect it is a wordy version of #each. Therefore most people use #each.&lt;/p&gt;
 &lt;p&gt;But we want a C style for! Because sometimes using indices is the right solution to a problem. Even though we don't have something just like it, we can build something close to it.&lt;/p&gt;
 &lt;p&gt;Let's say you want something like this from C#&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  for (var i = 0; i &amp;lt; list.Count; i++){
-      console.WriteLn(list[i].ToString());
-  }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;WriteLn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ToString&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;You can replicate it by doing something like this&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  for i in (0...list.length) do 
-     puts list[i]
-  end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to include the last number, we would have written (0..list.length), but this would throw and out of range error when it got to the last item.&lt;/p&gt;
 &lt;p&gt;But what do you do when you want to go backwards? We can come up with something as well.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;for i in (0...list.length).to_a.reverse do
-  puts list[i]
-end
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;to_a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;reverse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Here we start with the range. We turn it into an array, and then we call reverse. Wordy? Yes. Does it get the job done? Also yes. &lt;/p&gt;
@@ -107,14 +107,14 @@ end
 &lt;p&gt;Method dispatch is Ruby's process of looking for a method definition to execute it. When you call 'batman.punch', method dispatch is trying to find where the '.punch' is. It start looking for a definition in the object's class, and then it goes up the object's ancestors. That is the basic idea.  &lt;/p&gt;
 &lt;p&gt;The basic idea is also wrong. It is more complicated than that. Read this blog post to get an accurate picture: &lt;a href="https://blog.jcoglan.com/2013/05/08/how-ruby-method-dispatch-works/"&gt;How Ruby method dispatch works&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ruby has a strong reflection system. You can query a lot of information from an object. Using reflection methods is more useful if you understand how method dispatch works. But even if you don't, the following two methods will be useful right away.  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;batman.inspect
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;batman.inspect&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;'.inspect' gives you a string representation of the 'batman' object. Useful in the interactive ruby shell (irb), in the debugger, or  when printing to the log or a debugger via a 'puts object.inspect'.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;batman.methods
-batman.methods.sort
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;batman.methods&lt;/span&gt;
+&lt;span class="err"&gt;batman.methods.sort&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;'.methods' gives you an array of all of the methods that the 'batman' object can respond to.  If you add '.sort', then they will be sorted alphabetically.&lt;/p&gt;

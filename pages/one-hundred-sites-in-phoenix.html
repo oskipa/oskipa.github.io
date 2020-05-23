@@ -17,13 +17,14 @@
         |&gt Algorithms</h1>
 
       <nav>
-          <!--
       <ul>
+        <li><a href="today_i_learned.html">Today I learned<a></li>
+          <!--
         <li><a href="category/log.html">web log<a></li>
         <li><a href="">about<a></li>
         <li><a href="">site map<a></li>
-      </ul>
           -->
+      </ul>
     </nav>
 
 
@@ -59,9 +60,9 @@
 <p>I thought I was going to have to spend a lot of time here. I didn't have to. It was easy to work with. I hope they include this into the default Elixir libraries.</p>
 <h4>Installing the dependencies</h4>
 <p>Floki is some kind of jQuery for Elixir.</p>
-<div class="highlight"><pre><span></span>{:phoenix_live_view, &quot;~&gt; 0.6.0&quot;},
-{:floki, &quot;&gt;= 0.0.0&quot;, only: :test}
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">{:phoenix_live_view, &quot;~&gt; 0.6.0&quot;},</span>
+<span class="err">{:floki, &quot;&gt;= 0.0.0&quot;, only: :test}</span>
+</code></pre></div>
 
 
 <h4>References</h4>
@@ -88,17 +89,17 @@
 <p>I knew that it generated something like this. Now I know exactly what it generates.</p>
 <h4>Understanding routes</h4>
 <p>I initially wanted to route it like this</p>
-<div class="highlight"><pre><span></span>get &quot;/&quot;, PostController, :index
-get &quot;/vox&quot;, PostController, :new
-post &quot;/vox&quot;, PostController, :create
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">get &quot;/&quot;, PostController, :index</span>
+<span class="err">get &quot;/vox&quot;, PostController, :new</span>
+<span class="err">post &quot;/vox&quot;, PostController, :create</span>
+</code></pre></div>
 
 
 <p>This didn't work. After doing some pattern comparing and troubleshooting, I got it working with this</p>
-<div class="highlight"><pre><span></span>get &quot;/&quot;, PostController, :index
-get &quot;/new&quot;, PostController, :new
-post &quot;/&quot;, PostController, :create
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">get &quot;/&quot;, PostController, :index</span>
+<span class="err">get &quot;/new&quot;, PostController, :new</span>
+<span class="err">post &quot;/&quot;, PostController, :create</span>
+</code></pre></div>
 
 
 <p>I asked.  I believe that it has to do with the links that are generated in the template. If they are not there, then you get an error.</p>
@@ -156,17 +157,17 @@ post &quot;/&quot;, PostController, :create
 <p>Creating a static site that returns "hello, world". I don't need a database or JavaScript. Just the server.</p>
 <h3>What I learned</h3>
 <p>You can create a new phoenix site without a number of components. To create it without a database, we can use some of the <a href="https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html#content">mix phx.new</a>'s options. I ran</p>
-<div class="highlight"><pre><span></span>    mix phx.new hello_world --no-html --no-webpack --no-ecto
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">    mix phx.new hello_world --no-html --no-webpack --no-ecto</span>
+</code></pre></div>
 
 
 <p>Then I created the static page under <code>priv/static/hello.html</code>.</p>
 <p>I had to add <code>hello.html</code> to <code>lib/hello_world_web/endpoint.ex</code>'s Plug.Static <code>only:</code> config. That got html being served.</p>
 <p>To be able to set the root route to this page I had to create a controller whose index method redirect to the static page.</p>
-<div class="highlight"><pre><span></span>  def index(conn, _params) do
-      redirect(conn, to: &quot;hello.html&quot;)
-  end
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">  def index(conn, _params) do</span>
+<span class="err">      redirect(conn, to: &quot;hello.html&quot;)</span>
+<span class="err">  end</span>
+</code></pre></div>
 
  </div> 
  

@@ -17,13 +17,14 @@
         |&gt Algorithms</h1>
 
       <nav>
-          <!--
       <ul>
+        <li><a href="today_i_learned.html">Today I learned<a></li>
+          <!--
         <li><a href="category/log.html">web log<a></li>
         <li><a href="">about<a></li>
         <li><a href="">site map<a></li>
-      </ul>
           -->
+      </ul>
     </nav>
 
 
@@ -37,31 +38,31 @@
   <label>20 April, 2021</label>
   <p>This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.</p>
 <h2>Installing byebug</h2>
-<div class="highlight"><pre><span></span>gem install byebug
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">gem install byebug</span>
+</code></pre></div>
 
 
 <p>Or add to your Gemfile</p>
-<div class="highlight"><pre><span></span>gem byebug
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">gem byebug</span>
+</code></pre></div>
 
 
 <h2>Setting a breakpoint and starting a session</h2>
 <p>To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,</p>
-<div class="highlight"><pre><span></span>def my_awesome_function()
-  process
-  log
-end
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">def my_awesome_function()</span>
+<span class="err">  process</span>
+<span class="err">  log</span>
+<span class="err">end</span>
+</code></pre></div>
 
 
 <p>You would set the breakpoint like this</p>
-<div class="highlight"><pre><span></span>def my_awesome_function()
-  byebug
-  process
-  log
-end
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">def my_awesome_function()</span>
+<span class="err">  byebug</span>
+<span class="err">  process</span>
+<span class="err">  log</span>
+<span class="err">end</span>
+</code></pre></div>
 
 
 <p>If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.</p>
@@ -79,9 +80,9 @@ end
 <h2>Querying current values</h2>
 <p>Perhaps one of the most important things you can do in the ddebugging console is to query the value of different variables.</p>
 <p>You can examine variables by typing their name and hitting enter.</p>
-<div class="highlight"><pre><span></span>(byebug) name
-&quot;My name&quot;
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">(byebug) name</span>
+<span class="err">&quot;My name&quot;</span>
+</code></pre></div>
 
 
 <h2>Trying out solutions</h2>
