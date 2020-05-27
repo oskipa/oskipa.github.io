@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </ul>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Find and Replace Recursively</h2>
+  <h3>Using grep and sed to find and replace</h3>
+  <label>27 May, 2020</label>
+  <div class="highlight"><pre><span></span><code><span class="err">grep -rl &quot;Chunky&quot; . | LC_ALL=C xargs sed -i &quot;.bak&quot;  &quot;s/Chunky/Bacon/&quot;</span>
+</code></pre></div>
+
+
+<p>Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need another utility. There you have a choice of tools. For this case I decided to use grep. Although I use ack for searching patterns, I thought that grep would be the right tool here.</p>
+<p>Now the explanation of the example.</p>
+<table>
+<thead>
+<tr>
+<th>Magical bit</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grep</td>
+<td>Our second favorite tool for finding patterns in files. Our favorite is ack, but grep is more appropriate here.</td>
+</tr>
+<tr>
+<td>-rl</td>
+<td>Our grep options. r = recursive search. l = output the name of the files</td>
+</tr>
+<tr>
+<td>"Chunky"</td>
+<td>Our pattern</td>
+</tr>
+<tr>
+<td>.</td>
+<td>The direction we want to search. In this case, start from the current directory</td>
+</tr>
+<tr>
+<td>the pipe</td>
+<td>The magic unix character that lets us pass output into another command</td>
+</tr>
+<tr>
+<td>LC_ALL=C</td>
+<td>The esoteric incantation to have sed behave in MacOS. It has to do with encoding</td>
+</tr>
+<tr>
+<td>xargs</td>
+<td>Unix utility to transform standard input into command arguments</td>
+</tr>
+<tr>
+<td>sed</td>
+<td>Our batch editor</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>The option to edit in place</td>
+</tr>
+<tr>
+<td>".bak"</td>
+<td>The extension that we want to give to the backup file that sed -i will create</td>
+</tr>
+<tr>
+<td>"s/Chunky/Bacon/"</td>
+<td>The sed command we want to execute. In this case substitute Chunky with Bacon</td>
+</tr>
+</tbody>
+</table>
+<p>You can clean up the backup files with </p>
+<div class="highlight"><pre><span></span><code><span class="err">grep -rl &quot;Chunky&quot; . | xarg rm -f</span>
+</code></pre></div>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
