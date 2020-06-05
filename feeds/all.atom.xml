@@ -91,7 +91,133 @@
 &lt;/table&gt;
 &lt;p&gt;You can clean up the backup files with &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;grep -rl &amp;quot;Chunky&amp;quot; . | xarg rm -f&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="log"></category><category term="shell"></category><category term="unix"></category><category term="linux"></category><category term="macos"></category></entry><entry><title>The Five Minutes Problem</title><link href="https://oskipa.github.io/the-five-minutes-problem.html" rel="alternate"></link><published>2020-04-24T00:00:00-04:00</published><updated>2020-04-24T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-24:/the-five-minutes-problem.html</id><summary type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problem to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="log"></category><category term="shell"></category><category term="unix"></category><category term="linux"></category><category term="macos"></category></entry><entry><title>How to Design a Function</title><link href="https://oskipa.github.io/how-to-define-a-function.html" rel="alternate"></link><published>2020-05-05T00:00:00-04:00</published><updated>2020-05-05T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-05-05:/how-to-define-a-function.html</id><summary type="html">&lt;p&gt;This is a small template that teaches you how to write a function. This template distills a number of great practices into a brief checklist. This short checklist, which is the core teaching of &lt;a href="https://htdp.org/"&gt;How To Design Programs&lt;/a&gt; book, concentrates writing code, documentation, tests, and thinking about your function's input …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a small template that teaches you how to write a function. This template distills a number of great practices into a brief checklist. This short checklist, which is the core teaching of &lt;a href="https://htdp.org/"&gt;How To Design Programs&lt;/a&gt; book, concentrates writing code, documentation, tests, and thinking about your function's input range in one small checklist. &lt;/p&gt;
+&lt;p&gt;The book uses &lt;a href="https://racket-lang.org/"&gt;Racket&lt;/a&gt; as a teaching language. I am going to give an example using Ruby.&lt;/p&gt;
+&lt;p&gt;The checklist&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write the name of the function&lt;/li&gt;
+&lt;li&gt;Write a one-sentence comment describing what the function does&lt;/li&gt;
+&lt;li&gt;Write the type signature&lt;/li&gt;
+&lt;li&gt;Write an example of use in the comments&lt;/li&gt;
+&lt;li&gt;Write tests
+    a. It proves that it works
+    b. It explores the boundary cases, i.e. range, incorrect types, empty lists, etc.&lt;/li&gt;
+&lt;li&gt;Write the code&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now let's walk through a business software example. Let's say you want to insert a new blog record from an http request.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write the name&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;def create_post()&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Write a one-sentence comment describing the function&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This comment documents what our &lt;em&gt;intent&lt;/em&gt; for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;def create_post()&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Write the type signature &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.&lt;/p&gt;
+&lt;p&gt;The book uses the following type format. You make a list of each parameter followed by an arrow (-&amp;gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;
+&lt;span class="err"&gt;def create_post()&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is an example using more idiomatic Ruby.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;# @param params, Hash, the http parameters hash &lt;/span&gt;
+&lt;span class="err"&gt;# @return void &lt;/span&gt;
+&lt;span class="err"&gt;def create_post(params)&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Write an example &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentatation you can add. Most people will often google for examples. Include them.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;# @param blog_parameters, Hash, the http parameters hash &lt;/span&gt;
+&lt;span class="err"&gt;# @return void &lt;/span&gt;
+&lt;span class="err"&gt;# Example: create_post(params[:blog])&lt;/span&gt;
+&lt;span class="err"&gt;def create_post(blog_params)&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write tests&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is a two part step. We are asked to write tests for the correct output and for input ranges. So the happy path and the boundary checks. &lt;/p&gt;
+&lt;p&gt;Let's start with basic correctness when everything is right, the happy path.
+    # creates new post
+    # @param blog_parameters, Hash, the http parameters hash 
+    # @return void 
+    # Example: create_post(params[:blog])
+    def create_post(blog_parameters)
+    end&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;testing&lt;/span&gt; &lt;span class="n"&gt;correct&lt;/span&gt; &lt;span class="n"&gt;behavior&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;happy&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;ruby&lt;/span&gt; &lt;span class="n"&gt;pseudo&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;test_creation&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;setup&lt;/span&gt;
+  &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Joe Smith&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;
+
+  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;exercise&lt;/span&gt;
+  &lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;verification&lt;/span&gt;
+  &lt;span class="n"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+  &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;record&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nil&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; 
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This made us discover that we we have three required parameters. Now we can change our function again with this new information.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @return void &lt;/span&gt;
+&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
+&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen ehn we send a null value for author? What if the inputs are too big? Is it okay to have no author?&lt;/p&gt;
+&lt;p&gt;Thinking in term of ranges helps us identify the right number of tests. This is a superior way thinking about it than old advice I was told for TDD where you kept coming up with tests until you couldn't think of any more.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write the body of the function&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
+&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
+&lt;span class="err"&gt;# @return void &lt;/span&gt;
+&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
+&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
+&lt;span class="err"&gt;  blog = Blog.new(title, body, author) &lt;/span&gt;
+&lt;span class="err"&gt;  ORM.save(blog)&lt;/span&gt;
+&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.&lt;/p&gt;</content><category term="article"></category></entry><entry><title>The Five Minutes Problem</title><link href="https://oskipa.github.io/the-five-minutes-problem.html" rel="alternate"></link><published>2020-04-24T00:00:00-04:00</published><updated>2020-04-24T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-24:/the-five-minutes-problem.html</id><summary type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problem to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
 &lt;p&gt;But the question is, how much should you spend on a problem that you cannot solve …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problem to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
 &lt;p&gt;But the question is, how much should you spend on a problem that you cannot solve?&lt;/p&gt;
 &lt;p&gt;One school of thought is that you keep at that problem until you can solve it by yourself. It seems to make sense. If you put enough effort, you will discover the solution. Or find a novel one. Unfortunately you may not find a solution, so you can stop playing chess or learning math if you strickly stick to this method.&lt;/p&gt;

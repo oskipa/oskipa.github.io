@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </ul>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>How to Design a Function</h2>
+  <h3>A short template on how documenting and testing help writing code</h3>
+  <label>05 May, 2020</label>
+  <p>This is a small template that teaches you how to write a function. This template distills a number of great practices into a brief checklist. This short checklist, which is the core teaching of <a href="https://htdp.org/">How To Design Programs</a> book, concentrates writing code, documentation, tests, and thinking about your function's input range in one small checklist. </p>
+<p>The book uses <a href="https://racket-lang.org/">Racket</a> as a teaching language. I am going to give an example using Ruby.</p>
+<p>The checklist</p>
+<ol>
+<li>Write the name of the function</li>
+<li>Write a one-sentence comment describing what the function does</li>
+<li>Write the type signature</li>
+<li>Write an example of use in the comments</li>
+<li>Write tests
+    a. It proves that it works
+    b. It explores the boundary cases, i.e. range, incorrect types, empty lists, etc.</li>
+<li>Write the code</li>
+</ol>
+<p>Now let's walk through a business software example. Let's say you want to insert a new blog record from an http request.</p>
+<ol>
+<li>Write the name</li>
+</ol>
+<p>We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. </p>
+<div class="highlight"><pre><span></span><code><span class="err">def create_post()</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<ol>
+<li>Write a one-sentence comment describing the function</li>
+</ol>
+<p>This comment documents what our <em>intent</em> for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err">def create_post()</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<ol>
+<li>Write the type signature </li>
+</ol>
+<p>Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.</p>
+<p>The book uses the following type format. You make a list of each parameter followed by an arrow (-&gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err"># Hash -&gt; Unit  </span>
+<span class="err">def create_post()</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<p>This is an example using more idiomatic Ruby.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err"># @param params, Hash, the http parameters hash </span>
+<span class="err"># @return void </span>
+<span class="err">def create_post(params)</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<ol>
+<li>Write an example </li>
+</ol>
+<p>Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentatation you can add. Most people will often google for examples. Include them.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err"># @param blog_parameters, Hash, the http parameters hash </span>
+<span class="err"># @return void </span>
+<span class="err"># Example: create_post(params[:blog])</span>
+<span class="err">def create_post(blog_params)</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<p>Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.</p>
+<ol>
+<li>Write tests</li>
+</ol>
+<p>This is a two part step. We are asked to write tests for the correct output and for input ranges. So the happy path and the boundary checks. </p>
+<p>Let's start with basic correctness when everything is right, the happy path.
+    # creates new post
+    # @param blog_parameters, Hash, the http parameters hash 
+    # @return void 
+    # Example: create_post(params[:blog])
+    def create_post(blog_parameters)
+    end</p>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">testing</span> <span class="n">correct</span> <span class="n">behavior</span> <span class="k">or</span> <span class="n">happy</span> <span class="n">path</span>
+<span class="o">#</span> <span class="n">The</span> <span class="n">test</span> <span class="k">is</span> <span class="n">ruby</span> <span class="n">pseudo</span> <span class="n">code</span>
+<span class="n">def</span> <span class="n">test_creation</span><span class="p">()</span>
+  <span class="o">#</span> <span class="n">setup</span>
+  <span class="n">params</span> <span class="o">=</span> <span class="err">{</span><span class="n">title</span><span class="p">:</span> <span class="ss">&quot;hello&quot;</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="ss">&quot;hello world!&quot;</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="ss">&quot;Joe Smith&quot;</span> <span class="err">}</span>
+
+  <span class="o">#</span> <span class="n">exercise</span>
+  <span class="n">create_post</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+  <span class="o">#</span> <span class="n">verification</span>
+  <span class="n">record</span> <span class="o">=</span> <span class="n">ORM</span><span class="p">.</span><span class="n">find_by</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="ss">&quot;hello&quot;</span><span class="p">)</span> 
+  <span class="n">assert</span> <span class="o">!</span><span class="n">record</span><span class="p">.</span><span class="n">nil</span><span class="o">?</span> 
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>This made us discover that we we have three required parameters. Now we can change our function again with this new information.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err"># @param title, String, title of the blog post </span>
+<span class="err"># @param body, String, body of the blog post </span>
+<span class="err"># @param author, String, body of the blog post </span>
+<span class="err"># @return void </span>
+<span class="err"># Example: create_post(title, body, author)</span>
+<span class="err">def create_post(title, body, author)</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<p>Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen ehn we send a null value for author? What if the inputs are too big? Is it okay to have no author?</p>
+<p>Thinking in term of ranges helps us identify the right number of tests. This is a superior way thinking about it than old advice I was told for TDD where you kept coming up with tests until you couldn't think of any more.</p>
+<ol>
+<li>Write the body of the function</li>
+</ol>
+<p>Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
+<span class="err"># @param title, String, title of the blog post </span>
+<span class="err"># @param body, String, body of the blog post </span>
+<span class="err"># @param author, String, body of the blog post </span>
+<span class="err"># @return void </span>
+<span class="err"># Example: create_post(title, body, author)</span>
+<span class="err">def create_post(title, body, author)</span>
+<span class="err">  blog = Blog.new(title, body, author) </span>
+<span class="err">  ORM.save(blog)</span>
+<span class="err">end</span>
+</code></pre></div>
+
+
+<p>In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
