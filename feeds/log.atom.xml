@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - log</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/log.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-06-01T00:00:00-04:00</updated><entry><title>Why don't we practice self-reflection in Agile?</title><link href="https://oskipa.github.io/agile-self-reflection.html" rel="alternate"></link><published>2020-06-01T00:00:00-04:00</published><updated>2020-06-01T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-06-01:/agile-self-reflection.html</id><summary type="html">&lt;p&gt;Self-reflection is my favorite part from agile. Call it a retrospective or a post-mortem; at the end of the day it is self-reflection. This is the self-correcting mechanism. You see what you have done. If it is not working, you do something else. If it perhaps the essence of agile …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Self-reflection is my favorite part from agile. Call it a retrospective or a post-mortem; at the end of the day it is self-reflection. This is the self-correcting mechanism. You see what you have done. If it is not working, you do something else. If it perhaps the essence of agile. You can give up on everything, but if you keep practicing self-reflection and self-correction, you are doing it correclty. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - log</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/log.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-07-17T00:00:00-04:00</updated><entry><title>pyenv started pack</title><link href="https://oskipa.github.io/pyenv-started-pack.html" rel="alternate"></link><published>2020-07-17T00:00:00-04:00</published><updated>2020-07-17T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-17:/pyenv-started-pack.html</id><summary type="html">&lt;p&gt;In my transition from Ruby to Python, I quickly found that there was a familiar experience that made me feel like I never left the Ruby: libraries won't work well in certain language versions.&lt;/p&gt;
+&lt;p&gt;The common solution for this problem is to find a version manager. For personal projects I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my transition from Ruby to Python, I quickly found that there was a familiar experience that made me feel like I never left the Ruby: libraries won't work well in certain language versions.&lt;/p&gt;
+&lt;p&gt;The common solution for this problem is to find a version manager. For personal projects I have been using &lt;a href="https://pypi.org/project/pipenv/"&gt;pipenv&lt;/a&gt;, which feels like an enhanced version of bundler that also handles the language version along with virtual environments. Woah! But they are not using pyenv at work yet.&lt;/p&gt;
+&lt;p&gt;This week at work I learned to use pyenv. &lt;a href="https://github.com/pyenv/pyenv"&gt;Pyenv&lt;/a&gt; is a python version manager that knows how to work along with &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;virtualenv&lt;/a&gt;, python's virtual environment tool. What follows is my cheat sheet on how to use it. It is based on &lt;a href="https://realpython.com/intro-to-pyenv/"&gt;Logan Jones's article&lt;/a&gt; in Real Python [1].&lt;/p&gt;
+&lt;p&gt;Check which python versions are available&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv versions&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Install a version of python&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv install 3.6.1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;See what versions of python you have installed&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv versions&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a virtual environment with a specific python version&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv virtualenv 3.3.1 chunkybacon&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To manually activate and deactivate an environment&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv activate chunkybacon&lt;/span&gt;
+&lt;span class="err"&gt;pyenv deactivate&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To see which environments you have&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv virtualenvs&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you want to learn how to install pyenv and go deeper on how to use it, please read the article that is the source of this cheat sheet.&lt;/p&gt;
+&lt;p&gt;References: 
+1. &lt;a href="https://realpython.com/intro-to-pyenv/"&gt;Managing Multiple Python Versions With pyenv&lt;/a&gt; By Logan Jones&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>Why don't we practice self-reflection in Agile?</title><link href="https://oskipa.github.io/agile-self-reflection.html" rel="alternate"></link><published>2020-06-01T00:00:00-04:00</published><updated>2020-06-01T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-06-01:/agile-self-reflection.html</id><summary type="html">&lt;p&gt;Self-reflection is my favorite part from agile. Call it a retrospective or a post-mortem; at the end of the day it is self-reflection. This is the self-correcting mechanism. You see what you have done. If it is not working, you do something else. If it perhaps the essence of agile …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Self-reflection is my favorite part from agile. Call it a retrospective or a post-mortem; at the end of the day it is self-reflection. This is the self-correcting mechanism. You see what you have done. If it is not working, you do something else. If it perhaps the essence of agile. You can give up on everything, but if you keep practicing self-reflection and self-correction, you are doing it correclty. &lt;/p&gt;
 &lt;p&gt;It is also the least practiced one. If practiced, it is most likely poorly done. Self-reflection is about accepting reality. Accepting reality is hard. You need three elements for self-reflection to work: maturity to accept reality, safety to point it out, and power to improve things. &lt;/p&gt;
 &lt;p&gt;If these conditions don't exist, then doing a retrospective becomes an empty ritual. In the best of cases it is a waste of time. In the worst, it can become a bullying session. In both cases it becomes unpleasant, so people will try to avoid doing it.  &lt;/p&gt;
 &lt;p&gt;Accepting reality is the biggest challenge. It takes emotional maturity for individuals and organizations, which are made from those individuals. &lt;/p&gt;

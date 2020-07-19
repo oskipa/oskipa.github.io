@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </ul>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>pyenv started pack</h2>
+  <h3>a quasi cheat sheet for pyenv</h3>
+  <label>17 July, 2020</label>
+  <p>In my transition from Ruby to Python, I quickly found that there was a familiar experience that made me feel like I never left the Ruby: libraries won't work well in certain language versions.</p>
+<p>The common solution for this problem is to find a version manager. For personal projects I have been using <a href="https://pypi.org/project/pipenv/">pipenv</a>, which feels like an enhanced version of bundler that also handles the language version along with virtual environments. Woah! But they are not using pyenv at work yet.</p>
+<p>This week at work I learned to use pyenv. <a href="https://github.com/pyenv/pyenv">Pyenv</a> is a python version manager that knows how to work along with <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>, python's virtual environment tool. What follows is my cheat sheet on how to use it. It is based on <a href="https://realpython.com/intro-to-pyenv/">Logan Jones's article</a> in Real Python [1].</p>
+<p>Check which python versions are available</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv versions</span>
+</code></pre></div>
+
+
+<p>Install a version of python</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv install 3.6.1</span>
+</code></pre></div>
+
+
+<p>See what versions of python you have installed</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv versions</span>
+</code></pre></div>
+
+
+<p>Create a virtual environment with a specific python version</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv virtualenv 3.3.1 chunkybacon</span>
+</code></pre></div>
+
+
+<p>To manually activate and deactivate an environment</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv activate chunkybacon</span>
+<span class="err">pyenv deactivate</span>
+</code></pre></div>
+
+
+<p>To see which environments you have</p>
+<div class="highlight"><pre><span></span><code><span class="err">pyenv virtualenvs</span>
+</code></pre></div>
+
+
+<p>If you want to learn how to install pyenv and go deeper on how to use it, please read the article that is the source of this cheat sheet.</p>
+<p>References: 
+1. <a href="https://realpython.com/intro-to-pyenv/">Managing Multiple Python Versions With pyenv</a> By Logan Jones</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
