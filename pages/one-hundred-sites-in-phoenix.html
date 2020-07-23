@@ -42,20 +42,20 @@
 <li>Chatboard -- channels</li>
 </ul>
 <h2>Site 7: Moderated confessions</h2>
-<p>A site where you can write anonymous confessions. Yet these have to be a pproved by an adminstrator.</p>
+<p>A site where you can write anonymous confessions. Yet these have to be approved by an administrator.</p>
 <h3>What I learned</h3>
 <p>The main point on this one is to practice authentication again.</p>
 <h2>Site 6: World Clocks</h2>
-<p>This is a site that uses LiveView and displays clocks and dates in different formats. Learning Live View along with basic use of Timex</p>
+<p>This is a site that uses Phoenix LiveView and displays clocks and dates in different formats. Learning Live View along with basic use of Timex</p>
 <h3>What I learned</h3>
 <p>The big one here is how to install and get going with something simple with LiveView.</p>
 <h2>There is a Tzdata library for Elixir</h2>
-<p>Talk about convenience! This library has a function that gives you all of the allowed timezones.</p>
+<p>Talk about convenience! This library has a function that gives you all of the allowed time zones.</p>
 <p>https://hexdocs.pm/tzdata/Tzdata.html#content</p>
 <h4>It is complex to set up live view</h4>
 <p>LiveView ended up being complex to set up. I wanted to set it up myself to understand how it works. </p>
 <p>I can see why in the contest they would have you fork one with the setup and then start working.</p>
-<p>I enjoyed that liveview seems to be a genserver. So You are working directly with that.</p>
+<p>I enjoyed that LiveView seems to be a GenServer. So You are working directly with that.</p>
 <h4>Timex is very easy to use</h4>
 <p>I thought I was going to have to spend a lot of time here. I didn't have to. It was easy to work with. I hope they include this into the default Elixir libraries.</p>
 <h4>Installing the dependencies</h4>
@@ -115,9 +115,9 @@
 <p><a href="https://hexdocs.pm/ecto_sql/Ecto.Migration.html">Reference: Ecto Sql Migration</a></p>
 <h2>Site 3: Lotto number generator</h2>
 <p>The site uses simple jQuery to generate a set of lotto numbers.</p>
-<p>As of the writing of this post, to play <a href="https://powerball.com">powerball</a> you pick 5 number between 1 and 69 and one number between 1 and 26 for the red powerball. </p>
+<p>As of the writing of this post, to play <a href="https://powerball.com">Powerball</a> you pick 5 number between 1 and 69 and one number between 1 and 26 for the red Powerball. </p>
 <h3>What I learned</h3>
-<p>I wanted to learn how to use or add jQuery in phoenix. I like jQuery because it is the right tool for most html page driven apps. It is also a nice way to learn how to include different javascript libraries. How to include frameworks will come later.</p>
+<p>I wanted to learn how to use or add jQuery in phoenix. I like jQuery because it is the right tool for most html page driven apps. It is also a nice way to learn how to include different JavaScript libraries. How to include frameworks will come later.</p>
 <ol>
 <li>
 <p>In the <code>assets</code> directory, run <code>npm install jquery</code></p>
@@ -138,7 +138,7 @@
 </li>
 </ol>
 <p>This should add <code>$</code> and <code>jQuery</code> as a global value on the browser. </p>
-<p>ProvidePlugin loads the module automatically everywhere. The argument is a hash with an <code>identifier : 'module'</code>, where the identifier is the variable name that you want to use in the scripts in the browser along with the module name. You can also export this way just a function. See the documenation to see how that happens.</p>
+<p>ProvidePlugin loads the module automatically everywhere. The argument is a hash with an <code>identifier : 'module'</code>, where the identifier is the variable name that you want to use in the scripts in the browser along with the module name. You can also export this way just a function. See the documentation to see how that happens.</p>
 <ol>
 <li>
 <p>Now under <code>assets/js/app.js</code> you need to add the following</p>
