@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </ul>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Python's with</h2>
+  <h3>A small tutorial for a handy feature</h3>
+  <label>28 July, 2020</label>
+  <h2>The point</h2>
+<p>The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.</p>
+<p>Let's focus on the practical application of with. This is an example taken from the PEP.</p>
+<div class="highlight"><pre><span></span><code><span class="err">  with opened(&quot;/etc/passwd&quot;) as f:</span>
+<span class="err">      for line in f:</span>
+<span class="err">          print line.rstrip()</span>
+</code></pre></div>
+
+
+<p>This would be equivalent to something like</p>
+<div class="highlight"><pre><span></span><code>  <span class="kn">import</span> <span class="nn">sys</span>
+
+  <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/etc/passwd&quot;</span><span class="p">)</span>
+
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="n">e</span>
+  <span class="k">finally</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+
+<p>As you can see, using "with" is cleaner.</p>
+<p>The one catch is that the object must fit some conditions for it to work with the "with" statement. File objects since Python 2.5 meet them. You can also create objects that can play nicely along "with."</p>
+<h2>The long story</h2>
+<p>A friend told me that I should look into Python's "with" because he said that it trips some people new to the language. I found this document doing an online search <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a>[1]. This document goes into detail on the evolution of the feature and how to use it. If you have time and you are interested, you should read this document.</p>
+<p>As a side note, the Python Enhancement Proposal (PEP), seems to be a great documentation project. I need to think about this and see how workplaces can adopt something like this to document design decisions over time.</p>
+<p>Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support <strong>enter</strong>() and <strong>exit</strong>() methods. The PEP quoted above goes into detail on the requirements for "with" to work.</p>
+<p>If you find the PEP document too overwhelming, as I did, you can also look at the following blog entry by Fredrik Lundh, <a href="https://effbot.org/zone/python-with-statement.htm">Understanding Python's "with" statement</a>[2].</p>
+<p>References:
+1. <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a>
+2. Lundh, Fredrik <a href="https://effbot.org/zone/python-with-statement.htm">Understanding Python's "with" statement</a></p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
