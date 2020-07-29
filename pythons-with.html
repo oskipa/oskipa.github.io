@@ -36,9 +36,9 @@
   <h2>Python's with</h2>
   <h3>A small tutorial for a handy feature</h3>
   <label>28 July, 2020</label>
-  <h2>The point</h2>
+  <h3>The point</h3>
 <p>The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.</p>
-<p>Let's focus on the practical application of with. This is an example taken from the PEP.</p>
+<p>Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is your actual code rather than ceremonial templates.</p>
 <div class="highlight"><pre><span></span><code><span class="err">  with opened(&quot;/etc/passwd&quot;) as f:</span>
 <span class="err">      for line in f:</span>
 <span class="err">          print line.rstrip()</span>
@@ -63,7 +63,7 @@
 
 <p>As you can see, using "with" is cleaner.</p>
 <p>The one catch is that the object must fit some conditions for it to work with the "with" statement. File objects since Python 2.5 meet them. You can also create objects that can play nicely along "with."</p>
-<h2>The long story</h2>
+<h3>The long story</h3>
 <p>A friend told me that I should look into Python's "with" because he said that it trips some people new to the language. I found this document doing an online search <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a>[1]. This document goes into detail on the evolution of the feature and how to use it. If you have time and you are interested, you should read this document.</p>
 <p>As a side note, the Python Enhancement Proposal (PEP), seems to be a great documentation project. I need to think about this and see how workplaces can adopt something like this to document design decisions over time.</p>
 <p>Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support <strong>enter</strong>() and <strong>exit</strong>() methods. The PEP quoted above goes into detail on the requirements for "with" to work.</p>
