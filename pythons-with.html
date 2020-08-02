@@ -66,11 +66,11 @@
 <h3>The long story</h3>
 <p>A friend told me that I should look into Python's "with" because he said that it trips some people new to the language. I found this document doing an online search <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a>[1]. This document goes into detail on the evolution of the feature and how to use it. If you have time and you are interested, you should read this document.</p>
 <p>As a side note, the Python Enhancement Proposal (PEP), seems to be a great documentation project. I need to think about this and see how workplaces can adopt something like this to document design decisions over time.</p>
-<p>Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support <strong>enter</strong>() and <strong>exit</strong>() methods. The PEP quoted above goes into detail on the requirements for "with" to work.</p>
+<p>Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support __enter__() and __exit__() methods. The PEP quoted above goes into detail on the requirements for "with" to work.</p>
 <p>If you find the PEP document too overwhelming, as I did, you can also look at the following blog entry by Fredrik Lundh, <a href="https://effbot.org/zone/python-with-statement.htm">Understanding Python's "with" statement</a>[2].</p>
-<p>References:
-1. <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a>
-2. Lundh, Fredrik <a href="https://effbot.org/zone/python-with-statement.htm">Understanding Python's "with" statement</a></p>
+<p>References:</p>
+<p>[1]  <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343, the with statement</a></p>
+<p>[2]  Lundh, Fredrik <a href="https://effbot.org/zone/python-with-statement.htm">Understanding Python's "with" statement</a></p>
  </div>
 </div>
  </div> 

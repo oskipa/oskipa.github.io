@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-07-28T00:00:00-04:00</updated><entry><title>Python's with</title><link href="https://oskipa.github.io/pythons-with.html" rel="alternate"></link><published>2020-07-28T00:00:00-04:00</published><updated>2020-07-28T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-28:/pythons-with.html</id><summary type="html">&lt;h3&gt;The point&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-07-31T00:00:00-04:00</updated><entry><title>Python's doctest</title><link href="https://oskipa.github.io/pythons-doctest.html" rel="alternate"></link><published>2020-07-31T00:00:00-04:00</published><updated>2020-07-31T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-31:/pythons-doctest.html</id><summary type="html">&lt;h3&gt;tldr&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/3/library/doctest.html"&gt;doctest&lt;/a&gt; [1]  is a library that allows you to write python examples in comments or text documents. This is handy because you can write examples, test them, and have the peace of mind that they work. &lt;/p&gt;
+&lt;p&gt;Here are some examples example&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+
+
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;   &lt;span class="k"&gt;return …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;tldr&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/3/library/doctest.html"&gt;doctest&lt;/a&gt; [1]  is a library that allows you to write python examples in comments or text documents. This is handy because you can write examples, test them, and have the peace of mind that they work. &lt;/p&gt;
+&lt;p&gt;Here are some examples example&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+
+
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As you can see, the key is to use the three arrows, &amp;gt;&amp;gt;&amp;gt;, to write the python that you would execute in the console. The result is written lined up after the &amp;gt;&amp;gt;&amp;gt; prompt. If you have a multi-line code sample, like when you are writing a function, you must enter the three dots, ... , and then line up the code as you would when writing python.&lt;/p&gt;
+&lt;p&gt;To test your code, you need to have a script that imports doctest. I looked it up on the internet. The solution I found was&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;EOF&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;doctest&lt;/span&gt;
+    &lt;span class="n"&gt;doctest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;testfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pythons_doctest.md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is enough to get you going. Of course there is a lot more to it. Please consult [1] for more information.&lt;/p&gt;
+&lt;h3&gt;The long story&lt;/h3&gt;
+&lt;p&gt;One of the most awkward bits when writing about programming is writing examples in your articles and having to copy-and-past them into a script, run them, and then having to fix your article. It is not difficult. It is cumbersome. You leave a text editor to go into the console and you must add libraries and whatever you need to prepare to run the examples.&lt;/p&gt;
+&lt;p&gt;doctest makes it easier to write your examples in the docs. Or you could write the examples on the interactive console and copy-and-paste the expressions and results into the document you are writing. I first learned about these libraries from Elixir, which encourages writing documentation with examples that can be tested with their document testing library. As I started writing these small entries on Python, I decided that it would be handy to have examples that can be tested before I publish them.&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;[1] &lt;em&gt;doctest -- Test interactive Python examples&lt;/em&gt; docs.python.org &lt;a href="https://docs.python.org/3/library/doctest.html"&gt;https://docs.python.org/3/library/doctest.html&lt;/a&gt; (accessed, July 31, 2020)&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>Python's yield</title><link href="https://oskipa.github.io/pythons-yield.html" rel="alternate"></link><published>2020-07-30T00:00:00-04:00</published><updated>2020-07-30T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-30:/pythons-yield.html</id><summary type="html">&lt;h2&gt;The short answer&lt;/h2&gt;
+&lt;p&gt;Python's 'yield' is used instead of 'result' when you are creating results via a generator function. Think of generators as some sort of a lazy, stateful function that returns one item at a time. Why would we want that? We would want this when consuming a huge …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;The short answer&lt;/h2&gt;
+&lt;p&gt;Python's 'yield' is used instead of 'result' when you are creating results via a generator function. Think of generators as some sort of a lazy, stateful function that returns one item at a time. Why would we want that? We would want this when consuming a huge amount of data that can't be loaded all at once into memory. Think of a giant csv file. &lt;/p&gt;
+&lt;p&gt;So the point of a generator is to have a function that can give you one item at a time and remember where it was the next time you call it.  &lt;/p&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; # we create our generator&lt;/span&gt;
+&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; def up_to_10():&lt;/span&gt;
+&lt;span class="err"&gt;    ...   for n in range(10):&lt;/span&gt;
+&lt;span class="err"&gt;    ...     yield n&lt;/span&gt;
+&lt;span class="err"&gt;    ...&lt;/span&gt;
+&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; # we use it &lt;/span&gt;
+&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; for i in up_to_10():&lt;/span&gt;
+&lt;span class="err"&gt;    ...   print(i)&lt;/span&gt;
+&lt;span class="err"&gt;    ...&lt;/span&gt;
+&lt;span class="err"&gt;    0&lt;/span&gt;
+&lt;span class="err"&gt;    1&lt;/span&gt;
+&lt;span class="err"&gt;    2&lt;/span&gt;
+&lt;span class="err"&gt;    3&lt;/span&gt;
+&lt;span class="err"&gt;    4&lt;/span&gt;
+&lt;span class="err"&gt;    5&lt;/span&gt;
+&lt;span class="err"&gt;    6&lt;/span&gt;
+&lt;span class="err"&gt;    7&lt;/span&gt;
+&lt;span class="err"&gt;    8&lt;/span&gt;
+&lt;span class="err"&gt;    9&lt;/span&gt;
+&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;The longer story&lt;/h2&gt;
+&lt;p&gt;My example seems silly since we could achieve the same with a range or with a list. My guess is that generators are useful to implement laziness. You could create a library that queries a  database, but will only make the call it when you actually need it. I can also see how we can use generators to create infinite series.&lt;/p&gt;
+&lt;p&gt;'yield' trips me up coming from Ruby. 'yield' does something different in Ruby: it executes a block that has been passed to the method.&lt;/p&gt;
+&lt;p&gt;Python's 'yield' seems closer to C#'s yield. Sadly, I never fully understood C#'s yield. From this blog, it looks like it is similar to Pyton's yield. &lt;a href="https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/"&gt;https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/&lt;/a&gt;[3]&lt;/p&gt;
+&lt;p&gt;You can read more about 'yield' and generators at &lt;a href="https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/"&gt;https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/&lt;/a&gt;[1] and at its PEP[2]&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;[1] A. Agarwal, "When to use yield instead of return in Python?" GeeksForGeeks. &lt;a href="https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/"&gt;https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/&lt;/a&gt; (accessed July 30, 2020)&lt;/p&gt;
+&lt;p&gt;[2] N. Schemenauer, T. Peters, M. Lie Hetland, PEP 255. Python &lt;a href="https://www.python.org/dev/peps/pep-0255/"&gt;https://www.python.org/dev/peps/pep-0255/&lt;/a&gt;(accessed July 30, 2020)&lt;/p&gt;
+&lt;p&gt;[3] K. Truyers, &lt;em&gt;Yield return in C#&lt;/em&gt;, kenneth-truyers.net, &lt;a href="https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/"&gt;https://www.kenneth-truyers.net/2016/05/12/yield-return-in-c/&lt;/a&gt;(accessed July 31, 2020)&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>Python's with</title><link href="https://oskipa.github.io/pythons-with.html" rel="alternate"></link><published>2020-07-28T00:00:00-04:00</published><updated>2020-07-28T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-28:/pythons-with.html</id><summary type="html">&lt;h3&gt;The point&lt;/h3&gt;
 &lt;p&gt;The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.&lt;/p&gt;
 &lt;p&gt;Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;The point&lt;/h3&gt;
 &lt;p&gt;The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.&lt;/p&gt;
@@ -31,11 +104,11 @@
 &lt;h3&gt;The long story&lt;/h3&gt;
 &lt;p&gt;A friend told me that I should look into Python's "with" because he said that it trips some people new to the language. I found this document doing an online search &lt;a href="https://www.python.org/dev/peps/pep-0343/"&gt;PEP 343, the with statement&lt;/a&gt;[1]. This document goes into detail on the evolution of the feature and how to use it. If you have time and you are interested, you should read this document.&lt;/p&gt;
 &lt;p&gt;As a side note, the Python Enhancement Proposal (PEP), seems to be a great documentation project. I need to think about this and see how workplaces can adopt something like this to document design decisions over time.&lt;/p&gt;
-&lt;p&gt;Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support &lt;strong&gt;enter&lt;/strong&gt;() and &lt;strong&gt;exit&lt;/strong&gt;() methods. The PEP quoted above goes into detail on the requirements for "with" to work.&lt;/p&gt;
+&lt;p&gt;Back to with! In practical terms, "with" is some sort of syntactical sugar that allows you to avoid writing template try: except: finally:  blocks of code. It seems similar to the "using" statement in c#. For us to be able to use a "with" statement, the object needs to support __enter__() and __exit__() methods. The PEP quoted above goes into detail on the requirements for "with" to work.&lt;/p&gt;
 &lt;p&gt;If you find the PEP document too overwhelming, as I did, you can also look at the following blog entry by Fredrik Lundh, &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;[2].&lt;/p&gt;
-&lt;p&gt;References:
-1. &lt;a href="https://www.python.org/dev/peps/pep-0343/"&gt;PEP 343, the with statement&lt;/a&gt;
-2. Lundh, Fredrik &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>On Misspelling</title><link href="https://oskipa.github.io/on-misspelling.html" rel="alternate"></link><published>2020-07-22T00:00:00-04:00</published><updated>2020-07-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-22:/on-misspelling.html</id><summary type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of its spelling system.&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;[1]  &lt;a href="https://www.python.org/dev/peps/pep-0343/"&gt;PEP 343, the with statement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2]  Lundh, Fredrik &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>On Misspelling</title><link href="https://oskipa.github.io/on-misspelling.html" rel="alternate"></link><published>2020-07-22T00:00:00-04:00</published><updated>2020-07-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-22:/on-misspelling.html</id><summary type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of its spelling system.&lt;/p&gt;
 &lt;p&gt;One would think that the speakers of such a hard language to write would be forgiving when people misspell words. I believe that most people are in day-to-day communication. Yet in situations that matter in people's lives, such as getting a job or doing a sales pitch, having a misspelling can bring judgement, contempt, and rejection to the unfortunate author.&lt;/p&gt;
 &lt;p&gt;Like drivers, people think they are better at it than most people. Just like drivers, most people are worse than they think. Personally I have gone through periods where I believe I was an excellent speller. Then I lived through periods where I was an embarrassingly bad speller. I have fluctuated between okay and bad ever since. My lifetime spelling achievement puts me in the mediocre category.&lt;/p&gt;
 &lt;p&gt;But why? If I were consistently good, I would attribute it, like most people who are consistently good at spelling, to my superior mind and education. If I were consistently bad, I would attribute that to a poor education, or a learning disability, and secretly I would suffer thinking that I had an inferior mind.&lt;/p&gt;
