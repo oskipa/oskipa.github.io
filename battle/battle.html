@@ -1,0 +1,401 @@
+
+<html>
+  <head>
+     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+      @font-face {
+        font-family: 'pixeboy';
+        src: url('font/pixeboy.ttf') format('truetype');
+      }
+
+      body {
+        background: black;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      button {
+        font-size: 18px;
+        width: 100px;
+      }
+
+      td {
+        font-size: 24px;
+      }
+
+      #game {
+        font-family: "pixeboy", "Courier New", monospace;
+        font-size: 24px;
+        border-style: solid;
+        border-width: 2px;
+        width: 800px;
+        height: 610px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        background: white;
+      }
+
+      #arena {
+        display: flex;
+        height: 400px;
+      }
+
+      #io {
+        display: flex;
+      }
+
+      #controls{
+       margin 20px; 
+      }
+     
+      .card {
+        width: 400px;
+        height 400px; 
+      }
+
+      .io_item {
+        border-style: double;
+        border-width: 5px;
+        width: 400px;
+        height: 75px;
+        padding: 2px;
+      }
+
+      .log {
+        overflow-y: scroll;
+        height: 100%;
+      }
+
+      .character-image {
+        height: 300px;
+      }
+
+      .controls {
+        list-style-type: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 210px;
+      }
+
+      .controls li {
+        display: inline-block;
+      }
+
+      .health {
+        background: green;
+        color: green;
+      }
+
+      .credit {
+        font-size: 14px;
+      }
+
+      .output {
+        margin: 0px;
+      }
+
+      .inventory {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="game">
+      <h1> {{ title }} </h1>
+      <div id="arena">
+        <div id="player-card" class="card">
+          <label>player's hp {{ player.hp }}</label><br />
+          <span id="player-health" class="health">{{ player_health_bar }}</span>
+          <div class="character-image">
+            <img width="90%" src="images/potato.png"></img>
+          </div>
+        </div>
+        <div id="monster-card" class="card">
+          <div class="character-image">
+            <img width="90%" src="images/monster.png"></img>
+          </div>
+          <label>monster's hp {{ monster.hp }}</label><br />
+        <span id="monster-health" class="health">{{ monster_health_bar }}</span>
+        </div>
+      </div>
+
+      <span  class="inventory">heals {{ player.heals }} specials {{ player.specials}} killed {{ kills}}</span>
+      <div id="io">
+        <div class="io_item">
+          <div v-if="showLogs" class="log">
+            <table>
+              <tr v-for="action in logs" >
+                <td>{{ action }}</td>
+              </tr>
+            </table>
+          </div>
+          <div v-else  class="output">
+            {{output}}
+          </div>
+        </div>
+
+        <div id="controls" class="io_item">
+          <div v-if="stopped" id="start">
+              <button v-on:click="start()">1-UP</button>
+          </div>
+
+          <div v-else id="commands">
+            <ul class="controls" >
+              <li><button @click="use_attack()">Attack</button></li>
+              <li><button @click="use_special()">Special</button></li> 
+              <li><button @click="use_heal()">Heal</button></li>
+              <li><button v-on:click="flee()">Run</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings">
+        <input v-model="showLogs" type="checkbox">log view</input>
+        <input v-model="music" @change="toggle_music"  type="checkbox">Music</input>
+        <span class="credit"><a href="Royalty free music from https://www.fesliyanstudios.com">Royalty free music from https://www.fesliyanstudios.com</a></span>
+      </div>
+    </div>
+
+  <script>
+    class Character {
+      constructor(player, ac, hp, hit_dice, special, specials, heal_dice, heals) {
+        this.player = player;
+        this.ac = ac;
+        this.hp = hp; 
+        this.hit_dice = hit_dice;
+        this.special = special;
+        this.specials = specials;
+        this.heal_dice = heal_dice;
+        this.heals = heals;
+        this.next_action = "here goes the function";
+      }
+    }
+
+    var  app = new Vue({
+      el : "#game",
+      data : {
+        title: "Monster Battle",
+        player:  new Character(true, 0,0,0,0,0,0),
+        monster: new Character(false, 0,0,0,0,0,0),
+        kills: 0,
+        stopped: true,
+        music: true,
+        track: "", 
+        showLogs: false,
+        output: "Press 1-up to start",
+        logs: [],
+      },
+      computed: {
+        player_health_bar: function() {
+          return this.health_bar(this.player.hp);
+        },
+        monster_health_bar: function() {
+          return this.health_bar(this.monster.hp);
+        },
+      },
+      methods: {
+        toggle_music: function() {
+            if (this.music){
+              this.track = new Audio("audio/Arcade_Kid_David_Renda.mp3");
+              this.track.loop = true; 
+              this.track.play(); 
+            } else {
+              this.track.pause();
+            }
+        },
+        roll: function(dice) {
+          var result = Math.floor(Math.random() * dice) + 1;
+          console.log("roll: ", result); 
+          return result;
+        },
+        log: function(message) {
+          this.output = message;
+          this.logs.unshift(message);
+        },
+        health_bar: function(health) {
+          return (health > 0) ?  ".".repeat(health) : "";
+        },
+        start: function() {
+          this.kills = 0;
+          this.player  = new Character(true,
+                          10,
+                          this.roll(10) + 5,
+                          this.roll(10),
+                          this.roll(15) + 5, 
+                          this.roll(4), 
+                          this.roll(15) + this.roll(6),
+                          this.roll(6));
+
+          this.monster = new Character(false,
+                                this.roll(15), 
+                                this.roll(10),
+                                this.roll(15),
+                                this.roll(10),
+                                this.roll(4), 
+                                this.roll(6),
+                                this.roll(6));
+
+          this.stopped = false;
+          this.output = "A monster wants to fight!";
+          this.logs = [this.output];
+
+          if (this.music){
+            this.toggle_music();
+          }
+        },
+        flee: function() {
+          let roll, ability;
+          [roll, ability] = this.adjustment(-1);
+          this.log("You flee! -" + roll + " in " + ability);
+          this.new_monster();
+          this.check_end_game();
+        },
+        next_action: function(is_player){
+          if (is_player){
+            this.monsters_turn();
+          } else {
+            this.check_end_game();
+          }
+        },
+        attack: function(attacker, defender) {
+          var name = (attacker.player) ? "You" : "The monster"; 
+          var attack = this.roll(20);
+
+          if (attack >= defender.ac) {
+            var damage = this.roll(attacker.hit_dice);
+            defender.hp -= damage;
+            this.log( name + " attacked! " + damage.toString() + " in damage!");
+          } else {
+            this.log( name + " missed!");
+          }
+
+          this.next_action(attacker.player);
+        },
+        special: function(attacker, defender) {
+          var name = (attacker.player) ? "You" : "The monster"; 
+
+          if (attacker.specials > 0){ 
+            var damage = this.roll(attacker.special);
+            defender.hp -= damage;
+            attacker.specials -=1;
+            this.log(name + " did a special attack! " + damage.toString() + " in damage!");
+          } else {
+            this.log( name + " had no more special attacks left!");
+          }
+
+          this.next_action(attacker.player);
+        },
+        heal: function(performer) {
+          var name = (performer.player) ? "You" : "The monster"; 
+
+          if (performer.heals > 0) {
+            var healing = this.roll(performer.heal_dice);
+            performer.hp    += healing;
+            performer.heals -= 1;
+            this.log( name + " healed! " + healing.toString() + " HP!");
+          } else {
+            this.log(name + " ran out of heals!");
+          }
+          
+          this.next_action(performer.player);
+        },
+        new_monster: function() {
+          setTimeout(function () {
+            this.log("A monster wants to fight!");
+            this.monster = new Character(false,
+                                this.roll(15) + this.kills, 
+                                this.roll(10) + this.kills,
+                                this.roll(15) + this.kills,
+                                this.roll(10) + this.kills,
+                                this.roll(4) + this.kills, 
+                                this.roll(6) + this.kills,
+                                this.roll(6) + this.kills);
+
+          }.bind(this), 2000);
+
+        },
+        adjustment: function(reward) {
+            var sign = 1 * reward;
+
+            this.player.hp += sign * this.roll(this.player.heal_dice);
+
+            var abilities = [this.player.heals, this.player.specials, this.player.hit_dice];
+            var names = ["heals", "specials", "attack"];
+            var slot = this.roll(abilities.length) - 1;
+            var roll = this.roll(4);
+            
+            switch(slot) {
+              case 0:
+                this.player.heals += sign * roll;
+                break;
+              case 1:
+                this.player.specials += sign * roll;
+                break;
+              case 2:
+                this.player.specials += sign * roll;
+                break;
+              default:
+                break
+              }
+
+            return [roll, names[slot]];
+        },
+        check_end_game: function() {
+ 
+          if (this.player.hp < 1) {
+            this.log("You died");
+            this.stopped = true;
+            this.track.pause();
+          }
+         
+          if (this.monster.hp < 1) {
+            let roll, ability;
+            [roll, ability] = this.adjustment(1);
+            this.log("You slayed the monster.  +" + roll  + " in " + ability );
+            
+            this.kills += 1;
+            this.new_monster();
+          }
+
+          if (this.player.hp < 1 && this.monster.hp < 1){
+            this.log("You both died");
+            this.stopped = true;
+          }
+        },
+        use_attack: function() {
+          this.attack(this.player, this.monster);
+        },
+        use_special: function() {
+          this.special(this.player, this.monster);
+        },
+        use_heal: function() {
+          this.heal(this.player);
+        },
+        monsters_turn: function() {
+          setTimeout(function () {
+            if (this.monster.hp > 0){
+              var actions = [this.attack, this.special, this.heal];
+              var roll = this.roll(actions.length) - 1;
+
+              actions[roll](this.monster, this.player);
+            } else {
+              this.check_end_game();
+            }
+          }.bind(this), 2000);
+        },
+      }
+    });
+  </script>
+     
+  </body>
+</html>
