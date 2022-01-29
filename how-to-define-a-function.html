@@ -54,54 +54,49 @@
 <li>Write the name</li>
 </ol>
 <p>We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. </p>
-<div class="highlight"><pre><span></span><code><span class="err">def create_post()</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">create_post</span><span class="ss">()</span>
+<span class="k">end</span>
 </code></pre></div>
-
 
 <ol>
 <li>Write a one-sentence comment describing the function</li>
 </ol>
 <p>This comment documents what our <em>intent</em> for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err">def create_post()</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code># <span class="nv">creates</span> <span class="nv">new</span> <span class="nv">post</span>
+<span class="nv">def</span> <span class="nv">create_post</span><span class="ss">()</span>
+<span class="k">end</span>
 </code></pre></div>
-
 
 <ol>
 <li>Write the type signature </li>
 </ol>
 <p>Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.</p>
 <p>The book uses the following type format. You make a list of each parameter followed by an arrow (-&gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err"># Hash -&gt; Unit  </span>
-<span class="err">def create_post()</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="cp"># creates new post</span><span class="w"></span>
+<span class="cp"># Hash -&gt; Unit  </span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">create_post</span><span class="p">()</span><span class="w"></span>
+<span class="kd">end</span>
 </code></pre></div>
-
 
 <p>This is an example using more idiomatic Ruby.</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err"># @param params, Hash, the http parameters hash </span>
-<span class="err"># @return void </span>
-<span class="err">def create_post(params)</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">post</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">Hash</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">http</span><span class="w"> </span><span class="k">parameters</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@return</span><span class="w"> </span><span class="n">void</span><span class="w"> </span>
+<span class="n">def</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </code></pre></div>
-
 
 <ol>
 <li>Write an example </li>
 </ol>
 <p>Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentation you can add. Most people will often google for examples. Include them.</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err"># @param blog_parameters, Hash, the http parameters hash </span>
-<span class="err"># @return void </span>
-<span class="err"># Example: create_post(params[:blog])</span>
-<span class="err">def create_post(blog_params)</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">post</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">blog_parameters</span><span class="p">,</span><span class="w"> </span><span class="n">Hash</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">http</span><span class="w"> </span><span class="k">parameters</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@return</span><span class="w"> </span><span class="n">void</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nl">Example</span><span class="p">:</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="n">:blog</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">blog_params</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.</p>
 <ol>
@@ -115,33 +110,31 @@
     # Example: create_post(params[:blog])
     def create_post(blog_parameters)
     end</p>
-<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">testing</span> <span class="n">correct</span> <span class="n">behavior</span> <span class="k">or</span> <span class="n">happy</span> <span class="n">path</span>
-<span class="o">#</span> <span class="n">The</span> <span class="n">test</span> <span class="k">is</span> <span class="n">ruby</span> <span class="n">pseudo</span> <span class="n">code</span>
-<span class="n">def</span> <span class="n">test_creation</span><span class="p">()</span>
-  <span class="o">#</span> <span class="n">setup</span>
-  <span class="n">params</span> <span class="o">=</span> <span class="err">{</span><span class="n">title</span><span class="p">:</span> <span class="ss">&quot;hello&quot;</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="ss">&quot;hello world!&quot;</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="ss">&quot;Joe Smith&quot;</span> <span class="err">}</span>
+<div class="highlight"><pre><span></span><code># <span class="nv">testing</span> <span class="nv">correct</span> <span class="nv">behavior</span> <span class="nv">or</span> <span class="nv">happy</span> <span class="nv">path</span>
+# <span class="nv">The</span> <span class="nv">test</span> <span class="nv">is</span> <span class="nv">ruby</span> <span class="nv">pseudo</span> <span class="nv">code</span>
+<span class="nv">def</span> <span class="nv">test_creation</span><span class="ss">()</span>
+  # <span class="nv">setup</span>
+  <span class="nb">params</span> <span class="o">=</span> {<span class="nv">title</span>: <span class="s2">&quot;</span><span class="s">hello</span><span class="s2">&quot;</span>, <span class="nv">body</span>: <span class="s2">&quot;</span><span class="s">hello world!</span><span class="s2">&quot;</span>, <span class="nv">author</span>: <span class="s2">&quot;</span><span class="s">Joe Smith</span><span class="s2">&quot;</span> }
 
-  <span class="o">#</span> <span class="n">exercise</span>
-  <span class="n">create_post</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+  # <span class="nv">exercise</span>
+  <span class="nv">create_post</span><span class="ss">(</span><span class="nb">params</span><span class="ss">)</span>
 
-  <span class="o">#</span> <span class="n">verification</span>
-  <span class="n">record</span> <span class="o">=</span> <span class="n">ORM</span><span class="p">.</span><span class="n">find_by</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="ss">&quot;hello&quot;</span><span class="p">)</span> 
-  <span class="n">assert</span> <span class="o">!</span><span class="n">record</span><span class="p">.</span><span class="n">nil</span><span class="o">?</span> 
+  # <span class="nv">verification</span>
+  <span class="nv">record</span> <span class="o">=</span> <span class="nv">ORM</span>.<span class="nv">find_by</span><span class="ss">(</span><span class="nv">title</span>: <span class="s2">&quot;</span><span class="s">hello</span><span class="s2">&quot;</span><span class="ss">)</span> 
+  <span class="nv">assert</span> <span class="o">!</span><span class="nv">record</span>.<span class="nv">nil</span>? 
 <span class="k">end</span>
 </code></pre></div>
 
-
 <p>This made us discover that we we have three required parameters. Now we can change our function again with this new information.</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err"># @param title, String, title of the blog post </span>
-<span class="err"># @param body, String, body of the blog post </span>
-<span class="err"># @param author, String, body of the blog post </span>
-<span class="err"># @return void </span>
-<span class="err"># Example: create_post(title, body, author)</span>
-<span class="err">def create_post(title, body, author)</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">post</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@return</span><span class="w"> </span><span class="n">void</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nl">Example</span><span class="p">:</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen we send a null value for author? What if the inputs are too big? Is it okay to have no author?</p>
 <p>Thinking in term of ranges helps us identify the right number of tests. This is a superior way thinking about it than old advice I was told for TDD where you kept coming up with tests until you couldn't think of any more.</p>
@@ -149,18 +142,17 @@
 <li>Write the body of the function</li>
 </ol>
 <p>Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.</p>
-<div class="highlight"><pre><span></span><code><span class="err"># creates new post</span>
-<span class="err"># @param title, String, title of the blog post </span>
-<span class="err"># @param body, String, body of the blog post </span>
-<span class="err"># @param author, String, body of the blog post </span>
-<span class="err"># @return void </span>
-<span class="err"># Example: create_post(title, body, author)</span>
-<span class="err">def create_post(title, body, author)</span>
-<span class="err">  blog = Blog.new(title, body, author) </span>
-<span class="err">  ORM.save(blog)</span>
-<span class="err">end</span>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">post</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@param</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">blog</span><span class="w"> </span><span class="n">post</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nv">@return</span><span class="w"> </span><span class="n">void</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="nl">Example</span><span class="p">:</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"></span>
+<span class="n">def</span><span class="w"> </span><span class="n">create_post</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">blog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Blog</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">author</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="n">ORM</span><span class="p">.</span><span class="k">save</span><span class="p">(</span><span class="n">blog</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.</p>
  </div>

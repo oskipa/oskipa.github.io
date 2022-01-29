@@ -1,21 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-08-05T00:00:00-04:00</updated><entry><title>Python's args and kwargs</title><link href="https://oskipa.github.io/pythons-args-and-kwargs.html" rel="alternate"></link><published>2020-08-05T00:00:00-04:00</published><updated>2020-08-05T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-08-05:/pythons-args-and-kwargs.html</id><summary type="html">&lt;h3&gt;tldr&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2022-01-13T00:00:00-05:00</updated><entry><title>It doesn't deserve it</title><link href="https://oskipa.github.io/it-doesnt-deserve-it.html" rel="alternate"></link><published>2022-01-13T00:00:00-05:00</published><updated>2022-01-13T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-13:/it-doesnt-deserve-it.html</id><summary type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
+&lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
+&lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React user interface. For the backend, you are wondering if you should code it in .net core or use this as an opportunity to write that first Rust application. You will most likely put it in AWS, but you are open to Azure. The mobile app will be developed using Kotlin for Android and Swift for iOS.&lt;/p&gt;
+&lt;p&gt;Or you could spend 15 minutes showing her how to use Google contacts.&lt;/p&gt;
+&lt;p&gt;The first solution is complex. Complexity is expensive. It will take a long time to build. You must pay for the services. The diverse technologies take time to learn. Complexity is expensive in terms of understanding a system, fixing bugs, and maintaining it.&lt;/p&gt;
+&lt;p&gt;The second one takes 15 minutes. &lt;/p&gt;
+&lt;p&gt;Now, the issue is not that expensive, complex solutions are bad. The previous solution makes sense in many situations. For example, if it is vital to keep the list and the privacy of its members private. Or if the plan is that a huge organization wants to have a custom, single contact system for all of their sales people. Or if the idea is that the company is planning on building a sales contact app, using their sales people as the active user base.&lt;/p&gt;
+&lt;p&gt;We don't know, though. All what we know is that your coworker wants to organize their contacts.&lt;/p&gt;
+&lt;p&gt;So far, the task hasn't earned complexity. So the task doesn't deserve it. You shouldn't give complexity to it. &lt;/p&gt;
+&lt;p&gt;Until the task deserve it&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use off-the-shelf software&lt;/li&gt;
+&lt;li&gt;use a simple script&lt;/li&gt;
+&lt;li&gt;Use a text file to store data&lt;/li&gt;
+&lt;li&gt;use a simple app &lt;/li&gt;
+&lt;li&gt;use known technologies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, one should be aware when the task has earned its complexity. The company website is moving from 4 pages to becoming an active blog, which is key for getting customers. Then it may be a good idea to get a WordPress account. They want some customized widgets? We can build custom modules. The desired features and workflow for the blog are so unique that it is hard to develop? Maybe now it is a better idea to write their CMS from scratch, custom-made for the business.&lt;/p&gt;
+&lt;p&gt;Another thing to keep in mind is that if it is reasonable to add complexity from the beginning because it will be needed, go ahead and do it. We don't need to spend a winter freezing at a house because we needed to freeze during a winter. Put heat from the start. Same with tech. If you gather relational data, use that database from the start. &lt;/p&gt;
+&lt;p&gt;For those paying attention, this is a different way to express YAGNI. Perhaps a bit stronger.&lt;/p&gt;</content><category term="article"></category><category term="software"></category></entry><entry><title>Simple Programming</title><link href="https://oskipa.github.io/simple_programming.html" rel="alternate"></link><published>2022-01-08T00:00:00-05:00</published><updated>2022-01-08T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-08:/simple_programming.html</id><summary type="html">&lt;p&gt;I have been interested in Design By Contract. I don't have access to Eiffel. I want to try them out in Ruby. I looked into the frameworks provided by Ruby, but I don't fully understand how it works. I read that they have a lot of limitation. Frameworks are in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been interested in Design By Contract. I don't have access to Eiffel. I want to try them out in Ruby. I looked into the frameworks provided by Ruby, but I don't fully understand how it works. I read that they have a lot of limitation. Frameworks are in fact little languages that one has to learn on top of the regular language.&lt;/p&gt;
+&lt;p&gt;What can we do?&lt;/p&gt;
+&lt;p&gt;We can try it using the most minimal implementation of the idea.&lt;/p&gt;
+&lt;p&gt;Let's use design by contracts as an example.&lt;/p&gt;
+&lt;p&gt;The basic idea is that you check conditions before and after calling a function. This is somehting that we can implement easily. &lt;/p&gt;
+&lt;p&gt;Let's start with a simple function that we want to add contracts to. Here is a function that adds two unsignged bytes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Let's add a precondition that the sum should be of integers.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
+    &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now let's add a postcondition. Let's say that the return should be an integer that fits within a C byte range. So we need to take the result, do a modulo operation and get a value that fits.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;256&lt;/span&gt;
+
+    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;255&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point we have done the basics of Design By Contract. Yet looking at it, it is hard to read. We don't have any indicator of what we are doing. Let's abstract the conditional lines.&lt;/p&gt;
+&lt;p&gt;def condition(&amp;amp;block)
+      raise "Precondition violation" unless block.call
+  end&lt;/p&gt;
+&lt;p&gt;def unsigned_byte_sum(a, b)
+    condition do
+      a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
+    end&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+&lt;span class="nv"&gt;condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="nb"&gt;result&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+&lt;p&gt;This is a good step. It is cleaner. I would like to clearly point out when it is a precondition or postcondition. Especially, we want the error message to let us know immediately.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;pre_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;raise_message&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="nv"&gt;raise_message&lt;/span&gt; &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;block&lt;/span&gt;.&lt;span class="nv"&gt;call&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a lot better. It is clear that we are writing a contract for this function. There is one last item that bothers me, which is having to repeat &lt;code&gt;result&lt;/code&gt; a second time. We can make it slightly easier with the following modifications.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  # &lt;span class="nv"&gt;it&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;conditions&lt;/span&gt; &lt;span class="nv"&gt;are&lt;/span&gt; &lt;span class="nv"&gt;true&lt;/span&gt;
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;result&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt; 
+    &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This puts the &lt;code&gt;post_condition&lt;/code&gt; at the end, as the last step of the function. I think it is cleaner. You may disagree and choose to skip it.&lt;/p&gt;
+&lt;p&gt;Now we have a design by contract micro library. This is enough to try it out in your projects and see if it makes sense for you. With these few lines of code, we can bring in the value that design by contract has.&lt;/p&gt;
+&lt;p&gt;There is no elaborate API to learn either. The conditions are performed in plain Ruby, as long as you make sure the conditional returns a boolean.&lt;/p&gt;
+&lt;p&gt;The contract clauses are clearly marked. They are as close to the code as possible. Having the clauses there is marking that this function has enough business value that it is worth to add pre and post conditions.&lt;/p&gt;
+&lt;p&gt;The micro library is small, understandable, and hackable. It is not using obscure or hard to understand metaprograming code. Because of this, a developer or a team can easily extend it as adoption increases.&lt;/p&gt;
+&lt;p&gt;For example, the micro library lacks an &lt;code&gt;invariant&lt;/code&gt; test for objects. It shouldn't be too hard to add it if it is necessary.&lt;/p&gt;
+&lt;p&gt;It also allows to properly assess whether adopting a library makes sense. Now that you have tried Design by Contract for a while, you can correctly determine if adopting a fully fleshed framework is worth your time or not.&lt;/p&gt;
+&lt;p&gt;I could wrap this micro library in a gem. I have decided not to. Instead, you can copy and paste the library, and grow it yourself. Besides of this hackability, it also reduces your security exposure. Once you copy in the template micro library, you don't have to worry that someone has added a security vulnerability or malicious code.  &lt;/p&gt;</content><category term="article"></category><category term="simplicity"></category><category term="programming"></category><category term="design by contract"></category><category term="eiffel"></category><category term="ruby"></category></entry><entry><title>The Missing Tech Context</title><link href="https://oskipa.github.io/the-missing-tech-context.html" rel="alternate"></link><published>2021-11-21T00:00:00-05:00</published><updated>2021-11-21T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2021-11-21:/the-missing-tech-context.html</id><summary type="html">&lt;p&gt;Recently I ran into a discussion on a Ruby forum about the "right" way to implement a &lt;code&gt;.double&lt;/code&gt; function. One solution used a &lt;code&gt;case&lt;/code&gt; block that checked on the object's type. The other one added &lt;code&gt;.double&lt;/code&gt; methods to the &lt;code&gt;Numeric&lt;/code&gt;, &lt;code&gt;Array&lt;/code&gt;, etc. Which one is better?&lt;/p&gt;
+&lt;p&gt;People with Smalltalk experience …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I ran into a discussion on a Ruby forum about the "right" way to implement a &lt;code&gt;.double&lt;/code&gt; function. One solution used a &lt;code&gt;case&lt;/code&gt; block that checked on the object's type. The other one added &lt;code&gt;.double&lt;/code&gt; methods to the &lt;code&gt;Numeric&lt;/code&gt;, &lt;code&gt;Array&lt;/code&gt;, etc. Which one is better?&lt;/p&gt;
+&lt;p&gt;People with Smalltalk experience will say that adding methods is the proper object oriented solution. And they are right. Right, that is, if we are writing in Smalltalk. If we are writing in another OOP language, this solution may be wrong. A grave mistake, even.&lt;/p&gt;
+&lt;p&gt;Isn't OOP the same in any language? Our current expectation is that it is. The reality is that isn't. Each language operates with a different context from the others.&lt;/p&gt;
+&lt;p&gt;Ruby is heavily inspired by Smalltalk. It is essentially a command-line Smalltalk dialect that lacks the GUI and the tools. Let's examine the different contexts.&lt;/p&gt;
+&lt;p&gt;In Smalltalk we have good development tools. Developer education explains how the language works, how message dispatch works, and how each Smalltalk image is a unique system once you finished your project.&lt;/p&gt;
+&lt;p&gt;Ruby has a different culture. It has many people who use it to get things done. It is mainly written in text editors. Message dispatch is learned once we are learning about metaprogramming. The language is syntactically more complex. Developers don't expect that base classes will be modified.&lt;/p&gt;
+&lt;p&gt;So while the Smalltalk developer can easily find where a method is defined in their sysystem, even expecting changes, the Ruby developer will be surprised. We want to reduce those surprises.&lt;/p&gt;
+&lt;p&gt;An interesting consequence is that is changing Object becomes a common practice in Ruby, then this practice, which today may be considered incorrect, will be fine.&lt;/p&gt;</content><category term="article"></category><category term="tech culture"></category><category term="best practices"></category><category term="oop"></category><category term="functional"></category></entry><entry><title>What is good writing?</title><link href="https://oskipa.github.io/what-is-good-writing.html" rel="alternate"></link><published>2020-12-14T00:00:00-05:00</published><updated>2020-12-14T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-12-14:/what-is-good-writing.html</id><summary type="html">&lt;p&gt;As I was writing a brief review of Strunk and White's "The Elements of Style", I began articulating what my current ideas on what good writing consists in. I haven't thought about it for about 20 years. I realized that it had change since then. &lt;/p&gt;
+&lt;p&gt;Good writing is about empathy …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As I was writing a brief review of Strunk and White's "The Elements of Style", I began articulating what my current ideas on what good writing consists in. I haven't thought about it for about 20 years. I realized that it had change since then. &lt;/p&gt;
+&lt;p&gt;Good writing is about empathy. You have a message you want to share with an audience. You imagine how your audience would like to hear it. You imagine yourself as the audience. You adapt your communication style for that audience.&lt;/p&gt;
+&lt;p&gt;Audience is the most important consideration when writing. Audience determines the writing style, vocabulary, word usage, and even grammar. We do this out of respect and empathy for the audience. You must change your regular vocabulary, spelling, or grammar so that your audience will listen, you do it, even if it breaks the conventions of common academic English.&lt;/p&gt;
+&lt;p&gt;Good writing keeps your audience focused on your message. Anything that distracts the audience from your message is a problem with your writing. &lt;/p&gt;
+&lt;p&gt;Genres and conventions help audiences to know what to expect. Priests should talk like priests. Rappers should talk like rappers. Historical fiction shouldn't have laser guns that come out of nowhere. Political commentary shouldn't break into poetry. Convention breaking pulls away from the message.&lt;/p&gt;
+&lt;p&gt;Failing to meet the audience expectations is how they get distracted. Common examples of these distractions are misspellings or grammar mistakes. Word usage can be distracting for some, when used in the wrong context. Breaking a genre convention, if not done correctly or deliberately, will be confusing and distracting. Once distracted it is hard for the audience to focus again on the message. Be empathetic: the audience is already giving their time to listen to what you have to say. Don't distract them. &lt;/p&gt;
+&lt;p&gt;You want to develop the skills to write in common English so that people can focus on your message. Many will get distracted if they run into "incorrect English." People who disagree with your message will point out mistakes to distract others. These distractions often become attacks on your intelligence, your education, and your social class. Be empathetic with the rest of the audience and with yourself. Avoid this scenario in the first place. Run the spell and grammar check to avoid the biggest mistakes. Put down your draft and review it the next day. &lt;/p&gt;
+&lt;p&gt;Logical organization parallel sentences, and unambigous sentences help people understand you.&lt;/p&gt;
+&lt;p&gt;Good writing is about empathy. It is having empathy towards your audience and yourself. Although the last century has focused so much about how writing is the ultimately individual act, its ultimate purpose is to share with others. It is through sharing our opinions how we help to shape others; and through others sharing their opinions how they help to shape us. Writing is the ultimate communal act.&lt;/p&gt;
+&lt;p&gt;May your good writing help create a better world.&lt;/p&gt;</content><category term="log"></category><category term="writing"></category></entry><entry><title>Thoughts on Python's iterators</title><link href="https://oskipa.github.io/thoughts-on-pythons-iterators.html" rel="alternate"></link><published>2020-08-07T00:00:00-04:00</published><updated>2020-08-07T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-08-07:/thoughts-on-pythons-iterators.html</id><summary type="html">&lt;p&gt;I just read &lt;a href="https://dbader.org/blog/python-iterators"&gt;Dan Bader's blog on iterators&lt;/a&gt; [1]. Iterators were this fuzzy concept that sort of made sense, yet never did. I understood that they were there and how to use them. I read the blog, I try the example, and it clicks.&lt;/p&gt;
+&lt;p&gt;The summary is that an iterator …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just read &lt;a href="https://dbader.org/blog/python-iterators"&gt;Dan Bader's blog on iterators&lt;/a&gt; [1]. Iterators were this fuzzy concept that sort of made sense, yet never did. I understood that they were there and how to use them. I read the blog, I try the example, and it clicks.&lt;/p&gt;
+&lt;p&gt;The summary is that an iterator is an object that will give you one item from a collection at a time. Once it gets to the end, it signals that there are no more items. In Python it does this via a StopIteration exception. The "for x  in" expression seems to know how to handle these iterators.&lt;/p&gt;
+&lt;p&gt;Once again, Python makes the complex easy to understand. I recall taking a C++ class. I got an A in the course. I still didn't feel confident with OOP. Then I spend some time writing a chip simulator using Python. And OOP clicked. It made sense.&lt;/p&gt;
+&lt;p&gt;Python sits in a weird place. It is both an academic and an industry language. It could be that this duality allows it to a balance between making things terse enough so you can get the intention quickly, yet not too terse that you can't understand. It worked like that 20 years ago. It still works today.&lt;/p&gt;
+&lt;p&gt;This example has made me think again about the Python Data Model that works along with those funky underscore methods like __iter__. They seem to be the key to this behavior. Also the key to a lot of Python's goodness. The Python Data Model will be the next think I tackle.&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;[1] D. Bader. &lt;em&gt;Python Iterators: A Step-By-Step Introduction&lt;/em&gt;. dbader.org.  &lt;a href="https://dbader.org/blog/python-iterators"&gt;https://dbader.org/blog/python-iterators&lt;/a&gt; (accessed August 8, 2020)&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>Python's args and kwargs</title><link href="https://oskipa.github.io/pythons-args-and-kwargs.html" rel="alternate"></link><published>2020-08-05T00:00:00-04:00</published><updated>2020-08-05T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-08-05:/pythons-args-and-kwargs.html</id><summary type="html">&lt;h3&gt;tldr&lt;/h3&gt;
 &lt;p&gt;The *args and **kwargs parameter pattern is a way to collect an unknown number of function arguments. The names "args" and "kwargs" is a convention; the important part is the single or double star. A single star will return the arguments as a list. The double start will return …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;tldr&lt;/h3&gt;
 &lt;p&gt;The *args and **kwargs parameter pattern is a way to collect an unknown number of function arguments. The names "args" and "kwargs" is a convention; the important part is the single or double star. A single star will return the arguments as a list. The double start will return the argument as a dictionary.&lt;/p&gt;
 &lt;h3&gt;The long story&lt;/h3&gt;
 &lt;p&gt;Sometimes you need to give your function a variable number of arguments. You don't know in advance how many you are going to need. Let's say that you want to create a function that gives you the sum of some numbers. You don't know how many number there will be. That is when you use *args &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;  &amp;gt;&amp;gt;&amp;gt; def sum(*args):&lt;/span&gt;
-&lt;span class="err"&gt;  ...   result = 0&lt;/span&gt;
-&lt;span class="err"&gt;  ...   for n in args:&lt;/span&gt;
-&lt;span class="err"&gt;  ...    result += n &lt;/span&gt;
-&lt;span class="err"&gt;  ...   return result&lt;/span&gt;
-&lt;span class="err"&gt;  ...&lt;/span&gt;
-&lt;span class="err"&gt;  &amp;gt;&amp;gt;&amp;gt; sum(10)&lt;/span&gt;
-&lt;span class="err"&gt;  10&lt;/span&gt;
-&lt;span class="err"&gt;  &amp;gt;&amp;gt;&amp;gt; sum(10,20,30)&lt;/span&gt;
-&lt;span class="err"&gt;  60&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nv"&gt;args&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;:
+  ...   &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+  ...   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;args&lt;/span&gt;:
+  ...    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt; 
+  ...   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt;
+  ...
+  &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="mi"&gt;10&lt;/span&gt;
+  &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;,&lt;span class="mi"&gt;20&lt;/span&gt;,&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="mi"&gt;60&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Wouldn't it be nice if there was something similar for dictionaries? There is! That is what **kwargs is for. Let's write a function that updates a dictionary with new values.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;apple&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;ball&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -28,31 +183,28 @@
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;apple&amp;#39;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ball&amp;#39;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;deer&amp;#39;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;For more details, read the article on &lt;a href="https://book.pythontips.com/en/latest/args_and_kwargs.html"&gt;args and kwargs&lt;/a&gt; [1], which is the basis of this entry.
 References:&lt;/p&gt;
 &lt;p&gt;[1] M. Y. U. Khalid, &lt;em&gt;Python Tips&lt;/em&gt;, &lt;a href="https://book.pythontips.com/en/latest/args_and_kwargs.html"&gt;https://book.pythontips.com/en/latest/args_and_kwargs.html&lt;/a&gt;, (accessed  5 August, 2020).&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>Python's doctest</title><link href="https://oskipa.github.io/pythons-doctest.html" rel="alternate"></link><published>2020-07-31T00:00:00-04:00</published><updated>2020-07-31T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-31:/pythons-doctest.html</id><summary type="html">&lt;h3&gt;tldr&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://docs.python.org/3/library/doctest.html"&gt;doctest&lt;/a&gt; [1]  is a library that allows you to write python examples in comments or text documents. This is handy because you can write examples, test them, and have the peace of mind that they work. &lt;/p&gt;
 &lt;p&gt;Here are some examples example&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Hello World!&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;Hello&lt;/span&gt; &lt;span class="nv"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
 
 
-    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="p"&gt;...&lt;/span&gt;   &lt;span class="k"&gt;return …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;tldr&lt;/h3&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;one_plus …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;tldr&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://docs.python.org/3/library/doctest.html"&gt;doctest&lt;/a&gt; [1]  is a library that allows you to write python examples in comments or text documents. This is handy because you can write examples, test them, and have the peace of mind that they work. &lt;/p&gt;
 &lt;p&gt;Here are some examples example&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;Hello&lt;/span&gt; &lt;span class="n"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Hello World!&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;Hello&lt;/span&gt; &lt;span class="nv"&gt;World&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
 
 
-    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="p"&gt;...&lt;/span&gt;   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-    &lt;span class="p"&gt;...&lt;/span&gt;
-    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;one_plus_one&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;one_plus_one&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;:
+    ...   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    ...
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;one_plus_one&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
     &lt;span class="mi"&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;As you can see, the key is to use the three arrows, &amp;gt;&amp;gt;&amp;gt;, to write the python that you would execute in the console. The result is written lined up after the &amp;gt;&amp;gt;&amp;gt; prompt. If you have a multi-line code sample, like when you are writing a function, you must enter the three dots, ... , and then line up the code as you would when writing python.&lt;/p&gt;
 &lt;p&gt;To test your code, you need to have a script that imports doctest. I looked it up on the internet. The solution I found was&lt;/p&gt;
@@ -61,7 +213,6 @@ References:&lt;/p&gt;
     &lt;span class="n"&gt;doctest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;testfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pythons_doctest.md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;EOF&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;This is enough to get you going. Of course there is a lot more to it. Please consult [1] for more information.&lt;/p&gt;
 &lt;h3&gt;The long story&lt;/h3&gt;
@@ -73,28 +224,27 @@ References:&lt;/p&gt;
 &lt;p&gt;Python's 'yield' is used instead of 'result' when you are creating results via a generator function. Think of generators as some sort of a lazy, stateful function that returns one item at a time. Why would we want that? We would want this when consuming a huge amount of data that can't be loaded all at once into memory. Think of a giant csv file. &lt;/p&gt;
 &lt;p&gt;So the point of a generator is to have a function that can give you one item at a time and remember where it was the next time you call it.  &lt;/p&gt;
 &lt;p&gt;Here is an example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; # we create our generator&lt;/span&gt;
-&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; def up_to_10():&lt;/span&gt;
-&lt;span class="err"&gt;    ...   for n in range(10):&lt;/span&gt;
-&lt;span class="err"&gt;    ...     yield n&lt;/span&gt;
-&lt;span class="err"&gt;    ...&lt;/span&gt;
-&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; # we use it &lt;/span&gt;
-&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt; for i in up_to_10():&lt;/span&gt;
-&lt;span class="err"&gt;    ...   print(i)&lt;/span&gt;
-&lt;span class="err"&gt;    ...&lt;/span&gt;
-&lt;span class="err"&gt;    0&lt;/span&gt;
-&lt;span class="err"&gt;    1&lt;/span&gt;
-&lt;span class="err"&gt;    2&lt;/span&gt;
-&lt;span class="err"&gt;    3&lt;/span&gt;
-&lt;span class="err"&gt;    4&lt;/span&gt;
-&lt;span class="err"&gt;    5&lt;/span&gt;
-&lt;span class="err"&gt;    6&lt;/span&gt;
-&lt;span class="err"&gt;    7&lt;/span&gt;
-&lt;span class="err"&gt;    8&lt;/span&gt;
-&lt;span class="err"&gt;    9&lt;/span&gt;
-&lt;span class="err"&gt;    &amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; # &lt;span class="nv"&gt;we&lt;/span&gt; &lt;span class="nv"&gt;create&lt;/span&gt; &lt;span class="nv"&gt;our&lt;/span&gt; &lt;span class="nv"&gt;generator&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;up_to_10&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;:
+    ...   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;range&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;:
+    ...     &lt;span class="nv"&gt;yield&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;
+    ...
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; # &lt;span class="nv"&gt;we&lt;/span&gt; &lt;span class="nv"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;it&lt;/span&gt; 
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;up_to_10&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;:
+    ...   &lt;span class="nv"&gt;print&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    ...
+    &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="mi"&gt;2&lt;/span&gt;
+    &lt;span class="mi"&gt;3&lt;/span&gt;
+    &lt;span class="mi"&gt;4&lt;/span&gt;
+    &lt;span class="mi"&gt;5&lt;/span&gt;
+    &lt;span class="mi"&gt;6&lt;/span&gt;
+    &lt;span class="mi"&gt;7&lt;/span&gt;
+    &lt;span class="mi"&gt;8&lt;/span&gt;
+    &lt;span class="mi"&gt;9&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;The longer story&lt;/h2&gt;
 &lt;p&gt;My example seems silly since we could achieve the same with a range or with a list. My guess is that generators are useful to implement laziness. You could create a library that queries a  database, but will only make the call it when you actually need it. I can also see how we can use generators to create infinite series.&lt;/p&gt;
@@ -109,11 +259,10 @@ References:&lt;/p&gt;
 &lt;p&gt;Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;The point&lt;/h3&gt;
 &lt;p&gt;The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.&lt;/p&gt;
 &lt;p&gt;Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is your actual code rather than ceremonial templates.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;  with opened(&amp;quot;/etc/passwd&amp;quot;) as f:&lt;/span&gt;
-&lt;span class="err"&gt;      for line in f:&lt;/span&gt;
-&lt;span class="err"&gt;          print line.rstrip()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;with&lt;/span&gt; &lt;span class="nv"&gt;opened&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;/etc/passwd&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;:
+      &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;line&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;:
+          &lt;span class="nv"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;line&lt;/span&gt;.&lt;span class="nv"&gt;rstrip&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;This would be equivalent to something like&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
@@ -122,14 +271,13 @@ References:&lt;/p&gt;
 
   &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="k"&gt;except&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
   &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;As you can see, using "with" is cleaner.&lt;/p&gt;
 &lt;p&gt;The one catch is that the object must fit some conditions for it to work with the "with" statement. File objects since Python 2.5 meet them. You can also create objects that can play nicely along "with."&lt;/p&gt;
@@ -140,19 +288,20 @@ References:&lt;/p&gt;
 &lt;p&gt;If you find the PEP document too overwhelming, as I did, you can also look at the following blog entry by Fredrik Lundh, &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;[2].&lt;/p&gt;
 &lt;p&gt;References:&lt;/p&gt;
 &lt;p&gt;[1]  &lt;a href="https://www.python.org/dev/peps/pep-0343/"&gt;PEP 343, the with statement&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[2]  Lundh, Fredrik &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>On Misspelling</title><link href="https://oskipa.github.io/on-misspelling.html" rel="alternate"></link><published>2020-07-22T00:00:00-04:00</published><updated>2020-07-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-22:/on-misspelling.html</id><summary type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;English is notorious for how hard it is to spell its words. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make the many English sounds. Yet language learners and native speakers can both share in the frustration of its spelling system.&lt;/p&gt;
+&lt;p&gt;[2]  Lundh, Fredrik &lt;a href="https://effbot.org/zone/python-with-statement.htm"&gt;Understanding Python's "with" statement&lt;/a&gt;&lt;/p&gt;</content><category term="log"></category><category term="python"></category></entry><entry><title>On Misspelling</title><link href="https://oskipa.github.io/on-misspelling.html" rel="alternate"></link><published>2020-07-22T00:00:00-04:00</published><updated>2020-07-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-22:/on-misspelling.html</id><summary type="html">&lt;p&gt;English is notoriously hard to spell. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make English sounds. Yet language learners and native speakers can both share in the frustration of its spelling system.&lt;/p&gt;
+&lt;p&gt;One would think that the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;English is notoriously hard to spell. It is perhaps one of the biggest hurdles that people learning English have to go through, after learning how to make English sounds. Yet language learners and native speakers can both share in the frustration of its spelling system.&lt;/p&gt;
 &lt;p&gt;One would think that the speakers of such a hard language to write would be forgiving when people misspell words. I believe that most people are in day-to-day communication. Yet in situations that matter in people's lives, such as getting a job or doing a sales pitch, having a misspelling can bring judgement, contempt, and rejection to the unfortunate author.&lt;/p&gt;
 &lt;p&gt;Like drivers, people think they are better at it than most people. Just like drivers, most people are worse than they think. Personally I have gone through periods where I believe I was an excellent speller. Then I lived through periods where I was an embarrassingly bad speller. I have fluctuated between okay and bad ever since. My lifetime spelling achievement puts me in the mediocre category.&lt;/p&gt;
 &lt;p&gt;But why? If I were consistently good, I would attribute it, like most people who are consistently good at spelling, to my superior mind and education. If I were consistently bad, I would attribute that to a poor education, or a learning disability, and secretly I would suffer thinking that I had an inferior mind.&lt;/p&gt;
 &lt;p&gt;But my spelling power fluctuates. Spelling inconsistently feeds my vanity and my anxieties. But why? Why? I have come up with the following guesses on why my spelling is mediocre and why it varies.&lt;/p&gt;
-&lt;p&gt;My misspellings go up when I am tired. For a number of years, I had bad sleep, so my spelling got worse. My sentences also become very strange. In the last few years I have used frequent misspelling as a personal alert for me to go to sleep.&lt;/p&gt;
+&lt;p&gt;My misspellings go up when I am tired. For a number of years, I had bad sleep, so my spelling got worse. My sentences also become strange. In the last few years I have used frequent misspelling as a personal alert for me to go to sleep.&lt;/p&gt;
 &lt;p&gt;Another trait that I have is that I seem to be a strong mimic. I will see and copy what I am exposed to. So during my college years I was exposed to a lot of professionally proofread writing, so my spelling was excellent. When I taught middle school for a year and I was exposed to kids still learning how to spell, my spelling became horrible. If I am reading in Spanish, then some Spanish spelling begins to creep in English. If I am learning another language, let's say Latin, then I adopt Latin spelling. It is not like English is the only language affected. I recently noticed that I was writing English-inspired Spanish.&lt;/p&gt;
 &lt;p&gt;One solution for this mimicry side effect is that I can stop reading in other languages. Yet I enjoy that so much I am not going to stop. I need to learn how to live with it.&lt;/p&gt;
-&lt;p&gt;I also attribute a lot of misspelling to my writing haze, this mental state where I am in a frenzy to write down thoughts. While in that state, I don't see misspellings or grammatical mistakes.&lt;/p&gt;
+&lt;p&gt;I also attribute a lot of misspelling to my writing haze, this mental state where I am in a frenzy to write down thoughts. While in this state, I don't see misspellings or grammatical mistakes.&lt;/p&gt;
 &lt;p&gt;Yesterday I thought about another possible reason. Maybe it is a bad habit.  Perhaps internet communication, with its short, meaningless exchanges, has encouraged me to be sloppy. I don't care because the bulk of what I write online doesn't matter.&lt;/p&gt;
-&lt;p&gt;I am guessing that all of the above contribute to poor misspelling. Now I am trying to figure out how to improve my spelling.&lt;/p&gt;
+&lt;p&gt;I am guessing that all the above contribute to poor misspelling. Now I am trying to figure out how to improve my spelling.&lt;/p&gt;
 &lt;p&gt;One of the key features of English spelling is that you more or less have to memorize how a word is written. The task ahead of us is one of memorization, so mnemonic tactics should be use. To better learn the spelling of words, we need to guess its origin, since English has different spelling and pronunciation rules for words that come from different languages.&lt;/p&gt;
-&lt;p&gt;I am planning on making a list of words I have misspelled so that I can practice those. I will probably use Anki to practice. I have been having a problem with how exactly make cards for it, since I would see the correct answer as the solution. Or I could write the misspelling of a word and then correct it. But then I would be exposing myself to misspellings, and my mimicry trait could learn the misspellings instead.  I could also write the pronunciation transcript. Maybe it is best if I make recordings of the word and then I have to write it out.&lt;/p&gt;
+&lt;p&gt;I am planning on making a list of words I have misspelled so that I can practice those. I will probably use Anki to practice. I have been having a problem with how exactly make cards for it, since I would see the correct answer as the solution. Or I could write the misspelling of a word and then correct it. But then I would be exposing myself to misspellings, and my mimicry trait could learn the misspellings instead. I could also write the pronunciation transcript. Maybe it is best if I make recordings of the word and then I have to write it out.&lt;/p&gt;
 &lt;p&gt;There are probably spelling bee quiz programs that I can use to test myself every so often.&lt;/p&gt;
 &lt;p&gt;I will try it out and report how my efforts went.&lt;/p&gt;</content><category term="log"></category><category term="writing"></category></entry><entry><title>Slow writing</title><link href="https://oskipa.github.io/slow-writing.html" rel="alternate"></link><published>2020-07-20T00:00:00-04:00</published><updated>2020-07-20T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-07-20:/slow-writing.html</id><summary type="html">&lt;p&gt;In the last year I have found it hard to write. It feels that it is hard to express what I am thinking in sentences. When I do write, I notice weaknesses in my logic; in my construction of sentences; in the grammar of the sentences; and a lot of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the last year I have found it hard to write. It feels that it is hard to express what I am thinking in sentences. When I do write, I notice weaknesses in my logic; in my construction of sentences; in the grammar of the sentences; and a lot of misspellings.&lt;/p&gt;
 &lt;p&gt;I have thought a lot about this. I mainly attribute it to what I call "the writing haze." When I write, I find myself in this hazy state where I can't see grammatical mistakes or typos. I can start seeing them about 30 to 60 minutes after, once the haze goes away.&lt;/p&gt;
@@ -164,35 +313,29 @@ References:&lt;/p&gt;
 &lt;p&gt;The common solution for this problem is to find a version manager. For personal projects I have been using &lt;a href="https://pypi.org/project/pipenv/"&gt;pipenv&lt;/a&gt;, which feels like an enhanced version of bundler that also handles the language version along with virtual environments. Whoa! But they are not using pyenv at work yet.&lt;/p&gt;
 &lt;p&gt;This week at work I learned to use pyenv. &lt;a href="https://github.com/pyenv/pyenv"&gt;Pyenv&lt;/a&gt; is a python version manager that knows how to work along with &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;virtualenv&lt;/a&gt;, python's virtual environment tool. What follows is my cheat sheet on how to use it. It is based on &lt;a href="https://realpython.com/intro-to-pyenv/"&gt;Logan Jones's article&lt;/a&gt; in Real Python [1].&lt;/p&gt;
 &lt;p&gt;Check which python versions are available&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv versions&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv versions
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Install a version of python&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv install 3.6.1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv install 3.6.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;See what versions of python you have installed&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv versions&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv versions
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Create a virtual environment with a specific python version&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv virtualenv 3.3.1 chunkybacon&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv virtualenv 3.3.1 chunkybacon
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;To manually activate and deactivate an environment&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv activate chunkybacon&lt;/span&gt;
-&lt;span class="err"&gt;pyenv deactivate&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv activate chunkybacon
+pyenv deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;To see which environments you have&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pyenv virtualenvs&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv virtualenvs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;If you want to learn how to install pyenv and go deeper on how to use it, please read the article that is the source of this cheat sheet.&lt;/p&gt;
 &lt;p&gt;References: 
@@ -233,13 +376,11 @@ References:&lt;/p&gt;
 &lt;p&gt;Workers need a reasonable work process. They need to have the necessary autonomy, training, and tools. They need a safe environment so that they can focus on their work rather than office politics.&lt;/p&gt;
 &lt;p&gt;Keeping in mind these goals, we can adapt methodology principles to actual workplaces when we join them. &lt;/p&gt;
 &lt;p&gt;If a team shares their daily tasks on a slack channel, that fulfills the information needs for the  manager. There isn't a need to introduce a stand up meeting. You may love the stand up ritual, but if you force on people who don't want to do it, they will resent you for wasting their time. At the end of the day the manager is still getting the information they need.&lt;/p&gt;
-&lt;p&gt;Process is a tool. If some behavior exists that already fulfill the goal, then the pragmatic decision is to keep that behavior.&lt;/p&gt;</content><category term="log"></category><category term="process"></category></entry><entry><title>Find and Replace Recursively</title><link href="https://oskipa.github.io/find-and-replace-recursively.html" rel="alternate"></link><published>2020-05-27T00:00:00-04:00</published><updated>2020-05-27T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-05-27:/find-and-replace-recursively.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;grep -rl &amp;quot;Chunky&amp;quot; . | LC_ALL=C xargs sed -i &amp;quot;.bak&amp;quot;  &amp;quot;s/Chunky/Bacon/&amp;quot;&lt;/span&gt;
+&lt;p&gt;Process is a tool. If some behavior exists that already fulfill the goal, then the pragmatic decision is to keep that behavior.&lt;/p&gt;</content><category term="log"></category><category term="process"></category></entry><entry><title>Find and Replace Recursively</title><link href="https://oskipa.github.io/find-and-replace-recursively.html" rel="alternate"></link><published>2020-05-27T00:00:00-04:00</published><updated>2020-05-27T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-05-27:/find-and-replace-recursively.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep -rl &amp;quot;Chunky&amp;quot; . | LC_ALL=C xargs sed -i &amp;quot;.bak&amp;quot;  &amp;quot;s/Chunky/Bacon/&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need another utility. There you have a choice of tools. For this case I …&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;grep -rl &amp;quot;Chunky&amp;quot; . | LC_ALL=C xargs sed -i &amp;quot;.bak&amp;quot;  &amp;quot;s/Chunky/Bacon/&amp;quot;&lt;/span&gt;
+&lt;p&gt;Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need another utility. There you have a choice of tools. For this case …&lt;/p&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep -rl &amp;quot;Chunky&amp;quot; . | LC_ALL=C xargs sed -i &amp;quot;.bak&amp;quot;  &amp;quot;s/Chunky/Bacon/&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need another utility. There you have a choice of tools. For this case I decided to use grep. Although I use ack for searching patterns, I thought that grep would be the right tool here.&lt;/p&gt;
 &lt;p&gt;Now the explanation of the example.&lt;/p&gt;
@@ -298,7 +439,7 @@ References:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;You can clean up the backup files with &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;grep -rl &amp;quot;Chunky&amp;quot; . | xarg rm -f&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep -rl &amp;quot;Chunky&amp;quot; . | xarg rm -f
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="log"></category><category term="shell"></category><category term="unix"></category><category term="linux"></category><category term="macos"></category></entry><entry><title>Listen instead of getting buy in</title><link href="https://oskipa.github.io/listen-instead-of-getting-buy-in.html" rel="alternate"></link><published>2020-05-06T00:00:00-04:00</published><updated>2020-05-06T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-05-06:/listen-instead-of-getting-buy-in.html</id><summary type="html">&lt;p&gt;I learned recently that product owners and managers are trained to seek team members to buy-in into new process, goals, or plans. This was an unfortunate word selection. It undermines building trust in a team. It frames the relationship between managers and workers the wrong way.&lt;/p&gt;
 &lt;p&gt;"Buy-in" sets a narrative …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I learned recently that product owners and managers are trained to seek team members to buy-in into new process, goals, or plans. This was an unfortunate word selection. It undermines building trust in a team. It frames the relationship between managers and workers the wrong way.&lt;/p&gt;
 &lt;p&gt;"Buy-in" sets a narrative where the manager wants something that the workers are resistant to do. The goal of the manager becomes getting that buy-in, that verbal agreement. The manager becomes a high pressure salesman. Workers are reluctant customers. A successful manager, like a high pressure salesman, making that sale no matter what. In high pressure sales, you will ignore objections. All you want is an explicit or implicit yes, even if it is not real. &lt;/p&gt;
@@ -325,54 +466,49 @@ References:&lt;/p&gt;
 &lt;li&gt;Write the name&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write a one-sentence comment describing the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This comment documents what our &lt;em&gt;intent&lt;/em&gt; for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;creates&lt;/span&gt; &lt;span class="nv"&gt;new&lt;/span&gt; &lt;span class="nv"&gt;post&lt;/span&gt;
+&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write the type signature &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.&lt;/p&gt;
 &lt;p&gt;The book uses the following type format. You make a list of each parameter followed by an arrow (-&amp;gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;
-&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# creates new post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="kd"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;This is an example using more idiomatic Ruby.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param params, Hash, the http parameters hash &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;def create_post(params)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write an example &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentation you can add. Most people will often google for examples. Include them.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param blog_parameters, Hash, the http parameters hash &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(params[:blog])&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(blog_params)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog_parameters&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:blog&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.&lt;/p&gt;
 &lt;ol&gt;
@@ -386,33 +522,31 @@ References:&lt;/p&gt;
     # Example: create_post(params[:blog])
     def create_post(blog_parameters)
     end&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;testing&lt;/span&gt; &lt;span class="n"&gt;correct&lt;/span&gt; &lt;span class="n"&gt;behavior&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;happy&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;
-&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;ruby&lt;/span&gt; &lt;span class="n"&gt;pseudo&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;test_creation&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;setup&lt;/span&gt;
-  &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Joe Smith&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;testing&lt;/span&gt; &lt;span class="nv"&gt;correct&lt;/span&gt; &lt;span class="nv"&gt;behavior&lt;/span&gt; &lt;span class="nv"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;happy&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt;
+# &lt;span class="nv"&gt;The&lt;/span&gt; &lt;span class="nv"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;ruby&lt;/span&gt; &lt;span class="nv"&gt;pseudo&lt;/span&gt; &lt;span class="nv"&gt;code&lt;/span&gt;
+&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;test_creation&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+  # &lt;span class="nv"&gt;setup&lt;/span&gt;
+  &lt;span class="nb"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; {&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;body&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello world!&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;author&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Joe Smith&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; }
 
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;exercise&lt;/span&gt;
-  &lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  # &lt;span class="nv"&gt;exercise&lt;/span&gt;
+  &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;params&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
 
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;verification&lt;/span&gt;
-  &lt;span class="n"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
-  &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;record&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nil&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; 
+  # &lt;span class="nv"&gt;verification&lt;/span&gt;
+  &lt;span class="nv"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ORM&lt;/span&gt;.&lt;span class="nv"&gt;find_by&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
+  &lt;span class="nv"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;record&lt;/span&gt;.&lt;span class="nv"&gt;nil&lt;/span&gt;? 
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;This made us discover that we we have three required parameters. Now we can change our function again with this new information.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen we send a null value for author? What if the inputs are too big? Is it okay to have no author?&lt;/p&gt;
 &lt;p&gt;Thinking in term of ranges helps us identify the right number of tests. This is a superior way thinking about it than old advice I was told for TDD where you kept coming up with tests until you couldn't think of any more.&lt;/p&gt;
@@ -420,21 +554,20 @@ References:&lt;/p&gt;
 &lt;li&gt;Write the body of the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;  blog = Blog.new(title, body, author) &lt;/span&gt;
-&lt;span class="err"&gt;  ORM.save(blog)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Blog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;save&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.&lt;/p&gt;</content><category term="article"></category></entry><entry><title>The Five Minutes Problem</title><link href="https://oskipa.github.io/the-five-minutes-problem.html" rel="alternate"></link><published>2020-04-24T00:00:00-04:00</published><updated>2020-04-24T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-24:/the-five-minutes-problem.html</id><summary type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problem to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
-&lt;p&gt;But the question is, how much should you spend on a problem that you cannot solve …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problem to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
+&lt;p&gt;In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.&lt;/p&gt;</content><category term="article"></category></entry><entry><title>The Five Minutes Problem</title><link href="https://oskipa.github.io/the-five-minutes-problem.html" rel="alternate"></link><published>2020-04-24T00:00:00-04:00</published><updated>2020-04-24T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-24:/the-five-minutes-problem.html</id><summary type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problems to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
+&lt;p&gt;But the question is, how much should you spend on a problem that you cannot solve …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In fields like chess, math, and computer science, you need to do the problems to learn. You cannot learn just by watching a lecture. It is a skill that one must cultivate via doing.&lt;/p&gt;
 &lt;p&gt;But the question is, how much should you spend on a problem that you cannot solve?&lt;/p&gt;
 &lt;p&gt;One school of thought is that you keep at that problem until you can solve it by yourself. It seems to make sense. If you put enough effort, you will discover the solution. Or find a novel one. Unfortunately you may not find a solution, so you can stop playing chess or learning math if you strikingly stick to this method.&lt;/p&gt;
 &lt;p&gt;A better method is to timebox how much time you spend on solving a puzzle. The rule of thumb is that you should find the basic solution within five minutes. &lt;/p&gt;
@@ -443,59 +576,49 @@ References:&lt;/p&gt;
 &lt;p&gt;If this cheating? No. Problem solving is about pattern recognition. If you couldn't find a solution, you couldn't find a pattern. That means you haven't learned that pattern.&lt;/p&gt;
 &lt;p&gt;By spending those earnest five minutes trying to solve the problem, you will understand the problem well. You will understand why your natural solution didn't work. When you look at the solution, it is meaningful. Your emotional reaction to seeing the solution will make it easier for you to remember it, creating that desire pattern for you to recognize the next time you see a similar problem.&lt;/p&gt;
 &lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight. The idiomatic way of doing it is via #each on &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each do |beast|&lt;/span&gt;
-&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Sometimes you need the index. So you call in #each_with_index&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each_with_index do |beast, index|&lt;/span&gt;
-&lt;span class="err"&gt;  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each_with_index&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;, &lt;span class="nv"&gt;index&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="nv"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;#{beast} #{index} says: #{beast.roar} &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;end …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight. The idiomatic way of doing it is via #each on &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;If you feel functional …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight. The idiomatic way of doing it is via #each on &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each do |beast|&lt;/span&gt;
-&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Sometimes you need the index. So you call in #each_with_index&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.each_with_index do |beast, index|&lt;/span&gt;
-&lt;span class="err"&gt;  puts &amp;quot;#{beast} #{index} says: #{beast.roar} &amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each_with_index&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;, &lt;span class="nv"&gt;index&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="nv"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;#{beast} #{index} says: #{beast.roar} &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;If you feel functional, then you can use one of the Enumerable methods.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;animals.map do |beast|&lt;/span&gt;
-&lt;span class="err"&gt;  beast.roar&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;map&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;For 90% of your looping needs, #each, or an Enumerable, #map, #select, #any?, #all?, etc, will do.&lt;/p&gt;
 &lt;p&gt;If you are working with a queue or a stack, you can always use the classic where loop&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;where !stack.empty?&lt;/span&gt;
-&lt;span class="err"&gt;  ghost = stack.pop&lt;/span&gt;
-&lt;span class="err"&gt;  pacman.chomp(ghost)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;where&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;stack&lt;/span&gt;.&lt;span class="nv"&gt;empty&lt;/span&gt;?
+  &lt;span class="nv"&gt;ghost&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;stack&lt;/span&gt;.&lt;span class="nv"&gt;pop&lt;/span&gt;
+  &lt;span class="nv"&gt;pacman&lt;/span&gt;.&lt;span class="nv"&gt;chomp&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ghost&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Yet every so often you will get to some problem where a classic for loop would be perfect. This is where it becomes awkward. Ruby doesn't have a classic for loop.&lt;/p&gt;
 &lt;p&gt;There is a for loop. But it is not C style for loop. Instead it loops over a collection. Usually a list or a range.&lt;/p&gt;
 &lt;p&gt;This is how it works. This will go by each element.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;for i in list do&lt;/span&gt;
-&lt;span class="err"&gt;  puts i&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;list&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="nv"&gt;puts&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;In effect it is a wordy version of #each. Therefore most people use #each.&lt;/p&gt;
+&lt;p&gt;In effect, it is a wordy version of #each. Therefore most people use #each.&lt;/p&gt;
 &lt;p&gt;But we want a C style for! Because sometimes using indices is the right solution to a problem. Even though we don't have something just like it, we can build something close to it.&lt;/p&gt;
 &lt;p&gt;Let's say you want something like this from C#&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -503,13 +626,11 @@ References:&lt;/p&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;You can replicate it by doing something like this&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Here we are using a range. So we will cycle through 0 to list.length - 1. We get that -1 automatically by using the ... range operator that says that we don't want to include the last number. If you wanted to include the last number, we would have written (0..list.length), but this would throw and out of range error when it got to the last item.&lt;/p&gt;
 &lt;p&gt;But what do you do when you want to go backwards? We can come up with something as well.&lt;/p&gt;
@@ -518,14 +639,82 @@ References:&lt;/p&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Here we start with the range. We turn it into an array, and then we call reverse. Wordy? Yes. Does it get the job done? Also yes. &lt;/p&gt;
-&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Functional Programming in OCaml, 1-2</title><link href="https://oskipa.github.io/functional-programming-in-ocaml-1-2.html" rel="alternate"></link><published>2020-03-14T00:00:00-04:00</published><updated>2020-03-14T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-14:/functional-programming-in-ocaml-1-2.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
+&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2020-04-21T00:00:00-04:00</published><updated>2020-04-21T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-21:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;h2&gt;Installing byebug&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or add to your Gemfile&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem byebug
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
+&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;h2&gt;Installing byebug&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or add to your Gemfile&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem byebug
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
+&lt;p&gt;To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;my_awesome_function&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+  &lt;span class="nv"&gt;process&lt;/span&gt;
+  &lt;span class="nv"&gt;log&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You would set the breakpoint like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;my_awesome_function&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+  &lt;span class="nv"&gt;byebug&lt;/span&gt;
+  &lt;span class="nv"&gt;process&lt;/span&gt;
+  &lt;span class="nv"&gt;log&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.&lt;/p&gt;
+&lt;h2&gt;The debugger screen&lt;/h2&gt;
+&lt;p&gt;Once byebug starts its session, you will see the debugger screen. This screen will give you the file name, and then some lines of the code. There will be a arrow showing you the current place where the code execution has stopped.&lt;/p&gt;
+&lt;p&gt;To step over the next line of code, enter "next".&lt;/p&gt;
+&lt;p&gt;To step into the next line of code, enter "step"&lt;/p&gt;
+&lt;p&gt;To step out, enter, "finish". This last one doesn't seem to work as I would want it to, so sometimes I have to enter it several times.&lt;/p&gt;
+&lt;p&gt;If by querying values you can't see the code where you are stopped, you can get the listing back by typing "list =".&lt;/p&gt;
+&lt;p&gt;To let the program run, type "continue".&lt;/p&gt;
+&lt;h2&gt;Navigating the Stack Trace&lt;/h2&gt;
+&lt;p&gt;To see the stack trace, type "backtrack". This should give you a pretty output of the stack trace.&lt;/p&gt;
+&lt;p&gt;If you want to go back in the stack trace so that you can query the environment at a previous point in the execution, type "up".&lt;/p&gt;
+&lt;p&gt;Once you are done doing your exploring, you can come back to later points by typing "down".&lt;/p&gt;
+&lt;h2&gt;Querying current values&lt;/h2&gt;
+&lt;p&gt;Perhaps one of the most important things you can do in the debugging console is to query the value of different variables.&lt;/p&gt;
+&lt;p&gt;You can examine variables by typing their name and hitting enter.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(byebug) name
+&amp;quot;My name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Trying out solutions&lt;/h2&gt;
+&lt;p&gt;If you think you found a way to solve your bug, you can try the solution directly in the console to see if it works out.&lt;/p&gt;
+&lt;h2&gt;Learning more&lt;/h2&gt;
+&lt;p&gt;The debugger becomes a better tool if your add to it an understanding on Ruby's object model and method dispatch. Having a good command on Ruby's reflection methods also helps.&lt;/p&gt;
+&lt;p&gt;For more information on Byebug itself and to explore other command, look at its documentation on github https://github.com/deivid-rodriguez/byebug&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category><category term="byebug"></category></entry><entry><title>Functional Programming in OCaml, 1-2</title><link href="https://oskipa.github.io/functional-programming-in-ocaml-1-2.html" rel="alternate"></link><published>2020-03-14T00:00:00-04:00</published><updated>2020-03-14T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-14:/functional-programming-in-ocaml-1-2.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
 &lt;p&gt;I enjoyed reading chapter one. They explain the goals and purpose of the class that the book supports. It also has a great section on the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.cs.cornell.edu/courses/cs3110/2020sp/textbook/"&gt;Functional Programming in OCaml&lt;/a&gt; is an online book compiled by Michael R. Clarkson. It is used by Cornell University for their functional programming course.&lt;/p&gt;
 &lt;p&gt;I enjoyed reading chapter one. They explain the goals and purpose of the class that the book supports. It also has a great section on the history of the  book and the course. It tells how the class was originally based on &lt;a href="http://sarabander.github.io/sicp/html/index.xhtml#SEC_Contents"&gt;Structure and Interpretation of Computer Programs&lt;/a&gt;, (SICP). From the challenges of teaching SICP, they changed languages, from Scheme to OCaml, and they developed the textbook from their class notes. This is fascinating because it is a similar experience that lead to the development of &lt;a href="https://racket-lang.org/"&gt;Racket&lt;/a&gt; and the supporting book &lt;a href="https://htdp.org/"&gt;How To Design Programs&lt;/a&gt;. I will probably talk more about how SICP, a beloved textbook, lead to the creation of other books in a future entry.&lt;/p&gt;
 &lt;p&gt;Chapter 2 is an introduction to OCaml as a language. I have read a number of tutorials and several chapters on other OCaml books, and "Functional Programming in Ocaml" seems to be one of the clearest explanations on the basics of OCaml. If for some reason you didn't understand the topic well enough from this text, at the end of the chapter the authors tell you which chapters from others OCaml books you should read to get an alternate explanation of the same topics.&lt;/p&gt;
 &lt;p&gt;There is a caveat to the previous statement. It will be clear if you have a basic understanding on lambda calculus and you are familiar with how modern  mathematics defines concepts. If you are not familiar with these, the text should be more challenging. &lt;/p&gt;
-&lt;p&gt;The exercises for chapter 2 were good. You get to face the difference between integer operators such as +, -, * , /, versus the floating point operators, like +., -., * . / .. &lt;/p&gt;</content><category term="log"></category><category term="ocaml"></category><category term="notes"></category></entry><entry><title>When you Are New To Rails</title><link href="https://oskipa.github.io/when-you-are-new-to-rails.html" rel="alternate"></link><published>2020-03-09T00:00:00-04:00</published><updated>2020-03-09T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-09:/when-you-are-new-to-rails.html</id><summary type="html">&lt;p&gt;Are you an experienced developer? Have you been tasked to help out in a Rails project? Do you feel confused because there are no 'require' statements and variables seem to mushroom out of nowhere? Does Rails seem too magical to you? &lt;/p&gt;
+&lt;p&gt;The exercises for chapter 2 were good. You get to face the difference between integer operators such as +, -, * , /, versus the floating point operators, like +., -., * . / .. &lt;/p&gt;</content><category term="log"></category><category term="ocaml"></category><category term="notes"></category></entry><entry><title>Survival Ruby Reflection</title><link href="https://oskipa.github.io/survival-ruby-reflection.html" rel="alternate"></link><published>2020-03-10T00:00:00-04:00</published><updated>2020-03-10T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-10:/survival-ruby-reflection.html</id><summary type="html">&lt;p&gt;Ruby has a strong reflection system. This is useful when you are debugging. The more you know, the easier debugging will be. But if you are starting, the following ones will make your life better. &lt;/p&gt;
+&lt;p&gt;my_object.inspect&lt;/p&gt;
+&lt;p&gt;This will give you a string representation of the object. Very useful …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ruby has a strong reflection system. This is useful when you are debugging. The more you know, the easier debugging will be. But if you are starting, the following ones will make your life better. &lt;/p&gt;
+&lt;p&gt;my_object.inspect&lt;/p&gt;
+&lt;p&gt;This will give you a string representation of the object. Very useful when programming and debugging.&lt;/p&gt;
+&lt;p&gt;my_object.respond_to?(:method_name)&lt;/p&gt;
+&lt;p&gt;This one will tell you if the object can respond to a method. So Let's say that you want to call &lt;code&gt;batman.swing&lt;/code&gt;. But can you? You can query the object with &lt;code&gt;batman.respond_to?(:swing)&lt;/code&gt; and it will answer with true or false. Notice how you need to use the colon for the method name when sent as a parameter.&lt;/p&gt;
+&lt;p&gt;my_object.methods
+   (my_object.methods - Object.new.methods).sort&lt;/p&gt;
+&lt;p&gt;The first one will list all the methods that the object can respond to. Depending on the object, the list can be large. Once you look through them, you will discover that many of the methods were not defined in the class itself.  The last version will remove all of the methods that are inherited by Object, the root parent object that most object descend from.&lt;/p&gt;
+&lt;p&gt;my_object.method(:method_name).source_location&lt;/p&gt;
+&lt;p&gt;This is perhaps the most useful one when looking for code. This incantation will give you the source location for the method that the object responds to.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category><category term="rails"></category></entry><entry><title>When you Are New To Rails</title><link href="https://oskipa.github.io/when-you-are-new-to-rails.html" rel="alternate"></link><published>2020-03-09T00:00:00-04:00</published><updated>2020-03-09T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-09:/when-you-are-new-to-rails.html</id><summary type="html">&lt;p&gt;Are you an experienced developer? Have you been tasked to help out in a Rails project? Do you feel confused because there are no 'require' statements and variables seem to mushroom out of nowhere? Does Rails seem too magical to you? &lt;/p&gt;
 &lt;p&gt;If this describes you, don't worry. I have gathered …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Are you an experienced developer? Have you been tasked to help out in a Rails project? Do you feel confused because there are no 'require' statements and variables seem to mushroom out of nowhere? Does Rails seem too magical to you? &lt;/p&gt;
 &lt;p&gt;If this describes you, don't worry. I have gathered this quick list of pointers to help you find your bearing. Hopefully they will make Rails more logical and less magic.&lt;/p&gt;
 &lt;h3&gt;Rails loads all objects found under the 'app' directory into the global scope&lt;/h3&gt;
@@ -541,15 +730,13 @@ References:&lt;/p&gt;
 &lt;p&gt;Method dispatch is Ruby's process of looking for a method definition to execute it. When you call 'batman.punch', method dispatch is trying to find where the '.punch' is. It start looking for a definition in the object's class, and then it goes up the object's ancestors. That is the basic idea.  &lt;/p&gt;
 &lt;p&gt;The basic idea is also wrong. It is more complicated than that. Read this blog post to get an accurate picture: &lt;a href="https://blog.jcoglan.com/2013/05/08/how-ruby-method-dispatch-works/"&gt;How Ruby method dispatch works&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ruby has a strong reflection system. You can query a lot of information from an object. Using reflection methods is more useful if you understand how method dispatch works. But even if you don't, the following two methods will be useful right away.  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;batman.inspect&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;batman.inspect
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;'.inspect' gives you a string representation of the 'batman' object. Useful in the interactive ruby shell (irb), in the debugger, or  when printing to the log or a debugger via a 'puts object.inspect'.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;batman.methods&lt;/span&gt;
-&lt;span class="err"&gt;batman.methods.sort&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;batman.methods
+batman.methods.sort
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;'.methods' gives you an array of all of the methods that the 'batman' object can respond to.  If you add '.sort', then they will be sorted alphabetically.&lt;/p&gt;
 &lt;p&gt;If you want more in depth information, read chapters 2 and 3 from the book &lt;a href="https://pragprog.com/book/ppmetr2/metaprogramming-ruby-2"&gt;Metaprogramming Ruby 2&lt;/a&gt;&lt;/p&gt;
@@ -569,13 +756,13 @@ References:&lt;/p&gt;
 &lt;p&gt;I have found that I have enjoyed working with Pelican. It is easy to use and easy to customize. The documentation is superb. And if you run into something that is not covered, you can find the answer with a web search.&lt;/p&gt;
 &lt;p&gt;I have liked using the make command to build and publish the site. It seems to make things easier.&lt;/p&gt;
 &lt;p&gt;Finally, Pelican is easy to understand. After you have worked a bit, you find that most settings are python constants found in the settings page. There are few surprises, for which I am grateful.&lt;/p&gt;</content><category term="log"></category><category term="python"></category><category term="static site"></category></entry><entry><title>Django, first impressions</title><link href="https://oskipa.github.io/django-first-impressions.html" rel="alternate"></link><published>2020-03-07T00:00:00-05:00</published><updated>2020-03-07T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-07:/django-first-impressions.html</id><summary type="html">&lt;p&gt;I am working through the Django tutorial. Here are some thoughts.&lt;/p&gt;
-&lt;p&gt;There really isn't any controllers. Interesting.&lt;/p&gt;
+&lt;p&gt;There really aren't any controllers. Interesting.&lt;/p&gt;
 &lt;p&gt;The instant admin area is amazing. &lt;/p&gt;
-&lt;p&gt;Pluggable apps is such a great idea.&lt;/p&gt;
+&lt;p&gt;Pluggable apps are such a great idea.&lt;/p&gt;
 &lt;p&gt;The way to define fields seems pretty straight forward. Using a more object style versus a more ruby-like dsl seems …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am working through the Django tutorial. Here are some thoughts.&lt;/p&gt;
-&lt;p&gt;There really isn't any controllers. Interesting.&lt;/p&gt;
+&lt;p&gt;There really aren't any controllers. Interesting.&lt;/p&gt;
 &lt;p&gt;The instant admin area is amazing. &lt;/p&gt;
-&lt;p&gt;Pluggable apps is such a great idea.&lt;/p&gt;
+&lt;p&gt;Pluggable apps are such a great idea.&lt;/p&gt;
 &lt;p&gt;The way to define fields seems pretty straight forward. Using a more object style versus a more ruby-like dsl seems to help because finding the documentation should be easier.&lt;/p&gt;
 &lt;p&gt;This is different from other frameworks. I like the idea of having a language module as the components.&lt;/p&gt;</content><category term="log"></category><category term="python"></category><category term="django"></category></entry><entry><title>A Friendly GUI Debugger for Ruby</title><link href="https://oskipa.github.io/ruby-gui-debugger.html" rel="alternate"></link><published>2020-03-01T00:00:00-05:00</published><updated>2020-03-01T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-03-01:/ruby-gui-debugger.html</id><summary type="html">&lt;p&gt;I have been learning Smalltalk. Smalltalk is very similar to Ruby. And Smalltalk have these great programming tools. I am particularly impressed by the object browser and it debugger. Smalltalk was designed so that the system would be learnable. If you wondered how something worked, you could inspect the object …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been learning Smalltalk. Smalltalk is very similar to Ruby. And Smalltalk have these great programming tools. I am particularly impressed by the object browser and it debugger. Smalltalk was designed so that the system would be learnable. If you wondered how something worked, you could inspect the object and see how it was put together.&lt;/p&gt;
 &lt;p&gt;Ruby is very similar to Smalltalk. And pry and byebug along with irb and the rails console  are a command line version of the Smalltalk debugger and object browser. Yet it requires some level of training to use it. You have to know which commands to use that belong to byebug or to ruby to get the information that you are looking for.&lt;/p&gt;

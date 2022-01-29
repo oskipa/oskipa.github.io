@@ -17,13 +17,14 @@
         |&gt Algorithms</h1>
 
       <nav>
-          <!--
       <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
         <li><a href="category/log.html">web log<a></li>
         <li><a href="">about<a></li>
         <li><a href="">site map<a></li>
-      </ul>
           -->
+      </ul>
     </nav>
 
 
@@ -34,35 +35,31 @@
  <div class="col-md-8">
   <h2>Getting Started With Byebug</h2>
   <h3>The bare minimum to start using Byebug</h3>
-  <label>20 April, 2021</label>
+  <label>21 April, 2020</label>
   <p>This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.</p>
 <h2>Installing byebug</h2>
-<div class="highlight"><pre><span></span>gem install byebug
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>gem install byebug
+</code></pre></div>
 
 <p>Or add to your Gemfile</p>
-<div class="highlight"><pre><span></span>gem byebug
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>gem byebug
+</code></pre></div>
 
 <h2>Setting a breakpoint and starting a session</h2>
 <p>To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,</p>
-<div class="highlight"><pre><span></span>def my_awesome_function()
-  process
-  log
-end
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">my_awesome_function</span><span class="ss">()</span>
+  <span class="nv">process</span>
+  <span class="nv">log</span>
+<span class="k">end</span>
+</code></pre></div>
 
 <p>You would set the breakpoint like this</p>
-<div class="highlight"><pre><span></span>def my_awesome_function()
-  byebug
-  process
-  log
-end
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">my_awesome_function</span><span class="ss">()</span>
+  <span class="nv">byebug</span>
+  <span class="nv">process</span>
+  <span class="nv">log</span>
+<span class="k">end</span>
+</code></pre></div>
 
 <p>If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.</p>
 <h2>The debugger screen</h2>
@@ -70,24 +67,23 @@ end
 <p>To step over the next line of code, enter "next".</p>
 <p>To step into the next line of code, enter "step"</p>
 <p>To step out, enter, "finish". This last one doesn't seem to work as I would want it to, so sometimes I have to enter it several times.</p>
-<p>If by querying values you can't see the code where you are sstopped, you can get the listing back by typing "list =".</p>
+<p>If by querying values you can't see the code where you are stopped, you can get the listing back by typing "list =".</p>
 <p>To let the program run, type "continue".</p>
 <h2>Navigating the Stack Trace</h2>
-<p>To see the stack trace, type "backtrack". This should give you a pretty output of the stacktrace.</p>
-<p>If you want to go back in the strack trace so that you can query the environment at a previous point in the execution, type "up".</p>
+<p>To see the stack trace, type "backtrack". This should give you a pretty output of the stack trace.</p>
+<p>If you want to go back in the stack trace so that you can query the environment at a previous point in the execution, type "up".</p>
 <p>Once you are done doing your exploring, you can come back to later points by typing "down".</p>
 <h2>Querying current values</h2>
-<p>Perhaps one of the most important things you can do in the ddebugging console is to query the value of different variables.</p>
+<p>Perhaps one of the most important things you can do in the debugging console is to query the value of different variables.</p>
 <p>You can examine variables by typing their name and hitting enter.</p>
-<div class="highlight"><pre><span></span>(byebug) name
+<div class="highlight"><pre><span></span><code>(byebug) name
 &quot;My name&quot;
-</pre></div>
-
+</code></pre></div>
 
 <h2>Trying out solutions</h2>
 <p>If you think you found a way to solve your bug, you can try the solution directly in the console to see if it works out.</p>
 <h2>Learning more</h2>
-<p>The debugger becomes a better tool if your add to it an understanding on Ruby's object model and method dispatch. Havinga good command on Ruby's reflection methods also helps.</p>
+<p>The debugger becomes a better tool if your add to it an understanding on Ruby's object model and method dispatch. Having a good command on Ruby's reflection methods also helps.</p>
 <p>For more information on Byebug itself and to explore other command, look at its documentation on github https://github.com/deivid-rodriguez/byebug</p>
  </div>
 </div>

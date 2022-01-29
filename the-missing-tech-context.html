@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <ul>
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </ul>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>The Missing Tech Context</h2>
+  <h3>Tech discourse will become better the more we take tools, environments, and culture into consideration</h3>
+  <label>21 November, 2021</label>
+  <p>Recently I ran into a discussion on a Ruby forum about the "right" way to implement a <code>.double</code> function. One solution used a <code>case</code> block that checked on the object's type. The other one added <code>.double</code> methods to the <code>Numeric</code>, <code>Array</code>, etc. Which one is better?</p>
+<p>People with Smalltalk experience will say that adding methods is the proper object oriented solution. And they are right. Right, that is, if we are writing in Smalltalk. If we are writing in another OOP language, this solution may be wrong. A grave mistake, even.</p>
+<p>Isn't OOP the same in any language? Our current expectation is that it is. The reality is that isn't. Each language operates with a different context from the others.</p>
+<p>Ruby is heavily inspired by Smalltalk. It is essentially a command-line Smalltalk dialect that lacks the GUI and the tools. Let's examine the different contexts.</p>
+<p>In Smalltalk we have good development tools. Developer education explains how the language works, how message dispatch works, and how each Smalltalk image is a unique system once you finished your project.</p>
+<p>Ruby has a different culture. It has many people who use it to get things done. It is mainly written in text editors. Message dispatch is learned once we are learning about metaprogramming. The language is syntactically more complex. Developers don't expect that base classes will be modified.</p>
+<p>So while the Smalltalk developer can easily find where a method is defined in their sysystem, even expecting changes, the Ruby developer will be surprised. We want to reduce those surprises.</p>
+<p>An interesting consequence is that is changing Object becomes a common practice in Ruby, then this practice, which today may be considered incorrect, will be fine.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>

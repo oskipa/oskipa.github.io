@@ -39,11 +39,10 @@
   <h3>The point</h3>
 <p>The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.</p>
 <p>Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is your actual code rather than ceremonial templates.</p>
-<div class="highlight"><pre><span></span><code><span class="err">  with opened(&quot;/etc/passwd&quot;) as f:</span>
-<span class="err">      for line in f:</span>
-<span class="err">          print line.rstrip()</span>
+<div class="highlight"><pre><span></span><code>  <span class="nv">with</span> <span class="nv">opened</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">/etc/passwd</span><span class="s2">&quot;</span><span class="ss">)</span> <span class="nv">as</span> <span class="nv">f</span>:
+      <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">f</span>:
+          <span class="nv">print</span> <span class="nv">line</span>.<span class="nv">rstrip</span><span class="ss">()</span>
 </code></pre></div>
-
 
 <p>This would be equivalent to something like</p>
 <div class="highlight"><pre><span></span><code>  <span class="kn">import</span> <span class="nn">sys</span>
@@ -52,14 +51,13 @@
 
   <span class="k">try</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
   <span class="k">except</span><span class="p">:</span>
     <span class="n">e</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">raise</span> <span class="n">e</span>
   <span class="k">finally</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-
 
 <p>As you can see, using "with" is cleaner.</p>
 <p>The one catch is that the object must fit some conditions for it to work with the "with" statement. File objects since Python 2.5 meet them. You can also create objects that can play nicely along "with."</p>

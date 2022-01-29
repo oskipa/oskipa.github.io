@@ -40,35 +40,29 @@
 <p>The common solution for this problem is to find a version manager. For personal projects I have been using <a href="https://pypi.org/project/pipenv/">pipenv</a>, which feels like an enhanced version of bundler that also handles the language version along with virtual environments. Whoa! But they are not using pyenv at work yet.</p>
 <p>This week at work I learned to use pyenv. <a href="https://github.com/pyenv/pyenv">Pyenv</a> is a python version manager that knows how to work along with <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>, python's virtual environment tool. What follows is my cheat sheet on how to use it. It is based on <a href="https://realpython.com/intro-to-pyenv/">Logan Jones's article</a> in Real Python [1].</p>
 <p>Check which python versions are available</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv versions</span>
+<div class="highlight"><pre><span></span><code>pyenv versions
 </code></pre></div>
-
 
 <p>Install a version of python</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv install 3.6.1</span>
+<div class="highlight"><pre><span></span><code>pyenv install 3.6.1
 </code></pre></div>
-
 
 <p>See what versions of python you have installed</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv versions</span>
+<div class="highlight"><pre><span></span><code>pyenv versions
 </code></pre></div>
-
 
 <p>Create a virtual environment with a specific python version</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv virtualenv 3.3.1 chunkybacon</span>
+<div class="highlight"><pre><span></span><code>pyenv virtualenv 3.3.1 chunkybacon
 </code></pre></div>
-
 
 <p>To manually activate and deactivate an environment</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv activate chunkybacon</span>
-<span class="err">pyenv deactivate</span>
+<div class="highlight"><pre><span></span><code>pyenv activate chunkybacon
+pyenv deactivate
 </code></pre></div>
-
 
 <p>To see which environments you have</p>
-<div class="highlight"><pre><span></span><code><span class="err">pyenv virtualenvs</span>
+<div class="highlight"><pre><span></span><code>pyenv virtualenvs
 </code></pre></div>
-
 
 <p>If you want to learn how to install pyenv and go deeper on how to use it, please read the article that is the source of this cheat sheet.</p>
 <p>References: 

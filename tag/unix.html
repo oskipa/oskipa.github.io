@@ -35,11 +35,10 @@
  <div class="col-md-8">
    <h2><a href="/find-and-replace-recursively.html">Find and Replace Recursively</a></h2>
    <label>27 May, 2020</label>
-   <div class="highlight"><pre><span></span><code><span class="err">grep -rl &quot;Chunky&quot; . | LC_ALL=C xargs sed -i &quot;.bak&quot;  &quot;s/Chunky/Bacon/&quot;</span>
+   <div class="highlight"><pre><span></span><code>grep -rl &quot;Chunky&quot; . | LC_ALL=C xargs sed -i &quot;.bak&quot;  &quot;s/Chunky/Bacon/&quot;
 </code></pre></div>
 
-
-<p>Every so often we need to mass edit some directories. That should be the job of sed. Yet sed...
+<p>Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need...
  </div>
 </div>
  </div> 

@@ -39,17 +39,16 @@
   <h3>tldr</h3>
 <p><a href="https://docs.python.org/3/library/doctest.html">doctest</a> [1]  is a library that allows you to write python examples in comments or text documents. This is handy because you can write examples, test them, and have the peace of mind that they work. </p>
 <p>Here are some examples example</p>
-<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">print</span><span class="p">(</span><span class="ss">&quot;Hello World!&quot;</span><span class="p">)</span>
-    <span class="n">Hello</span> <span class="n">World</span><span class="o">!</span>
+<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="nv">print</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Hello World!</span><span class="s2">&quot;</span><span class="ss">)</span>
+    <span class="nv">Hello</span> <span class="nv">World</span><span class="o">!</span>
 
 
-    <span class="o">&gt;&gt;&gt;</span> <span class="n">def</span> <span class="n">one_plus_one</span><span class="p">():</span>
-    <span class="p">...</span>   <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="p">...</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="n">one_plus_one</span><span class="p">()</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">def</span> <span class="nv">one_plus_one</span><span class="ss">()</span>:
+    ...   <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+    ...
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">one_plus_one</span><span class="ss">()</span>
     <span class="mi">2</span>
 </code></pre></div>
-
 
 <p>As you can see, the key is to use the three arrows, &gt;&gt;&gt;, to write the python that you would execute in the console. The result is written lined up after the &gt;&gt;&gt; prompt. If you have a multi-line code sample, like when you are writing a function, you must enter the three dots, ... , and then line up the code as you would when writing python.</p>
 <p>To test your code, you need to have a script that imports doctest. I looked it up on the internet. The solution I found was</p>
@@ -58,7 +57,6 @@
     <span class="n">doctest</span><span class="o">.</span><span class="n">testfile</span><span class="p">(</span><span class="s1">&#39;pythons_doctest.md&#39;</span><span class="p">)</span>
     <span class="n">EOF</span>
 </code></pre></div>
-
 
 <p>This is enough to get you going. Of course there is a lot more to it. Please consult [1] for more information.</p>
 <h3>The long story</h3>

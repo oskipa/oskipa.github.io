@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>Dada Structures and Algorithms - macos tag</title>
+ <title></title>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  <meta id="keywords" name="keywords" content="">
@@ -33,12 +33,19 @@
  <div class="container">
 <div class="row">
  <div class="col-md-8">
-   <h2><a href="/find-and-replace-recursively.html">Find and Replace Recursively</a></h2>
-   <label>27 May, 2020</label>
-   <div class="highlight"><pre><span></span><code>grep -rl &quot;Chunky&quot; . | LC_ALL=C xargs sed -i &quot;.bak&quot;  &quot;s/Chunky/Bacon/&quot;
-</code></pre></div>
-
-<p>Every so often we need to mass edit some directories. That should be the job of sed. Yet sed doesn't find files, so you need...
+  <h2>Survival Ruby Reflection</h2>
+  <h3>Some basic Ruby reflection methods to make your life easier</h3>
+  <label>10 March, 2020</label>
+  <p>Ruby has a strong reflection system. This is useful when you are debugging. The more you know, the easier debugging will be. But if you are starting, the following ones will make your life better. </p>
+<p>my_object.inspect</p>
+<p>This will give you a string representation of the object. Very useful when programming and debugging.</p>
+<p>my_object.respond_to?(:method_name)</p>
+<p>This one will tell you if the object can respond to a method. So Let's say that you want to call <code>batman.swing</code>. But can you? You can query the object with <code>batman.respond_to?(:swing)</code> and it will answer with true or false. Notice how you need to use the colon for the method name when sent as a parameter.</p>
+<p>my_object.methods
+   (my_object.methods - Object.new.methods).sort</p>
+<p>The first one will list all the methods that the object can respond to. Depending on the object, the list can be large. Once you look through them, you will discover that many of the methods were not defined in the class itself.  The last version will remove all of the methods that are inherited by Object, the root parent object that most object descend from.</p>
+<p>my_object.method(:method_name).source_location</p>
+<p>This is perhaps the most useful one when looking for code. This incantation will give you the source location for the method that the object responds to.</p>
  </div>
 </div>
  </div> 

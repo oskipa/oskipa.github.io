@@ -36,13 +36,44 @@
 
     <h2>Possible future</h2>
 <ul>
+<li>incident journal</li>
 <li>Fraudomatic</li>
 <li>Live Texas Hold Them -live</li>
 <li>Oca Game -- live and umbrella </li>
 <li>Chatboard -- channels</li>
 </ul>
+<h2>Site 8: Incident Reports</h2>
+<p>A site where one journals incidents for different applications.</p>
+<p>Features</p>
+<ul>
+<li>Can add different projects</li>
+<li>Can add different people</li>
+<li>Shows a "Days without incident" count on dashboard</li>
+<li>Search by project and incident</li>
+<li>Graph of incidents and time that it took to solve</li>
+<li>Suggest previous tickets</li>
+<li>Link tickets</li>
+<li>Run book with troubleshooting informations</li>
+<li>
+<p>Internal view vs external view</p>
+</li>
+<li>
+<p>Incident fields</p>
+</li>
+<li>Short summmary title</li>
+<li>Project</li>
+<li>Initial description</li>
+<li>Customer/Stakeholder</li>
+<li>Resolution</li>
+<li>Action steps with github issue or 
+  documentation</li>
+</ul>
 <h2>Site 7: Moderated confessions</h2>
 <p>A site where you can write anonymous confessions. Yet these have to be approved by an administrator.</p>
+<h2>What I learned</h2>
+<p>I forgot how nice routing is in Phoenix/Rails. Ecto is so nice as well.</p>
+<p>I have come to appreciate a lot the Context. I didn't fully understand what they did, but using it with the authentication generator along with the confessions one makes sense. Years ago I called Repositories what they are calling Context. I guess Repository was already taken, and Context took its place.</p>
+<p>Years ago I thought Phoenix was the carefully curated web framework. It is so much more so now.</p>
 <h3>What I learned</h3>
 <p>The main point on this one is to practice authentication again.</p>
 <h2>Site 6: World Clocks</h2>
@@ -60,10 +91,9 @@
 <p>I thought I was going to have to spend a lot of time here. I didn't have to. It was easy to work with. I hope they include this into the default Elixir libraries.</p>
 <h4>Installing the dependencies</h4>
 <p>Floki is some kind of jQuery for Elixir.</p>
-<div class="highlight"><pre><span></span><code><span class="err">{:phoenix_live_view, &quot;~&gt; 0.6.0&quot;},</span>
-<span class="err">{:floki, &quot;&gt;= 0.0.0&quot;, only: :test}</span>
+<div class="highlight"><pre><span></span><code>{:phoenix_live_view, &quot;~&gt; 0.6.0&quot;},
+{:floki, &quot;&gt;= 0.0.0&quot;, only: :test}
 </code></pre></div>
-
 
 <h4>References</h4>
 <p><a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html">How to use it</a></p>
@@ -89,18 +119,16 @@
 <p>I knew that it generated something like this. Now I know exactly what it generates.</p>
 <h4>Understanding routes</h4>
 <p>I initially wanted to route it like this</p>
-<div class="highlight"><pre><span></span><code><span class="err">get &quot;/&quot;, PostController, :index</span>
-<span class="err">get &quot;/vox&quot;, PostController, :new</span>
-<span class="err">post &quot;/vox&quot;, PostController, :create</span>
+<div class="highlight"><pre><span></span><code>get &quot;/&quot;, PostController, :index
+get &quot;/vox&quot;, PostController, :new
+post &quot;/vox&quot;, PostController, :create
 </code></pre></div>
-
 
 <p>This didn't work. After doing some pattern comparing and troubleshooting, I got it working with this</p>
-<div class="highlight"><pre><span></span><code><span class="err">get &quot;/&quot;, PostController, :index</span>
-<span class="err">get &quot;/new&quot;, PostController, :new</span>
-<span class="err">post &quot;/&quot;, PostController, :create</span>
+<div class="highlight"><pre><span></span><code>get &quot;/&quot;, PostController, :index
+get &quot;/new&quot;, PostController, :new
+post &quot;/&quot;, PostController, :create
 </code></pre></div>
-
 
 <p>I asked.  I believe that it has to do with the links that are generated in the template. If they are not there, then you get an error.</p>
 <h4>Using the phx.gen.html generator</h4>
@@ -146,6 +174,9 @@
   window.$ = $;
   window.jQuery = $;</p>
 </li>
+<li>
+<p>In the template loading the javascript file, it may have <code>defer</code> in it. You may need to remove it to make jQuery work</p>
+</li>
 </ol>
 <p>And this will make it available on the site</p>
 <p><a href="https://stackoverflow.com/questions/58714479/phoenix-framework-jquery-connection">Reference: adding jQuery to Phoenix, SO</a></p>
@@ -157,16 +188,15 @@
 <p>Creating a static site that returns "hello, world". I don't need a database or JavaScript. Just the server.</p>
 <h3>What I learned</h3>
 <p>You can create a new phoenix site without a number of components. To create it without a database, we can use some of the <a href="https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html#content">mix phx.new</a>'s options. I ran</p>
-<div class="highlight"><pre><span></span><code><span class="err">    mix phx.new hello_world --no-html --no-webpack --no-ecto</span>
+<div class="highlight"><pre><span></span><code>    mix phx.new hello_world --no-html --no-webpack --no-ecto
 </code></pre></div>
-
 
 <p>Then I created the static page under <code>priv/static/hello.html</code>.</p>
 <p>I had to add <code>hello.html</code> to <code>lib/hello_world_web/endpoint.ex</code>'s Plug.Static <code>only:</code> config. That got html being served.</p>
 <p>To be able to set the root route to this page I had to create a controller whose index method redirect to the static page.</p>
-<div class="highlight"><pre><span></span><code><span class="err">  def index(conn, _params) do</span>
-<span class="err">      redirect(conn, to: &quot;hello.html&quot;)</span>
-<span class="err">  end</span>
+<div class="highlight"><pre><span></span><code>  <span class="nv">def</span> <span class="nv">index</span><span class="ss">(</span><span class="nv">conn</span>, <span class="nv">_params</span><span class="ss">)</span> <span class="k">do</span>
+      <span class="nv">redirect</span><span class="ss">(</span><span class="nv">conn</span>, <span class="nv">to</span>: <span class="s2">&quot;</span><span class="s">hello.html</span><span class="s2">&quot;</span><span class="ss">)</span>
+  <span class="k">end</span>
 </code></pre></div>
 
  </div> 

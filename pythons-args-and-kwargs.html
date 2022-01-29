@@ -40,18 +40,17 @@
 <p>The *args and **kwargs parameter pattern is a way to collect an unknown number of function arguments. The names "args" and "kwargs" is a convention; the important part is the single or double star. A single star will return the arguments as a list. The double start will return the argument as a dictionary.</p>
 <h3>The long story</h3>
 <p>Sometimes you need to give your function a variable number of arguments. You don't know in advance how many you are going to need. Let's say that you want to create a function that gives you the sum of some numbers. You don't know how many number there will be. That is when you use *args </p>
-<div class="highlight"><pre><span></span><code><span class="err">  &gt;&gt;&gt; def sum(*args):</span>
-<span class="err">  ...   result = 0</span>
-<span class="err">  ...   for n in args:</span>
-<span class="err">  ...    result += n </span>
-<span class="err">  ...   return result</span>
-<span class="err">  ...</span>
-<span class="err">  &gt;&gt;&gt; sum(10)</span>
-<span class="err">  10</span>
-<span class="err">  &gt;&gt;&gt; sum(10,20,30)</span>
-<span class="err">  60</span>
+<div class="highlight"><pre><span></span><code>  <span class="o">&gt;&gt;&gt;</span> <span class="nv">def</span> <span class="nv">sum</span><span class="ss">(</span><span class="o">*</span><span class="nv">args</span><span class="ss">)</span>:
+  ...   <span class="nb">result</span> <span class="o">=</span> <span class="mi">0</span>
+  ...   <span class="k">for</span> <span class="nv">n</span> <span class="nv">in</span> <span class="nv">args</span>:
+  ...    <span class="nb">result</span> <span class="o">+=</span> <span class="nv">n</span> 
+  ...   <span class="k">return</span> <span class="nb">result</span>
+  ...
+  <span class="o">&gt;&gt;&gt;</span> <span class="nv">sum</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span>
+  <span class="mi">10</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="nv">sum</span><span class="ss">(</span><span class="mi">10</span>,<span class="mi">20</span>,<span class="mi">30</span><span class="ss">)</span>
+  <span class="mi">60</span>
 </code></pre></div>
-
 
 <p>Wouldn't it be nice if there was something similar for dictionaries? There is! That is what **kwargs is for. Let's write a function that updates a dictionary with new values.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="ss">&quot;apple&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;ball&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;cat&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
@@ -63,7 +62,6 @@
 <span class="w">  </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="k">print</span><span class="p">(</span><span class="k">data</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="err">{</span><span class="s1">&#39;apple&#39;</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ball&#39;</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cat&#39;</span><span class="err">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;deer&#39;</span><span class="err">:</span><span class="w"> </span><span class="mi">4</span><span class="err">}</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>For more details, read the article on <a href="https://book.pythontips.com/en/latest/args_and_kwargs.html">args and kwargs</a> [1], which is the basis of this entry.
 References:</p>

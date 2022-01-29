@@ -1,5 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - article</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/article.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2020-06-06T00:00:00-04:00</updated><entry><title>Power makes you stupid</title><link href="https://oskipa.github.io/power-makes-you-stupid.html" rel="alternate"></link><published>2020-06-06T00:00:00-04:00</published><updated>2020-06-06T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-06-06:/power-makes-you-stupid.html</id><summary type="html">&lt;p&gt;We all have heard how power corrupts and absolute power corrupts absolutely. Probably more worrisome is that power stupefies and absolute power stupefies absolutely.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - article</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/article.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2022-01-13T00:00:00-05:00</updated><entry><title>It doesn't deserve it</title><link href="https://oskipa.github.io/it-doesnt-deserve-it.html" rel="alternate"></link><published>2022-01-13T00:00:00-05:00</published><updated>2022-01-13T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-13:/it-doesnt-deserve-it.html</id><summary type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
+&lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
+&lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React user interface. For the backend, you are wondering if you should code it in .net core or use this as an opportunity to write that first Rust application. You will most likely put it in AWS, but you are open to Azure. The mobile app will be developed using Kotlin for Android and Swift for iOS.&lt;/p&gt;
+&lt;p&gt;Or you could spend 15 minutes showing her how to use Google contacts.&lt;/p&gt;
+&lt;p&gt;The first solution is complex. Complexity is expensive. It will take a long time to build. You must pay for the services. The diverse technologies take time to learn. Complexity is expensive in terms of understanding a system, fixing bugs, and maintaining it.&lt;/p&gt;
+&lt;p&gt;The second one takes 15 minutes. &lt;/p&gt;
+&lt;p&gt;Now, the issue is not that expensive, complex solutions are bad. The previous solution makes sense in many situations. For example, if it is vital to keep the list and the privacy of its members private. Or if the plan is that a huge organization wants to have a custom, single contact system for all of their sales people. Or if the idea is that the company is planning on building a sales contact app, using their sales people as the active user base.&lt;/p&gt;
+&lt;p&gt;We don't know, though. All what we know is that your coworker wants to organize their contacts.&lt;/p&gt;
+&lt;p&gt;So far, the task hasn't earned complexity. So the task doesn't deserve it. You shouldn't give complexity to it. &lt;/p&gt;
+&lt;p&gt;Until the task deserve it&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use off-the-shelf software&lt;/li&gt;
+&lt;li&gt;use a simple script&lt;/li&gt;
+&lt;li&gt;Use a text file to store data&lt;/li&gt;
+&lt;li&gt;use a simple app &lt;/li&gt;
+&lt;li&gt;use known technologies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, one should be aware when the task has earned its complexity. The company website is moving from 4 pages to becoming an active blog, which is key for getting customers. Then it may be a good idea to get a WordPress account. They want some customized widgets? We can build custom modules. The desired features and workflow for the blog are so unique that it is hard to develop? Maybe now it is a better idea to write their CMS from scratch, custom-made for the business.&lt;/p&gt;
+&lt;p&gt;Another thing to keep in mind is that if it is reasonable to add complexity from the beginning because it will be needed, go ahead and do it. We don't need to spend a winter freezing at a house because we needed to freeze during a winter. Put heat from the start. Same with tech. If you gather relational data, use that database from the start. &lt;/p&gt;
+&lt;p&gt;For those paying attention, this is a different way to express YAGNI. Perhaps a bit stronger.&lt;/p&gt;</content><category term="article"></category><category term="software"></category></entry><entry><title>Simple Programming</title><link href="https://oskipa.github.io/simple_programming.html" rel="alternate"></link><published>2022-01-08T00:00:00-05:00</published><updated>2022-01-08T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-08:/simple_programming.html</id><summary type="html">&lt;p&gt;I have been interested in Design By Contract. I don't have access to Eiffel. I want to try them out in Ruby. I looked into the frameworks provided by Ruby, but I don't fully understand how it works. I read that they have a lot of limitation. Frameworks are in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been interested in Design By Contract. I don't have access to Eiffel. I want to try them out in Ruby. I looked into the frameworks provided by Ruby, but I don't fully understand how it works. I read that they have a lot of limitation. Frameworks are in fact little languages that one has to learn on top of the regular language.&lt;/p&gt;
+&lt;p&gt;What can we do?&lt;/p&gt;
+&lt;p&gt;We can try it using the most minimal implementation of the idea.&lt;/p&gt;
+&lt;p&gt;Let's use design by contracts as an example.&lt;/p&gt;
+&lt;p&gt;The basic idea is that you check conditions before and after calling a function. This is somehting that we can implement easily. &lt;/p&gt;
+&lt;p&gt;Let's start with a simple function that we want to add contracts to. Here is a function that adds two unsignged bytes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Let's add a precondition that the sum should be of integers.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
+    &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now let's add a postcondition. Let's say that the return should be an integer that fits within a C byte range. So we need to take the result, do a modulo operation and get a value that fits.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;256&lt;/span&gt;
+
+    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;255&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point we have done the basics of Design By Contract. Yet looking at it, it is hard to read. We don't have any indicator of what we are doing. Let's abstract the conditional lines.&lt;/p&gt;
+&lt;p&gt;def condition(&amp;amp;block)
+      raise "Precondition violation" unless block.call
+  end&lt;/p&gt;
+&lt;p&gt;def unsigned_byte_sum(a, b)
+    condition do
+      a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
+    end&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+&lt;span class="nv"&gt;condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="nb"&gt;result&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+&lt;p&gt;This is a good step. It is cleaner. I would like to clearly point out when it is a precondition or postcondition. Especially, we want the error message to let us know immediately.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;pre_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;raise_message&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="nv"&gt;raise_message&lt;/span&gt; &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;block&lt;/span&gt;.&lt;span class="nv"&gt;call&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a lot better. It is clear that we are writing a contract for this function. There is one last item that bothers me, which is having to repeat &lt;code&gt;result&lt;/code&gt; a second time. We can make it slightly easier with the following modifications.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  # &lt;span class="nv"&gt;it&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;conditions&lt;/span&gt; &lt;span class="nv"&gt;are&lt;/span&gt; &lt;span class="nv"&gt;true&lt;/span&gt;
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;result&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+
+  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+
+    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+
+    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt; 
+    &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This puts the &lt;code&gt;post_condition&lt;/code&gt; at the end, as the last step of the function. I think it is cleaner. You may disagree and choose to skip it.&lt;/p&gt;
+&lt;p&gt;Now we have a design by contract micro library. This is enough to try it out in your projects and see if it makes sense for you. With these few lines of code, we can bring in the value that design by contract has.&lt;/p&gt;
+&lt;p&gt;There is no elaborate API to learn either. The conditions are performed in plain Ruby, as long as you make sure the conditional returns a boolean.&lt;/p&gt;
+&lt;p&gt;The contract clauses are clearly marked. They are as close to the code as possible. Having the clauses there is marking that this function has enough business value that it is worth to add pre and post conditions.&lt;/p&gt;
+&lt;p&gt;The micro library is small, understandable, and hackable. It is not using obscure or hard to understand metaprograming code. Because of this, a developer or a team can easily extend it as adoption increases.&lt;/p&gt;
+&lt;p&gt;For example, the micro library lacks an &lt;code&gt;invariant&lt;/code&gt; test for objects. It shouldn't be too hard to add it if it is necessary.&lt;/p&gt;
+&lt;p&gt;It also allows to properly assess whether adopting a library makes sense. Now that you have tried Design by Contract for a while, you can correctly determine if adopting a fully fleshed framework is worth your time or not.&lt;/p&gt;
+&lt;p&gt;I could wrap this micro library in a gem. I have decided not to. Instead, you can copy and paste the library, and grow it yourself. Besides of this hackability, it also reduces your security exposure. Once you copy in the template micro library, you don't have to worry that someone has added a security vulnerability or malicious code.  &lt;/p&gt;</content><category term="article"></category><category term="simplicity"></category><category term="programming"></category><category term="design by contract"></category><category term="eiffel"></category><category term="ruby"></category></entry><entry><title>The Missing Tech Context</title><link href="https://oskipa.github.io/the-missing-tech-context.html" rel="alternate"></link><published>2021-11-21T00:00:00-05:00</published><updated>2021-11-21T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2021-11-21:/the-missing-tech-context.html</id><summary type="html">&lt;p&gt;Recently I ran into a discussion on a Ruby forum about the "right" way to implement a &lt;code&gt;.double&lt;/code&gt; function. One solution used a &lt;code&gt;case&lt;/code&gt; block that checked on the object's type. The other one added &lt;code&gt;.double&lt;/code&gt; methods to the &lt;code&gt;Numeric&lt;/code&gt;, &lt;code&gt;Array&lt;/code&gt;, etc. Which one is better?&lt;/p&gt;
+&lt;p&gt;People with Smalltalk experience …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I ran into a discussion on a Ruby forum about the "right" way to implement a &lt;code&gt;.double&lt;/code&gt; function. One solution used a &lt;code&gt;case&lt;/code&gt; block that checked on the object's type. The other one added &lt;code&gt;.double&lt;/code&gt; methods to the &lt;code&gt;Numeric&lt;/code&gt;, &lt;code&gt;Array&lt;/code&gt;, etc. Which one is better?&lt;/p&gt;
+&lt;p&gt;People with Smalltalk experience will say that adding methods is the proper object oriented solution. And they are right. Right, that is, if we are writing in Smalltalk. If we are writing in another OOP language, this solution may be wrong. A grave mistake, even.&lt;/p&gt;
+&lt;p&gt;Isn't OOP the same in any language? Our current expectation is that it is. The reality is that isn't. Each language operates with a different context from the others.&lt;/p&gt;
+&lt;p&gt;Ruby is heavily inspired by Smalltalk. It is essentially a command-line Smalltalk dialect that lacks the GUI and the tools. Let's examine the different contexts.&lt;/p&gt;
+&lt;p&gt;In Smalltalk we have good development tools. Developer education explains how the language works, how message dispatch works, and how each Smalltalk image is a unique system once you finished your project.&lt;/p&gt;
+&lt;p&gt;Ruby has a different culture. It has many people who use it to get things done. It is mainly written in text editors. Message dispatch is learned once we are learning about metaprogramming. The language is syntactically more complex. Developers don't expect that base classes will be modified.&lt;/p&gt;
+&lt;p&gt;So while the Smalltalk developer can easily find where a method is defined in their sysystem, even expecting changes, the Ruby developer will be surprised. We want to reduce those surprises.&lt;/p&gt;
+&lt;p&gt;An interesting consequence is that is changing Object becomes a common practice in Ruby, then this practice, which today may be considered incorrect, will be fine.&lt;/p&gt;</content><category term="article"></category><category term="tech culture"></category><category term="best practices"></category><category term="oop"></category><category term="functional"></category></entry><entry><title>Power makes you stupid</title><link href="https://oskipa.github.io/power-makes-you-stupid.html" rel="alternate"></link><published>2020-06-06T00:00:00-04:00</published><updated>2020-06-06T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-06-06:/power-makes-you-stupid.html</id><summary type="html">&lt;p&gt;We all have heard how power corrupts and absolute power corrupts absolutely. Probably more worrisome is that power stupefies and absolute power stupefies absolutely.&lt;/p&gt;
 &lt;p&gt;Although we have been taught that intelligence is an individual trait, it is to a large extend a communal one. Humans are social animals. What we …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We all have heard how power corrupts and absolute power corrupts absolutely. Probably more worrisome is that power stupefies and absolute power stupefies absolutely.&lt;/p&gt;
 &lt;p&gt;Although we have been taught that intelligence is an individual trait, it is to a large extend a communal one. Humans are social animals. What we know, what we decide to spend our time on, and what ideas we have are shaped by the people we socialize.&lt;/p&gt;
 &lt;p&gt;Yes, each person has a raw intelligence. But how effective it is depends on who their circle of peers are. I like to think about it  this way: you might have bought a Ferrari that can go 210mph, but if you only drive around city streets, your effective max speed is 30mph.&lt;/p&gt;
@@ -40,54 +179,49 @@
 &lt;li&gt;Write the name&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write a one-sentence comment describing the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This comment documents what our &lt;em&gt;intent&lt;/em&gt; for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;creates&lt;/span&gt; &lt;span class="nv"&gt;new&lt;/span&gt; &lt;span class="nv"&gt;post&lt;/span&gt;
+&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write the type signature &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.&lt;/p&gt;
 &lt;p&gt;The book uses the following type format. You make a list of each parameter followed by an arrow (-&amp;gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;
-&lt;span class="err"&gt;def create_post()&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# creates new post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="kd"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;This is an example using more idiomatic Ruby.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param params, Hash, the http parameters hash &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;def create_post(params)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Write an example &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentation you can add. Most people will often google for examples. Include them.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param blog_parameters, Hash, the http parameters hash &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(params[:blog])&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(blog_params)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog_parameters&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:blog&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.&lt;/p&gt;
 &lt;ol&gt;
@@ -101,33 +235,31 @@
     # Example: create_post(params[:blog])
     def create_post(blog_parameters)
     end&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;testing&lt;/span&gt; &lt;span class="n"&gt;correct&lt;/span&gt; &lt;span class="n"&gt;behavior&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;happy&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;
-&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;ruby&lt;/span&gt; &lt;span class="n"&gt;pseudo&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;test_creation&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;setup&lt;/span&gt;
-  &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Joe Smith&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;testing&lt;/span&gt; &lt;span class="nv"&gt;correct&lt;/span&gt; &lt;span class="nv"&gt;behavior&lt;/span&gt; &lt;span class="nv"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;happy&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt;
+# &lt;span class="nv"&gt;The&lt;/span&gt; &lt;span class="nv"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;ruby&lt;/span&gt; &lt;span class="nv"&gt;pseudo&lt;/span&gt; &lt;span class="nv"&gt;code&lt;/span&gt;
+&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;test_creation&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
+  # &lt;span class="nv"&gt;setup&lt;/span&gt;
+  &lt;span class="nb"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; {&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;body&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello world!&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;author&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Joe Smith&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; }
 
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;exercise&lt;/span&gt;
-  &lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  # &lt;span class="nv"&gt;exercise&lt;/span&gt;
+  &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;params&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
 
-  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;verification&lt;/span&gt;
-  &lt;span class="n"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
-  &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;record&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nil&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; 
+  # &lt;span class="nv"&gt;verification&lt;/span&gt;
+  &lt;span class="nv"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ORM&lt;/span&gt;.&lt;span class="nv"&gt;find_by&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
+  &lt;span class="nv"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;record&lt;/span&gt;.&lt;span class="nv"&gt;nil&lt;/span&gt;? 
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;This made us discover that we we have three required parameters. Now we can change our function again with this new information.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen we send a null value for author? What if the inputs are too big? Is it okay to have no author?&lt;/p&gt;
 &lt;p&gt;Thinking in term of ranges helps us identify the right number of tests. This is a superior way thinking about it than old advice I was told for TDD where you kept coming up with tests until you couldn't think of any more.&lt;/p&gt;
@@ -135,17 +267,16 @@
 &lt;li&gt;Write the body of the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# creates new post&lt;/span&gt;
-&lt;span class="err"&gt;# @param title, String, title of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param body, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @param author, String, body of the blog post &lt;/span&gt;
-&lt;span class="err"&gt;# @return void &lt;/span&gt;
-&lt;span class="err"&gt;# Example: create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;def create_post(title, body, author)&lt;/span&gt;
-&lt;span class="err"&gt;  blog = Blog.new(title, body, author) &lt;/span&gt;
-&lt;span class="err"&gt;  ORM.save(blog)&lt;/span&gt;
-&lt;span class="err"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Blog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;save&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.&lt;/p&gt;</content><category term="article"></category></entry></feed>
