@@ -49,3 +49,8 @@ h2 a:hover {
   font-size: smaller;
 }
 
+.minimal-menu li {
+  display: inline-block;
+  list-style-type: none;
+}
+
