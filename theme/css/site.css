@@ -9,8 +9,14 @@ body {
 }
 
 code {
-  display: block;
+  /*display: inline;
   margin: 1em;
+  */
+  background: #F2F2F2;
+}
+
+pre code {
+  background: none;
 }
 
 h2,
