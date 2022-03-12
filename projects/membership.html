@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      table {
+        border-style: solid;
+        border-width: 2px;
+      }
+
+      td {
+        width: 10px;
+        height: 10px;
+      }
+
+      body { max-width: 500px;}
+
+      #service { max-width: 400px;}
+
+      .toggle {display: none;}
+
+      .usedUnder50 {
+        background-color: red;
+      }
+
+      .usedOver50 {
+        background-color: yellow;
+      }
+
+      .usedOver100 {
+        background-color: green;
+      }
+
+      .label {
+        width: 100px;
+      }
+
+    </style>
+
+    <script type="text/javascript" src="vendors/lodash.js"  ></script>
+    <script type="text/javascript" src="vendors/jquery.js"  ></script>
+    <script type="text/javascript" src="vendors/pouchdb-7.2.1.js"  ></script>
+
+    <script type="text/javascript">
+      'use strict';
+
+      class Service {
+          constructor(name, period, itemPrice, servicePrice) {
+            this.name = name;
+            this.period = period;
+            this.itemPrice = itemPrice;
+            this.servicePrice = servicePrice;
+            this.limit = Math.floor(servicePrice / itemPrice) + 1;
+
+            this.uses = 0;
+            this.startTracking = new Date();
+            this.useLog = [];
+          }
+
+          serialize() {
+            let result = {
+              'name' : this.name,
+              'period' : this.period,
+              'itemPrice' : this.itemPrice,
+              'servicePrice' : this.servicePrice,
+              'limit' : this.limit,
+              'uses' : this.uses,
+              'startTracking' : this.startTracking,
+              'useLog' : this.useLog,
+            };
+
+            return result;
+          }
+
+          deserialize(data) {
+               this.name = data['name'];
+               this.period = data['period'];
+               this.itemPrice = data['itemPrice'];
+               this.servicePrice = data['servicePrice'];
+               this.limit = data['limit'];
+               this.uses = data['uses'];
+               this.startTracking = data['startTracking'];
+               this.useLog = data['useLog'];
+          }
+
+          toJson() {
+            return JSON.stringify(this.serialize());
+          }
+
+          deserializeFromString(stringData) {
+            let data = JSON.parse(stringData);
+            this.deserialize(data);
+          }
+
+          track() {
+            this.uses += 1;
+            this.useLog.push(new Date());
+          }
+
+          get percentage() {
+            let result = 0;
+
+            if (this.uses != 0) {
+              result = this.uses / this.limit;
+            }
+
+            return result;
+          }
+
+          get prorated() {
+            let result = undefined;
+
+            if (this.uses > 0) {
+              result = this.servicePrice / this.uses;
+            }
+
+            return result; 
+          }
+
+          reset_period() {
+            this.startTracking = new Date();
+            this.uses = 0;
+          }
+
+          get daysInPeriod() {
+            const today = new Date();
+
+            const difference  = today - this.startTracking;
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24)); 
+
+            return days;
+          }
+
+          get daysUntilRenew() {
+            let result = this.daysInPeriod % this.period;
+
+            if (result == 0) {
+              result = this.period;
+            }
+
+            if (this.daysInPeriod > this.period) {
+              this.resetPeriod();
+            }
+
+            return result; 
+          }
+      }
+
+      class ServicePouchDB {
+        constructor(id, service){
+          this._id = id || new Date().toISOString();
+          this._rev = null;
+          this.service = service || new Service();
+        }
+        
+        serialize() {
+          let result = {
+            "_id" : this._id,
+            "service": this.service.serialize()
+          }
+
+          if (this._rev != null){
+            result["_rev"] = this._rev;
+          }
+
+          return result;
+        }
+
+        deserialize(data) {
+          let service = new Service();
+          this._id = data["_id"];
+          this._rev = data["_rev"];
+          service.deserialize(data["service"]);
+          this.service = service;
+        }
+      }
+
+      class ServiceView {
+        constructor(service, parentElement, db, app, dbRecord) {
+          this.service = service;
+          this.parentElement = parentElement;
+          this.db = db;
+          let now = new Date().getTime();
+          this.id = `_serviceView${now}`;
+          this.element = `#${this.id}`; 
+          this.dbRecord = dbRecord || null;
+          this.app = app || null;
+
+          this.bind();
+        }
+
+        loadService(data) {
+          let record = new ServicePouchDB();
+          record.deserialize(data);
+          this.dbRecord = record;
+          this.service =  record.service;
+        }
+        
+        bind() {
+          window[this.id] = this;
+        }
+
+        render() {
+          if ($(this.element).length == 0){
+            $(this.parentElement).append(this.template());
+          } else {
+            $(this.element).html(this.template());
+          }
+        }
+
+        save() {
+          if (this.dbRecord == null){
+            this.dbRecord = new ServicePouchDB(this.service.name, this.service);
+          }
+
+          this.db.put(this.dbRecord);
+        }
+
+        remove() {
+          if (this.dbRecord != null) {
+              this.db.remove(this.dbRecord);
+          }
+
+          $(`#${this.id}`).remove();
+
+          this.app.remove(this.service.name);
+        }
+
+        getUseClass() {
+          let result = 'usedUnder50';
+
+          if (this.service.percentage > 0.5){
+            result = 'usedOver50';
+          }
+
+          if (this.service.percentage > 1) {
+            result = 'usedOver100';
+          }
+
+          return result;
+        }
+
+        beforeBar() {
+          let result = "<tr>";
+
+          for (var i = 0; i < this.service.limit; i++) {
+
+            if (i < this.service.uses) {
+              result += `<td class='${this.getUseClass()}'></td>`; 
+            } else {
+              result += "<td class='clear'></td>"; 
+            }
+          }
+          
+          result += "</tr>";
+
+          return result;
+        }
+
+        afterBars() {
+          let result = "";
+
+          const difference = this.service.uses - this.service.limit;
+
+          if (difference > 0) {
+            result += "<tr>";
+
+            for (var i = 0; i < difference; i++) {
+              result += `<td class='${this.getUseClass()}'></td>`; 
+            }
+
+            result += "</tr>";
+          }
+
+          return result;
+        }
+
+        bar() {
+          let result = this.beforeBar();
+          result += this.afterBars();
+          
+           return result;
+        }
+
+        graph() {
+          let result = `
+              <table>
+                  ${this.bar()}
+              </table>
+          `.trim();
+
+            
+          return result;
+        }
+
+        used() {
+          this.service.track();
+          this.save();
+          this.render();
+        }
+
+        prorated() {
+          let result = 'infinity';
+
+          if (this.service.prorated != undefined) {
+            result = this.service.prorated.toFixed(2);
+          }
+
+          return result;
+        }
+
+        template() {
+          let result = `
+          <div  class='service' id=${this.id}>
+              <h2>${this.service.name}</h2>
+                  <p>Uses: ${this.service.uses} Limit: ${this.service.limit} Regular Price: ${this.service.itemPrice} Prorated: ${this.prorated()} Days until renew: ${this.service.daysUntilRenew} Days in period: ${this.service.daysInPeriod} </p>
+              <p>${this.graph()}</p>
+              <button onclick='${this.id}.used()' >Track</button>
+
+              <label onclick="toggle('#${this.id}_delete')">Delete</label>
+              <span id="${this.id}_delete" class="toggle">
+                  <button onclick='${this.id}.remove()' >Remove</button>
+              </span>
+          
+            </div>
+
+          `.trim();
+
+          return result;
+        }
+      }
+
+      class MembershipApp{
+        constructor(db, elementName) {
+          this.db = db;
+          this.services = [];
+          this.elementName = elementName;
+        }
+
+        getFormData(formElement){
+          let result = {};
+          
+          $(`${formElement} :input`).each(function(index, element){
+            if (element.type == 'text'){
+              result[element.name] = $(element).val();
+            }
+          });
+
+          return result;
+        }
+
+        create(formElement){
+          let data = this.getFormData(formElement);
+          let sample = new Service(data["name"], data["period"], data["itemPrice"], data["servicePrice"]);   
+          let ui = new ServiceView(sample, this.elementName, this.db, this);
+          this.services.push(ui);
+
+          ui.render();
+        }
+
+        render() {
+          for(var i = 0; i < this.services.length; i++){
+            this.services[i].render();
+          }
+        }
+
+        save() {
+          this.services.forEach(serviceView => serviceView.save()); 
+        }
+
+        remove(serviceName) {
+          this.services =  _.remove(this.services, function (o) { o.service == serviceName});
+          this.render();
+        }
+
+        load() {
+          let that = this;
+
+          this.db.allDocs({include_docs: true 
+            }).then(function (result) {
+              if (result["total_rows"] > 0){
+                let service = new ServiceView(null, that.elementName, that.db, that);
+                let data = result['rows'][0]['doc'];
+                service.loadService(data);
+                that.services.push(service);
+              }
+            }).then(function () {
+                that.render();
+            });
+
+        }
+      }
+
+      $(document).ready(function() {
+          // load data
+          let db = new PouchDB('services');
+          var app = new MembershipApp(db, "#service");
+          app.load();
+
+          window.app = app;
+      });
+
+    function toggle(id) {
+      $(id).toggle();
+    }
+    </script>
+
+  </head>
+  <body>
+    <h1>Paid Service Tracker</h1>
+
+    <div id="service" >
+    </div>
+
+
+   
+    <h2 onclick="toggle('#create')">New service</h2>
+      <div id="create" class="toggle" >
+        <form id="new-service">
+          <table>
+            <tr> <td class="label"><label>service: </label></td><td><input name="name" type="text" placeholder="name"></input></td> </tr>
+            <tr> <td class="label"><label>price: </label></td><td><input name="servicePrice" type="text" placeholder="service price"></input></td> </tr>
+            <tr><td class="label"><label>days of service: </label></td><td><input name="period" type="text" placeholder="time period (in days)" ></input></td></tr>
+            <tr><td class="label"><label>item price: </label></td><td><input name="itemPrice" type="text" placeholder="item price"></input></td></tr>
+            <tr><td colspan="2"><input type="button" style="width: 100%" value="create" onclick="app.create('#new-service')"></input></td></tr>
+          </table>
+        </form>
+      </div>
+
+    <h2 onclick="toggle('#description')"> Description</h2>
+    <div id="description" class="toggle" >
+    <p>A simple tracker to track if a service is being used enough to justify paying for it.</p>
+
+    <p>For example, it may take 10 visits to the gym to justify paying a monthly membership vs. paying a single day use pass at the public recreation center. </p>
+
+    <p>Let's do an actual example. A streamig service is $10 a month. Renting a movie is about $3 in Youtube or Amazon. How many videos do you need to watch to justify $10 a month? 4 x 3 = 12. So you need to watch at least 4 videos a month to justify the subscription. Otherwise it will be cheaper to rent them one at a time.</p>
+
+    <p>This app does the calculation for you</p>
+    </div>
+
+    <h2 onclick="toggle('#instructions')">How to use it</h2>
+
+    <div id="instructions" class="toggle" >
+       Example
+      <ol>
+        <li>'gym', the name of the service</li>
+        <li>'100', the service cost</li>
+        <li>'30', the days the service lasts</li>
+        <li>'10', the cost of using a gym a single time</li>
+      </ol>
+    </div>
+
+    <h3>To do</h3>
+    <ol>
+      <li>It shows extra blocks, once you go over</li>
+    </ol>
+
+
+    <p>This is a demonstration app. It is not secure. Use at your own risk.</p>
+  </body>
+</html>
