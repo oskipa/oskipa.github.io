@@ -648,7 +648,7 @@ pyenv deactivate
 &lt;p&gt;If you don't, you look at the answer. &lt;/p&gt;
 &lt;p&gt;If this cheating? No. Problem solving is about pattern recognition. If you couldn't find a solution, you couldn't find a pattern. That means you haven't learned that pattern.&lt;/p&gt;
 &lt;p&gt;By spending those earnest five minutes trying to solve the problem, you will understand the problem well. You will understand why your natural solution didn't work. When you look at the solution, it is meaningful. Your emotional reaction to seeing the solution will make it easier for you to remember it, creating that desire pattern for you to recognize the next time you see a similar problem.&lt;/p&gt;
-&lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight.&lt;/p&gt;
+&lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!-- break --&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
   &lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -660,7 +660,7 @@ pyenv deactivate
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;If you feel functional, then you can use one of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight.&lt;/p&gt;
+&lt;p&gt;If you feel functional, then you can use one of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!-- break --&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
   &lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -716,7 +716,7 @@ pyenv deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here we start with the range. We turn it into an array, and then we call reverse. Wordy? Yes. Does it get the job done? Also yes. &lt;/p&gt;
-&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2020-04-21T00:00:00-04:00</published><updated>2020-04-21T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-21:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2020-04-21T00:00:00-04:00</published><updated>2020-04-21T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-21:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!-- break --&gt;&lt;/p&gt;
 &lt;h2&gt;Installing byebug&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -726,7 +726,7 @@ pyenv deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
-&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.&lt;/p&gt;
+&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!-- break --&gt;&lt;/p&gt;
 &lt;h2&gt;Installing byebug&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
