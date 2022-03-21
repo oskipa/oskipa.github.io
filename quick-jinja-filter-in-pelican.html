@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Quick jinja filter in Pelican</h2>
+  <h3>Writing a jinja filter for manual teaser breakin in Pelican</h3>
+  <label>21 March, 2022</label>
+  <p>I have articles on this blog that has sample code. Sometimes that sample code appears early in the article. This causes a problem with the teaser sample because sometimes the code markup breaks the rest of the list of articles, so it looks ugly and broken.</p>
+<p>I recalled that in Drupal you can add a manual break by making an html comment that says "break". I looked for an existing pluging that does this in Pelican. I couldn't find it. I decided to make my own.</p>
+<p>I found this great post, <a href="http://undefinedvalue.com/adding-a-jinja2-filter-with-a-pelican-plugin.html">Adding a Jinja2 Filter with a Pelican Plugin</a>. It explains how to create a plugin. It is so good, that I am essentially writing this to copy the key points so that if that blog goes away, I have the notes.</p>
+<p>It is so easy to create the plugin, that I am including the full code below.</p>
+<div class="highlight"><pre><span></span><code>    <span class="c1">#python</span>
+    <span class="kn">from</span> <span class="nn">pelican</span> <span class="kn">import</span> <span class="n">signals</span>
+
+    <span class="k">def</span> <span class="nf">break_text</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&lt;!-- break --&gt;&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">add_filter</span><span class="p">(</span><span class="n">pelican</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add age_in_days filter to Pelican.&quot;&quot;&quot;</span>
+        <span class="n">pelican</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;break&#39;</span><span class="p">:</span> <span class="n">break_text</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Plugin registration.&quot;&quot;&quot;</span>
+        <span class="n">signals</span><span class="o">.</span><span class="n">generator_init</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">add_filter</span><span class="p">)</span>
+</code></pre></div>
+
+<p>After you write that, you add in pelicanconf.py</p>
+<div class="highlight"><pre><span></span><code><span class="nv">PLUGIN_PATH</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">./plugins</span><span class="s2">&quot;</span>]
+<span class="nv">PLUGINS</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">break</span><span class="s2">&quot;</span>]
+</code></pre></div>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
