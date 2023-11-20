@@ -34,7 +34,10 @@
     </header>
     
  <div class="container">
-    <h1>One hundred Sites in Phoenix</h1>
+<article>
+  <header>
+    <h2>One hundred Sites in Phoenix</h2>
+  </header>
     
 
     <h2>Possible future</h2>
@@ -198,11 +201,12 @@ post &quot;/&quot;, PostController, :create
 <p>Then I created the static page under <code>priv/static/hello.html</code>.</p>
 <p>I had to add <code>hello.html</code> to <code>lib/hello_world_web/endpoint.ex</code>'s Plug.Static <code>only:</code> config. That got html being served.</p>
 <p>To be able to set the root route to this page I had to create a controller whose index method redirect to the static page.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nv">def</span> <span class="nv">index</span><span class="ss">(</span><span class="nv">conn</span>, <span class="nv">_params</span><span class="ss">)</span> <span class="k">do</span>
-      <span class="nv">redirect</span><span class="ss">(</span><span class="nv">conn</span>, <span class="nv">to</span>: <span class="s2">&quot;</span><span class="s">hello.html</span><span class="s2">&quot;</span><span class="ss">)</span>
-  <span class="k">end</span>
+<div class="highlight"><pre><span></span><code>  def index(conn, _params) do
+      redirect(conn, to: &quot;hello.html&quot;)
+  end
 </code></pre></div>
 
+</article>
  </div> 
  
  <footer class="footer">

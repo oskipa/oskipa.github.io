@@ -43,26 +43,26 @@
 <p>Python's 'yield' is used instead of 'result' when you are creating results via a generator function. Think of generators as some sort of a lazy, stateful function that returns one item at a time. Why would we want that? We would want this when consuming a huge amount of data that can't be loaded all at once into memory. Think of a giant csv file. </p>
 <p>So the point of a generator is to have a function that can give you one item at a time and remember where it was the next time you call it.  </p>
 <p>Here is an example:</p>
-<div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> # <span class="nv">we</span> <span class="nv">create</span> <span class="nv">our</span> <span class="nv">generator</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nv">def</span> <span class="nv">up_to_10</span><span class="ss">()</span>:
-    ...   <span class="k">for</span> <span class="nv">n</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span>:
-    ...     <span class="nv">yield</span> <span class="nv">n</span>
+<div class="highlight"><pre><span></span><code>    &gt;&gt;&gt; # we create our generator
+    &gt;&gt;&gt; def up_to_10():
+    <span class="k">...</span>   for n in range(10):
+    <span class="k">...</span>     yield n
     ...
-    <span class="o">&gt;&gt;&gt;</span> # <span class="nv">we</span> <span class="nv">use</span> <span class="nv">it</span> 
-    <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nv">i</span> <span class="nv">in</span> <span class="nv">up_to_10</span><span class="ss">()</span>:
-    ...   <span class="nv">print</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span>
+    &gt;&gt;&gt; # we use it 
+    &gt;&gt;&gt; for i in up_to_10():
+    <span class="k">...</span>   print(i)
     ...
-    <span class="mi">0</span>
-    <span class="mi">1</span>
-    <span class="mi">2</span>
-    <span class="mi">3</span>
-    <span class="mi">4</span>
-    <span class="mi">5</span>
-    <span class="mi">6</span>
-    <span class="mi">7</span>
-    <span class="mi">8</span>
-    <span class="mi">9</span>
-    <span class="o">&gt;&gt;&gt;</span>
+    0
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    &gt;&gt;&gt;
 </code></pre></div>
 
 <h2>The longer story</h2>

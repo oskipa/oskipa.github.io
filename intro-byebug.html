@@ -50,21 +50,21 @@
 
 <h2>Setting a breakpoint and starting a session</h2>
 <p>To add the point where byebug will start the session in your code, essentially, the breakpoint, you type the method "byebug" in your code. If your code looks like this,</p>
-<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">my_awesome_function</span><span class="ss">()</span>
-  <span class="nv">process</span>
-  <span class="nv">log</span>
-<span class="k">end</span>
+<div class="highlight"><pre><span></span><code>def my_awesome_function()
+  process
+  log
+end
 </code></pre></div>
 
 <p>You would set the breakpoint like this</p>
-<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">my_awesome_function</span><span class="ss">()</span>
-  <span class="nv">byebug</span>
-  <span class="nv">process</span>
-  <span class="nv">log</span>
-<span class="k">end</span>
+<div class="highlight"><pre><span></span><code>def my_awesome_function()
+  byebug
+  process
+  log
+end
 </code></pre></div>
 
-<p>If you are running your code directly, the running should stop when your code reaches the line with byebug. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.</p>
+<p>If you are running your code directly, the process should stop when your code reaches the line with <code>byebug</code>. If you are using something like foreman, then you have the option to connect to a sockets session on another terminal tab.</p>
 <h2>The debugger screen</h2>
 <p>Once byebug starts its session, you will see the debugger screen. This screen will give you the file name, and then some lines of the code. There will be a arrow showing you the current place where the code execution has stopped.</p>
 <p>To step over the next line of code, enter "next".</p>

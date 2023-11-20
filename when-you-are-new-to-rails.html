@@ -40,7 +40,7 @@
   <h3>Some pointers for developers new to Rails</h3>
   <label>09 March, 2020</label>
   <p>Are you an experienced developer? Have you been tasked to help out in a Rails project? Do you feel confused because there are no 'require' statements and variables seem to mushroom out of nowhere? Does Rails seem too magical to you? </p>
-<p>If this describes you, don't worry. I have gathered this quick list of pointers to help you find your bearing. Hopefully they will make Rails more logical and less magic.</p>
+<p>If this describes you, don't worry. I have gathered this quick list of pointers to help you find your bearing. Hopefully they will make Rails more logical and less magical.</p>
 <h3>Rails loads all objects found under the 'app' directory into the global scope</h3>
 <p>This is why you don't see 'require' statements. Most objects are available in the global scope.</p>
 <p>Why? Think of it as a radical kind of Don't Repeat Yourself (DRY). Whether you think this is a good idea doesn't matter. This is a Rails convention.</p>
@@ -72,7 +72,7 @@ batman.methods.sort
 <p>Still mystified or confused?</p>
 <p>Read <a href="https://github.com/rails/rails">Rails' source code</a>. It is recommended for you to look the source code up if all of the above have failed. Read it if you are curious on how something is put together. Read it if you need to check exactly when some feature was added or removed. </p>
 <h3>Use a debugger</h3>
-<p>Ruby has two popular command line debuggers, Pry and Byebug. When you add their name your code, it will open an interactive, command line  shell where you can inspect values, query the variables available in the global space, and do a lot more. </p>
+<p>Ruby has two popular command line debuggers, Pry and Byebug. When you add their names into your code, it will open an interactive, command line  shell where you can inspect values, query the variables available in the global space, and do a lot more. </p>
 <p>If you have learned about Ruby's method dispatch and Ruby's reflection methods, the debugger will help you understand how everything gets put together.</p>
 <p>The debugger is perhaps the best tool to understand Rails: use it.</p>
 <p>Identify which debugger your app is using. Learn how to use it, and learn some of its commands. If there isn't one installed, spend some time to get Byebug set up.</p>

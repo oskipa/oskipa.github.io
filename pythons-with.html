@@ -42,9 +42,9 @@
   <h3>The point</h3>
 <p>The "with" statement can be thought as syntactical sugar that replaces a try: except: finally: block with a cleaner syntax.</p>
 <p>Let's focus on the practical application of with. This is an example taken from the PEP. You will see how clear the code is. What you see is your actual code rather than ceremonial templates.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nv">with</span> <span class="nv">opened</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">/etc/passwd</span><span class="s2">&quot;</span><span class="ss">)</span> <span class="nv">as</span> <span class="nv">f</span>:
-      <span class="k">for</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">f</span>:
-          <span class="nv">print</span> <span class="nv">line</span>.<span class="nv">rstrip</span><span class="ss">()</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nv">with</span><span class="w"> </span><span class="nv">opened</span><span class="ss">(</span><span class="s2">&quot;/etc/passwd&quot;</span><span class="ss">)</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">f</span>:
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">f</span>:
+<span class="w">          </span><span class="nv">print</span><span class="w"> </span><span class="nv">line</span>.<span class="nv">rstrip</span><span class="ss">()</span>
 </code></pre></div>
 
 <p>This would be equivalent to something like</p>

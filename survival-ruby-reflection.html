@@ -44,8 +44,8 @@
 <p>This will give you a string representation of the object. Very useful when programming and debugging.</p>
 <p>my_object.respond_to?(:method_name)</p>
 <p>This one will tell you if the object can respond to a method. So Let's say that you want to call <code>batman.swing</code>. But can you? You can query the object with <code>batman.respond_to?(:swing)</code> and it will answer with true or false. Notice how you need to use the colon for the method name when sent as a parameter.</p>
-<p>my_object.methods
-   (my_object.methods - Object.new.methods).sort</p>
+<p>my_object.methods</p>
+<p>(my_object.methods - Object.new.methods).sort</p>
 <p>The first one will list all the methods that the object can respond to. Depending on the object, the list can be large. Once you look through them, you will discover that many of the methods were not defined in the class itself.  The last version will remove all of the methods that are inherited by Object, the root parent object that most object descend from.</p>
 <p>my_object.method(:method_name).source_location</p>
 <p>This is perhaps the most useful one when looking for code. This incantation will give you the source location for the method that the object responds to.</p>

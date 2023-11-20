@@ -45,34 +45,34 @@
 <p>Let's use design by contracts as an example.</p>
 <p>The basic idea is that you check conditions before and after calling a function. This is somehting that we can implement easily. </p>
 <p>Let's start with a simple function that we want to add contracts to. Here is a function that adds two unsignged bytes.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">unsigned_byte_sum</span><span class="ss">(</span><span class="nv">a</span>, <span class="nv">b</span><span class="ss">)</span>
-  <span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span>
-<span class="k">end</span>
+<div class="highlight"><pre><span></span><code>def unsigned_byte_sum(a, b)
+  a + b
+end
 </code></pre></div>
 
 <p>Let's add a precondition that the sum should be of integers.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">def</span> <span class="nv">unsigned_byte_sum</span><span class="ss">(</span><span class="nv">a</span>, <span class="nv">b</span><span class="ss">)</span>
-  <span class="nv">unless</span> <span class="nv">a</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nv">b</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> 
-    <span class="nv">raise</span> <span class="s2">&quot;</span><span class="s">Precondition Violation</span><span class="s2">&quot;</span>
-  <span class="k">end</span>
-  <span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span>
-<span class="k">end</span>
+<div class="highlight"><pre><span></span><code>def unsigned_byte_sum(a, b)
+  unless a.is_a?(Integer) &amp;&amp; b.is_a?(Integer) 
+    raise &quot;Precondition Violation&quot;
+  end
+  a + b
+end
 </code></pre></div>
 
 <p>Now let's add a postcondition. Let's say that the return should be an integer that fits within a C byte range. So we need to take the result, do a modulo operation and get a value that fits.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nv">def</span> <span class="nv">unsigned_byte_sum</span><span class="ss">(</span><span class="nv">a</span>, <span class="nv">b</span><span class="ss">)</span>
-    <span class="nv">unless</span> <span class="nv">a</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nv">b</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span>
-      <span class="nv">raise</span> <span class="s2">&quot;</span><span class="s">Precondition Violation</span><span class="s2">&quot;</span>
-    <span class="k">end</span>
+<div class="highlight"><pre><span></span><code>  def unsigned_byte_sum(a, b)
+    unless a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
+      raise &quot;Precondition Violation&quot;
+    end
 
-    <span class="nb">result</span> <span class="o">=</span> <span class="ss">(</span><span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span><span class="ss">)</span> <span class="o">%</span> <span class="mi">256</span>
+    result = (a + b) % 256
 
-    <span class="nv">unless</span> <span class="nb">result</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&gt;=</span> <span class="mi">255</span>
-      <span class="nv">raise</span> <span class="s2">&quot;</span><span class="s">Postcondition Violation</span><span class="s2">&quot;</span>
-    <span class="k">end</span>
+    unless result.is_a?(Integer) &amp;&amp; result &lt;= 0 &amp;&amp; result &gt;= 255
+      raise &quot;Postcondition Violation&quot;
+    end
 
-    <span class="nb">result</span>
-  <span class="k">end</span>
+    result
+  end
 </code></pre></div>
 
 <p>At this point we have done the basics of Design By Contract. Yet looking at it, it is hard to read. We don't have any indicator of what we are doing. Let's abstract the conditional lines.</p>
@@ -83,65 +83,65 @@
     condition do
       a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
     end</p>
-<div class="highlight"><pre><span></span><code><span class="nb">result</span> <span class="o">=</span> <span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span>
+<div class="highlight"><pre><span></span><code>result = a + b
 
-<span class="nv">condition</span> <span class="k">do</span>
-  <span class="nb">result</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&lt;=</span> <span class="mi">127</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">128</span>
-<span class="k">end</span>
+condition do
+  result.is_a?(Integer) &amp;&amp; result &lt;= 127 &amp;&amp; result &gt;= -128
+end
 
-<span class="nb">result</span>
+result
 </code></pre></div>
 
 <p>end</p>
 <p>This is a good step. It is cleaner. I would like to clearly point out when it is a precondition or postcondition. Especially, we want the error message to let us know immediately.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nv">def</span> <span class="nv">pre_condition</span><span class="ss">(</span><span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-      <span class="nv">condition</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Precondition violation</span><span class="s2">&quot;</span>, <span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-  <span class="k">end</span>
+<div class="highlight"><pre><span></span><code>  def pre_condition(&amp;block)
+      condition(&quot;Precondition violation&quot;, &amp;block)
+  end
 
-  <span class="nv">def</span> <span class="nv">post_condition</span><span class="ss">(</span><span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-      <span class="nv">condition</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Postcondition violation</span><span class="s2">&quot;</span>, <span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-  <span class="k">end</span>
-
-
-  <span class="nv">def</span> <span class="nv">condition</span><span class="ss">(</span><span class="nv">raise_message</span>, <span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-      <span class="nv">raise</span> <span class="nv">raise_message</span> <span class="nv">unless</span> <span class="nv">block</span>.<span class="nv">call</span>
-  <span class="k">end</span>
+  def post_condition(&amp;block)
+      condition(&quot;Postcondition violation&quot;, &amp;block)
+  end
 
 
+  def condition(raise_message, &amp;block)
+      raise raise_message unless block.call
+  end
 
-  <span class="nv">def</span> <span class="nv">unsigned_byte_sum</span><span class="ss">(</span><span class="nv">a</span>, <span class="nv">b</span><span class="ss">)</span>
-    <span class="nv">pre_condition</span> <span class="k">do</span>
-      <span class="nv">a</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nv">b</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span>
-    <span class="k">end</span>
 
-    <span class="nb">result</span> <span class="o">=</span> <span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span>
 
-    <span class="nv">post_condition</span> <span class="k">do</span>
-      <span class="nb">result</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&lt;=</span> <span class="mi">127</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">128</span>
-    <span class="k">end</span>
+  def unsigned_byte_sum(a, b)
+    pre_condition do
+      a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
+    end
 
-    <span class="nb">result</span>
-  <span class="k">end</span>
+    result = a + b
+
+    post_condition do
+      result.is_a?(Integer) &amp;&amp; result &lt;= 127 &amp;&amp; result &gt;= -128
+    end
+
+    result
+  end
 </code></pre></div>
 
 <p>This is a lot better. It is clear that we are writing a contract for this function. There is one last item that bothers me, which is having to repeat <code>result</code> a second time. We can make it slightly easier with the following modifications.</p>
-<div class="highlight"><pre><span></span><code>  # <span class="nv">it</span> <span class="nv">will</span> <span class="k">return</span> <span class="nv">the</span> <span class="nb">result</span> <span class="k">if</span> <span class="nv">the</span> <span class="nv">conditions</span> <span class="nv">are</span> <span class="nv">true</span>
-  <span class="nv">def</span> <span class="nv">post_condition</span><span class="ss">(</span><span class="nb">result</span>, <span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-      <span class="nv">condition</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Postcondition violation</span><span class="s2">&quot;</span>, <span class="o">&amp;</span><span class="nv">block</span><span class="ss">)</span>
-      <span class="nb">result</span>
-  <span class="k">end</span>
+<div class="highlight"><pre><span></span><code>  # it will return the result if the conditions are true
+  def post_condition(result, &amp;block)
+      condition(&quot;Postcondition violation&quot;, &amp;block)
+      result
+  end
 
-  <span class="nv">def</span> <span class="nv">unsigned_byte_sum</span><span class="ss">(</span><span class="nv">a</span>, <span class="nv">b</span><span class="ss">)</span>
-    <span class="nv">pre_condition</span> <span class="k">do</span>
-      <span class="nv">a</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nv">b</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span>
-    <span class="k">end</span>
+  def unsigned_byte_sum(a, b)
+    pre_condition do
+      a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
+    end
 
-    <span class="nb">result</span> <span class="o">=</span> <span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span>
+    result = a + b
 
-    <span class="nv">post_condition</span> <span class="nb">result</span> <span class="k">do</span>
-      <span class="nb">result</span>.<span class="nv">is_a</span>?<span class="ss">(</span><span class="nv">Integer</span><span class="ss">)</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&lt;=</span> <span class="mi">127</span> <span class="o">&amp;&amp;</span> <span class="nb">result</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">128</span> 
-    <span class="k">end</span>
-  <span class="k">end</span>
+    post_condition result do
+      result.is_a?(Integer) &amp;&amp; result &lt;= 127 &amp;&amp; result &gt;= -128 
+    end
+  end
 </code></pre></div>
 
 <p>This puts the <code>post_condition</code> at the end, as the last step of the function. I think it is cleaner. You may disagree and choose to skip it.</p>

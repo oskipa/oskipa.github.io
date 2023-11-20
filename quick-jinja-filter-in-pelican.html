@@ -52,17 +52,17 @@
         <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">add_filter</span><span class="p">(</span><span class="n">pelican</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add age_in_days filter to Pelican.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add age_in_days filter to Pelican.&quot;&quot;&quot;</span>
         <span class="n">pelican</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;break&#39;</span><span class="p">:</span> <span class="n">break_text</span><span class="p">})</span>
 
     <span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
-        <span class="sd">&quot;&quot;&quot;Plugin registration.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plugin registration.&quot;&quot;&quot;</span>
         <span class="n">signals</span><span class="o">.</span><span class="n">generator_init</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">add_filter</span><span class="p">)</span>
 </code></pre></div>
 
 <p>After you write that, you add in pelicanconf.py</p>
-<div class="highlight"><pre><span></span><code><span class="nv">PLUGIN_PATH</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">./plugins</span><span class="s2">&quot;</span>]
-<span class="nv">PLUGINS</span> <span class="o">=</span> [<span class="s2">&quot;</span><span class="s">break</span><span class="s2">&quot;</span>]
+<div class="highlight"><pre><span></span><code>PLUGIN_PATH = [&quot;./plugins&quot;]
+PLUGINS = [&quot;break&quot;]
 </code></pre></div>
  </div>
 </div>

@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - article</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/article.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2022-03-02T00:00:00-05:00</updated><entry><title>Your Team is your Village</title><link href="https://oskipa.github.io/team-language-dialects.html" rel="alternate"></link><published>2022-03-02T00:00:00-05:00</published><updated>2022-03-02T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-03-02:/team-language-dialects.html</id><summary type="html">&lt;p&gt;Software has a tech bias. Our culture emphasizes technology while ignoring social dynamics. We choose to lose ourselves in technological details. This gives us the option to ignore the social dynamics. Some of us do it more than others. Our current culture pushes us in that direction.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - article</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/article.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2022-10-17T00:00:00-04:00</updated><entry><title>The meta story of modern software development</title><link href="https://oskipa.github.io/the-meta-story-of-modern-software-development.html" rel="alternate"></link><published>2022-10-17T00:00:00-04:00</published><updated>2022-10-17T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-10-17:/the-meta-story-of-modern-software-development.html</id><summary type="html">&lt;p&gt;tl/dr: Writing software is facing our ignorance and faillability. Our practices mean that we don't know what to do, and when we do, we don't trust ourselves&lt;/p&gt;
+&lt;p&gt;Stories are the main way in which we communicate with each other. We want stories. We want them history, yes, but we …&lt;/p&gt;</summary><content type="html">&lt;p&gt;tl/dr: Writing software is facing our ignorance and faillability. Our practices mean that we don't know what to do, and when we do, we don't trust ourselves&lt;/p&gt;
+&lt;p&gt;Stories are the main way in which we communicate with each other. We want stories. We want them history, yes, but we also want them in video games, business presentation, technical writing. We even prefer code that is written as a story.  Stories are so important that we even have specialists in reading and understanding stories: literary criticism. And literary criticism has many techniques on how to understand stories.&lt;/p&gt;
+&lt;p&gt;What I want to do is to use those techniques to understand our modern software practices. &lt;/p&gt;
+&lt;p&gt;To get there, I want to do a quick summary of some literary criticism techniques and then apply them to software development. We will examine two stories. First, we will follow a fairy tale plot, which will illustrate the literary criticism technique we will use to analyze our software development practices.&lt;/p&gt;
+&lt;p&gt;As children, we learn to follow stories as a sequence of events. You see this behavior in the playground, where the kid will tell you the blow-by-blow story.  Hansel and Gretel are guided into the woods. They are giving a loave of bread. They use it to drop a trail so that they can go home. When they try to go back, birds have eaten the trail. They wander alone, hungry, in the forest until they find a gingerbread house. There, a kind old lady brings them in and offers to feed them. Once inside she puts them in cages, so that she can eat them. Gretel pushes woman into the fire. After rescuing Hans, they find the woman's money. With the money, they can safely return home. &lt;/p&gt;
+&lt;p&gt;As we get older, we learn to find identify and share the plot. "Children run into danger, and overcome it." &lt;/p&gt;
+&lt;p&gt;Sometime in middleschool or highschool we learn that stories can have some deeper meaning. That characters and episodes can stand for something else. We use what is found in the story as symbols to find some greater meaning, its greater themes. Hansel and Gretel is a lot about hunger. Hunger is usually associated with poverty. Another theme is how the poor are easily exploited with visions of riches, when in reality the person posing as a kind person attempts to exploit them. &lt;/p&gt;
+&lt;p&gt;In university we will be taught to go one step further. We are told that this simple comic book stories is telling another story silently. One that is told by what is not in the story. What are the assumptions that are not discussed, which do not rise as a problem the characters have to solve?&lt;/p&gt;
+&lt;p&gt;This question forces us to think a little. A sequence of events requires memory. A plot requires being able to summarize. Spotting out themes requires us to think about the story and create a more abstract story about it. Finding hidden assumptions require us to look at the negative space in a the story. What is not there. We need to outline that negative space.&lt;/p&gt;
+&lt;p&gt;Let's try it with Hansel and Gretal. The parents are abanding their children, against their wishes, and there isn't much talk about that. The audience listening to Hansel and Gretal must have known of extreme poverty and hunger. The gingerbread house is a trap to lure abandoned children. So there must have been a lot of parents leaving their children in the forest. So it isn't that Hansel and Gretal's parents are uniquely poor; there must have been a wide hunger going on at the time. There is another unsaid fact about the story. The parents don't ask for food from neighbors. They don't see help from local government. They don't go to a church for help. Their only option is leaving them alone in the forest.  &lt;/p&gt;
+&lt;p&gt;Now that we have the outlines, we can tell this greater story. Hansel and Gretal tells about deep poverty and hunger that is tolerated in their society. No one can help. The ones who appear to help, are trying to harm you.  &lt;/p&gt;
+&lt;p&gt;Now that we have either learned or reviewed the technique, we can apply to software development. We will go through the same stages: give a sequential narrative, give the plot, find themes, and then find the negative space narrative.&lt;/p&gt;
+&lt;p&gt;Modern software development is born out of the frustrations of 20th century waterfall process. There was a lot of specs and documents written that no one read. The development cycles were long, taking months, sometimes years. A team of architects would write specs, give these to software developers who would write code, they would give it to quality assurance to test and assert that the code was written to spec, and then it was presented to the client. The software dilevered often wasn't what they wanted in the first place or they had changed their mind. Most software projects failed to deliver a working product.&lt;/p&gt;
+&lt;p&gt;Then came Agile. With Agile, we got rid of documentation. We got rid of complex architectural systems. We work in short prints lasting 2 weeks each. We delivery often. We write a lot of tests. We use typing. We use scrum and kanban to guide our practices. Clients can see what we are doing and accept the directly or change it early on.&lt;/p&gt;
+&lt;p&gt;The plot of the story is that we gave up a highly bureaucratic process that ended up with a lot of failed projects for a spunky, fast, iterative process that allows for quick feedback.&lt;/p&gt;
+&lt;p&gt;Let's explore the themes. The first one is speed. Software developers are working faster because we are focusing on the right things. We avoid work that is not necessary, such as creating extensive requirements and documentations. We have infrastructure that allows for continuous integretation and deployment. This increase speed because we can quickly check that our changes can be merged along, a usually slow and difficult process. Continous deployments allows for quick feedback, either from clients or performance.&lt;br&gt;
+Another theme is adaptabilty. This is a reality in some teams and an aspiration in others. The ideal is that teams are constantly thinking about the process. Identifying what can be changed and improved. Acknowleding what is working.&lt;/p&gt;
+&lt;p&gt;Currently there are people, some of them the ones that brought agile into software development, who are criticizing how agile has been implemented. Yet their main criticism is usually that the spirit of continuous improvement is not followed. Like mystics, they denouce the rituals and demand the deep, spiritual following of the spirit of the teaching, not its forms.&lt;/p&gt;
+&lt;p&gt;Now let's get to the point of this piece. Let's outline the negative space from this story.&lt;/p&gt;
+&lt;p&gt;We need frequent feedback from the client. Why? Usually this happens because it is well known that clients may have a need, but they don't know what actually need. Or they can express it. Or they can only express it once they see a mock up design, or a working prototype, or a delivered product. Frequent feedback is meant to guard developers from the client not knowing.&lt;/p&gt;
+&lt;p&gt;There is an emphasis on speed. Why? Software development is slow. After decades of attempting to turn it into something akin to building construction, we keep finding that it doesn't work like that. Clients not knowing what they want or how to express their needs is a big reason for the slowness. But even straightforward changes often take a lot longer than we expect. Software development often involves learning. At its core, we are learning about a business problem and solving it within our existing solutions. Learning is slow. It gets worse if while we are solving a problem we are learning a new technology. Learning becomes slower. Our story emphasizes speed because we know how slow writing software is.&lt;/p&gt;
+&lt;p&gt;We talk a lot about tests and their benefits. They catch early bugs. They guide design. They are useful to catch unintentional bugs while creating other features. But why? We know that we make mistakes. A lot of mistakes. Software development is, to a large extent, of getting things wrong and slowly removing errors until we have a working program. This is perhaps one of aspects of programming that many people find difficut: we are in a constant state of getting the feedback that we are wrong.&lt;/p&gt;
+&lt;p&gt;The modern discussion of static types are a variation on tests. Proponents say that it is imperitive that a compiler must tease out type errors.&lt;/p&gt;
+&lt;p&gt;Now we can put together a full narrative.&lt;/p&gt;
+&lt;p&gt;Software development is the process where we don't know what we want and we don't trust ourselves of doing well.&lt;/p&gt;
+&lt;p&gt;In stronger words, we know that we are ignorant and incompentent. 
+In terms of ignorance, not knowing what we want, this may be unsolvale problem. There have been many attempts to solve it. We had tried to solve it via extensive requirements and legal contracts, where we attempt to outline what we need to do. Modern smart contracts attempt a similar way to tease out ambiguity. All of these attempts fail. It is a basic problem of communication, limited knowledge, and changing opinions. People can be poor at communicating. Or after creating the requirements, we discover something new that makes us change our requirements. Or the client could have changed their mind. Frequent feedback from the client may be the only way to solve this issue.&lt;/p&gt;
+&lt;p&gt;To our credit, we have tried our best to solve these two problems. To our despair, what we can do can be limited. We still try our best, though. &lt;/p&gt;</content><category term="article"></category><category term="software-engineering"></category><category term="culture"></category><category term="philosophy"></category><category term="linguistics"></category></entry><entry><title>The social context of technology work</title><link href="https://oskipa.github.io/social-tech.html" rel="alternate"></link><published>2022-03-02T00:00:00-05:00</published><updated>2022-03-02T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-03-02:/social-tech.html</id><summary type="html">&lt;p&gt;Software has a tech bias. Our culture emphasizes technology while ignoring social dynamics. We choose to lose ourselves in technological details. This gives us the option to ignore the social dynamics. Some of us do it more than others. Our current culture pushes us in that direction.&lt;/p&gt;
 &lt;p&gt;This bias creates …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Software has a tech bias. Our culture emphasizes technology while ignoring social dynamics. We choose to lose ourselves in technological details. This gives us the option to ignore the social dynamics. Some of us do it more than others. Our current culture pushes us in that direction.&lt;/p&gt;
-&lt;p&gt;This bias creates a problem for developer teams. It distorts our perceptions of reality. Because of this distortion, teams will often talk about cultural issues in technical language. Ironically, it often leads to making the wrong technical decisions, because social decisions are cloaked as technical discussions.&lt;/p&gt;
-&lt;p&gt;Let me illustrate with a common example. A new CTO joins a company. The company is currently using Ruby on Rails to develop the main product. The CTO believes that Java is a superior technology. He can point out at benchmark tests matching Ruby vs Java, showing that Java is faster. He can point out that Java has true threads, unlike Ruby, who has a workaround to simulates threads. He also says that it is easier to hire Java developers than Ruby developers.&lt;/p&gt;
+&lt;p&gt;This bias creates a problem for development teams. It distorts our perceptions of reality. Because of this distortion, teams will often talk about cultural issues as technical problems. Ironically, it often leads to making the wrong technical decisions, because we are addressing the wrong thing.&lt;/p&gt;
+&lt;p&gt;Let me illustrate with an example. A new CTO joins a company. The company is currently using Ruby on Rails to develop the main product. The CTO believes that Java is a superior technology. He can point out at benchmark tests matching Ruby vs Java, showing that Java is faster. He can point out that Java has true threads, unlike Ruby, who has a workaround to simulates threads. He also says that it is easier to hire Java developers than Ruby developers.&lt;/p&gt;
 &lt;p&gt;Within the context of this discussion, Java is the superior technology. It follows that transitioning to Java is the best decision.&lt;/p&gt;
-&lt;p&gt;I would wager to say that, in most cases, this is a bad technology and business decision. A top-down change of languages implies a rewrite. Rewrites are notorious for being expensive, take longer than expensive, and for failing. Your team goes from having 100 years of experience as Ruby developers to go down to 0 years of experience. Everyone has to be trained into the new language, which requires training expenses, either explicitly by sending people to seminars and courses, or implicitly, via slower development cycles.&lt;/p&gt;
+&lt;p&gt;I would wager to say that, in most cases, this is a bad technology and business decision. A top-down change of languages implies a rewrite. Rewrites are notorious for being expensive, take longer than expected, and for failing. Your team goes from having 100 years of experience as Ruby developers to go down to 0 years of experience as Java ones. Everyone has to be trained into the new language, which requires training expenses, either explicitly by sending people to seminars and courses, or implicitly, via slower development cycles.&lt;/p&gt;
 &lt;p&gt;The team also loses its programming language dialect. A dialect is a social variation of a language. Natural languages, like English, Spanish, Korean, have regional dialects. As anyone who has studied Spanish knows, the accent, the grammar, and the vocabulary used in Spain, is different from the one spoken in Mexico or Bolivia. Most language learners are aware of the existence of dialects.&lt;/p&gt;
 &lt;p&gt;Computer languages also have dialects, yet we don't fully acknowledge them. We are aware of them, yet the technical bias tends to push our discussions of dialects as style or correctness discussions. Another way to talk about it is when we say that we need some time to ramp up on the codebase, even when we already know the language.&lt;/p&gt;
-&lt;p&gt;Dialects are a social phenomenon. We need to discuss my team's python dialect the same way we talk about Canadian English versus American English.&lt;/p&gt;
-&lt;p&gt;Dialects allow teams to be highly productive. Everyone is actually writing the same language.&lt;/p&gt;
 &lt;p&gt;There is no such thing as readable code. There is only readable code in the context of a specific team. What is readable an understandable in one team can be this weird, unintelligable mess for someone else.&lt;/p&gt;
-&lt;p&gt;Culture matters as well. &lt;/p&gt;
-&lt;p&gt;This also shows what the problem of "best practices" entails. It needs the social context for us to decide whether the practice makes sense in this team or not.&lt;/p&gt;
-&lt;p&gt;Some of you would say that switching the company language hides some other motives. Maybe the CTO's real goal is for all of the current team to leave, so that he can hand-pick a new team.  &lt;/p&gt;</content><category term="article"></category><category term="software-engineering"></category><category term="cluture"></category></entry><entry><title>It doesn't deserve it</title><link href="https://oskipa.github.io/it-doesnt-deserve-it.html" rel="alternate"></link><published>2022-01-13T00:00:00-05:00</published><updated>2022-01-13T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-13:/it-doesnt-deserve-it.html</id><summary type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
+&lt;p&gt;This also shows what the problem of "best practices" entails. It needs the social context for us to decide whether the practice makes sense in a team. The Toyota method works well in Japan. It famously fails in most implementations in the U.S. There are many reasons for this, but let me share two cultural reasons for why it fails. The first one is that high quality is a value that only some American managers hold. It is just as common to run into business leaders that prefer cheaper prices for their products. Or the ones that demand planned obsolescent. The second reason is that the Toyota executies trust front-line workers to stop the production line. American manager usually don't trust their employees to that extent. On the contrary, stories about front-line employees bringing up problems, only to be ignored by management are quite common.&lt;/p&gt;
+&lt;p&gt;I have gone this far giving examples without a definition for social context. Now that you have seen examples, I am ready to offer one. The social context includes the cultural backgrond of the founders, the personality of the leadership, the amount of money the company has, how many employees there are, and the personalities of the individuals involved. All of these should be consciously taken into consideration when making technical decisions, like adopting kanban, building a QA team, using kubernetes, or picking Erlang to build the product.&lt;/p&gt;
+&lt;p&gt;At the same time, I understand that this is too much to think about at once. So I offer a shortcut that can help us to bring the social context into technical decisions.&lt;/p&gt;
+&lt;p&gt;The next time someone suggests to adopt the next shiny process, ask "would it make sense to do it here right now?"&lt;/p&gt;</content><category term="article"></category><category term="software-engineering"></category><category term="culture"></category></entry><entry><title>It doesn't deserve it</title><link href="https://oskipa.github.io/it-doesnt-deserve-it.html" rel="alternate"></link><published>2022-01-13T00:00:00-05:00</published><updated>2022-01-13T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2022-01-13:/it-doesnt-deserve-it.html</id><summary type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
 &lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A coworker from sales asks you if you can help her manage her list of potential clients.&lt;/p&gt;
 &lt;p&gt;You could start by designing a new kubernetes pod that includes Postgres as the database, Redis for caching, RabbitMQ for the queuing system. One container will run Node.js to serve the React user interface. For the backend, you are wondering if you should code it in .net core or use this as an opportunity to write that first Rust application. You will most likely put it in AWS, but you are open to Azure. The mobile app will be developed using Kotlin for Android and Swift for iOS.&lt;/p&gt;
 &lt;p&gt;Or you could spend 15 minutes showing her how to use Google contacts.&lt;/p&gt;
@@ -37,34 +64,34 @@
 &lt;p&gt;Let's use design by contracts as an example.&lt;/p&gt;
 &lt;p&gt;The basic idea is that you check conditions before and after calling a function. This is somehting that we can implement easily. &lt;/p&gt;
 &lt;p&gt;Let's start with a simple function that we want to add contracts to. Here is a function that adds two unsignged bytes.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;def unsigned_byte_sum(a, b)
+  a + b
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Let's add a precondition that the sum should be of integers.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-  &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
-    &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;def unsigned_byte_sum(a, b)
+  unless a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer) 
+    raise &amp;quot;Precondition Violation&amp;quot;
+  end
+  a + b
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now let's add a postcondition. Let's say that the return should be an integer that fits within a C byte range. So we need to take the result, do a modulo operation and get a value that fits.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  def unsigned_byte_sum(a, b)
+    unless a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
+      raise &amp;quot;Precondition Violation&amp;quot;
+    end
 
-    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;256&lt;/span&gt;
+    result = (a + b) % 256
 
-    &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;255&lt;/span&gt;
-      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition Violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
+    unless result.is_a?(Integer) &amp;amp;&amp;amp; result &amp;lt;= 0 &amp;amp;&amp;amp; result &amp;gt;= 255
+      raise &amp;quot;Postcondition Violation&amp;quot;
+    end
 
-    &lt;span class="nb"&gt;result&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+    result
+  end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At this point we have done the basics of Design By Contract. Yet looking at it, it is hard to read. We don't have any indicator of what we are doing. Let's abstract the conditional lines.&lt;/p&gt;
@@ -75,65 +102,65 @@
     condition do
       a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
     end&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;result = a + b
 
-&lt;span class="nv"&gt;condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+condition do
+  result.is_a?(Integer) &amp;amp;&amp;amp; result &amp;lt;= 127 &amp;amp;&amp;amp; result &amp;gt;= -128
+end
 
-&lt;span class="nb"&gt;result&lt;/span&gt;
+result
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;end&lt;/p&gt;
 &lt;p&gt;This is a good step. It is cleaner. I would like to clearly point out when it is a precondition or postcondition. Especially, we want the error message to let us know immediately.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;pre_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Precondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  def pre_condition(&amp;amp;block)
+      condition(&amp;quot;Precondition violation&amp;quot;, &amp;amp;block)
+  end
 
-  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-
-
-  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;raise_message&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nv"&gt;raise&lt;/span&gt; &lt;span class="nv"&gt;raise_message&lt;/span&gt; &lt;span class="nv"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;block&lt;/span&gt;.&lt;span class="nv"&gt;call&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+  def post_condition(&amp;amp;block)
+      condition(&amp;quot;Postcondition violation&amp;quot;, &amp;amp;block)
+  end
 
 
+  def condition(raise_message, &amp;amp;block)
+      raise raise_message unless block.call
+  end
 
-  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
 
-    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
 
-    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
+  def unsigned_byte_sum(a, b)
+    pre_condition do
+      a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
+    end
 
-    &lt;span class="nb"&gt;result&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+    result = a + b
+
+    post_condition do
+      result.is_a?(Integer) &amp;amp;&amp;amp; result &amp;lt;= 127 &amp;amp;&amp;amp; result &amp;gt;= -128
+    end
+
+    result
+  end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This is a lot better. It is clear that we are writing a contract for this function. There is one last item that bothers me, which is having to repeat &lt;code&gt;result&lt;/code&gt; a second time. We can make it slightly easier with the following modifications.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  # &lt;span class="nv"&gt;it&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;conditions&lt;/span&gt; &lt;span class="nv"&gt;are&lt;/span&gt; &lt;span class="nv"&gt;true&lt;/span&gt;
-  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;post_condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;result&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nv"&gt;condition&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Postcondition violation&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;block&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-      &lt;span class="nb"&gt;result&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  # it will return the result if the conditions are true
+  def post_condition(result, &amp;amp;block)
+      condition(&amp;quot;Postcondition violation&amp;quot;, &amp;amp;block)
+      result
+  end
 
-  &lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;unsigned_byte_sum&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;, &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-    &lt;span class="nv"&gt;pre_condition&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-      &lt;span class="nv"&gt;a&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;end&lt;/span&gt;
+  def unsigned_byte_sum(a, b)
+    pre_condition do
+      a.is_a?(Integer) &amp;amp;&amp;amp; b.is_a?(Integer)
+    end
 
-    &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;
+    result = a + b
 
-    &lt;span class="nv"&gt;post_condition&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-      &lt;span class="nb"&gt;result&lt;/span&gt;.&lt;span class="nv"&gt;is_a&lt;/span&gt;?&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Integer&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;127&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;result&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt; 
-    &lt;span class="k"&gt;end&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+    post_condition result do
+      result.is_a?(Integer) &amp;amp;&amp;amp; result &amp;lt;= 127 &amp;amp;&amp;amp; result &amp;gt;= -128 
+    end
+  end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This puts the &lt;code&gt;post_condition&lt;/code&gt; at the end, as the last step of the function. I think it is cleaner. You may disagree and choose to skip it.&lt;/p&gt;
@@ -168,7 +195,7 @@
 &lt;p&gt;DotNet's MVC and PHP's CodeIgniter are two frameworks that meet most of these criteria. Elixir's Phoenix seems to fit it too, but I need more experience working with it to make a stronger statement.&lt;/p&gt;
 &lt;p&gt;If you find yourself fighting too much with the framework, it may be an indication that you may move onto something else. It may be faster and easier to write something yourself. Toss it.&lt;/p&gt;</content><category term="article"></category><category term="software engineering"></category><category term="programming"></category></entry><entry><title>Listen instead of getting buy in</title><link href="https://oskipa.github.io/listen-instead-of-getting-buy-in.html" rel="alternate"></link><published>2020-05-06T00:00:00-04:00</published><updated>2020-05-06T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-05-06:/listen-instead-of-getting-buy-in.html</id><summary type="html">&lt;p&gt;I learned recently that product owners and managers are trained to seek team members to buy-in into new process, goals, or plans. This was an unfortunate word selection. It undermines building trust in a team. It frames the relationship between managers and workers the wrong way.&lt;/p&gt;
 &lt;p&gt;"Buy-in" sets a narrative …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I learned recently that product owners and managers are trained to seek team members to buy-in into new process, goals, or plans. This was an unfortunate word selection. It undermines building trust in a team. It frames the relationship between managers and workers the wrong way.&lt;/p&gt;
-&lt;p&gt;"Buy-in" sets a narrative where the manager wants something that the workers are resistant to do. The goal of the manager becomes getting that buy-in, that verbal agreement. The manager becomes a high pressure salesman. Workers are reluctant customers. A successful manager, like a high pressure salesman, making that sale no matter what. In high pressure sales, you will ignore objections. All you want is an explicit or implicit yes, even if it is not real. &lt;/p&gt;
+&lt;p&gt;"Buy-in" sets a narrative where the manager wants something that the workers are resistant to do. The goal of the manager becomes getting that buy-in, that verbal agreement. The manager becomes a high pressure salesman. Workers are reluctant customers. A successful manager, like a high pressure salesman,is meant to make that sale, no matter what. In high pressure sales, you will ignore objections. All you want is an explicit or implicit yes, even if it is not real. &lt;/p&gt;
 &lt;p&gt;A better approach is to listen. Everyone wants to succeed. As a manager you may have a vision to implement, either personal or given by your supervisors. Your workers know the obstacles that are in the way to get that done.&lt;/p&gt;
 &lt;p&gt;Let me give you an example. Upper management learned about threaded programming. They want the project to use threaded programming. It should make response time faster. Fair enough. You go to your team and you announce this. The team tells you that it is not a good idea because the legacy project is using Ruby, and Ruby's thread model is not robust.&lt;/p&gt;
 &lt;p&gt;If the manager has a buy-in mentality, they will think that the workers are stuck in their ways. That they don't want to adapt to new ideas. The manager's task now is somehow to win them over and agree to do the task that must be done. It sets an adversarial relation with the works. It is easy to ignore what the workers are telling you because you need that win. The manager does some googling and finds that there are threads in Ruby. The devs must be ignorant and are too prideful to accept that. When an unrelated PR comes, he asks for the solution to be using threads. &lt;/p&gt;
@@ -192,17 +219,17 @@
 &lt;li&gt;Write the name&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;We write the function with its name. Nothing more.  Notice I am not writing the body or the parameters. Only write the name so that it is syntactically correct in the language that you are working on. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;def create_post()
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Write a one-sentence comment describing the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This comment documents what our &lt;em&gt;intent&lt;/em&gt; for the function is. When designing a function, it helps us focus on what we are trying to write. If you can't express it in words, you can't express it in code.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;creates&lt;/span&gt; &lt;span class="nv"&gt;new&lt;/span&gt; &lt;span class="nv"&gt;post&lt;/span&gt;
-&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; creates new post
+def create_post()
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
@@ -210,30 +237,30 @@
 &lt;/ol&gt;
 &lt;p&gt;Even if you work with a dynamic language you are working with types. The point of this step is to explicitly think about what is your input and what will be your output. Statically typed languages will enforce your type signature for you. If you are using a dynamic language, you need this information to know what is supposed to be happening.&lt;/p&gt;
 &lt;p&gt;The book uses the following type format. You make a list of each parameter followed by an arrow (-&amp;gt;), ending with the return type. This will be familiar to people who have studied Haskell or OCaml. If the return is void, you can say "void" or "unit".&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# creates new post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="cp"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# creates new post&lt;/span&gt;
+&lt;span class="cp"&gt;# Hash -&amp;gt; Unit  &lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="kd"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This is an example using more idiomatic Ruby.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Write an example &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Writing an example of how to use your function helps you further design it. It is also one of the most helpful documentation you can add. Most people will often google for examples. Include them.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog_parameters&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;parameters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:blog&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;:blog&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Notice how I changed the name of the parameter. I did this so that the example would be less confusing since I wanted to pass 'params[:blog]'. Thanks to writing the example, now I have a more explicit name for my function signature.&lt;/p&gt;
@@ -248,30 +275,30 @@
     # Example: create_post(params[:blog])
     def create_post(blog_parameters)
     end&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;testing&lt;/span&gt; &lt;span class="nv"&gt;correct&lt;/span&gt; &lt;span class="nv"&gt;behavior&lt;/span&gt; &lt;span class="nv"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;happy&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt;
-# &lt;span class="nv"&gt;The&lt;/span&gt; &lt;span class="nv"&gt;test&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;ruby&lt;/span&gt; &lt;span class="nv"&gt;pseudo&lt;/span&gt; &lt;span class="nv"&gt;code&lt;/span&gt;
-&lt;span class="nv"&gt;def&lt;/span&gt; &lt;span class="nv"&gt;test_creation&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;
-  # &lt;span class="nv"&gt;setup&lt;/span&gt;
-  &lt;span class="nb"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; {&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;body&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello world!&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;author&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Joe Smith&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; }
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; testing correct behavior or happy path
+&lt;span class="gh"&gt;#&lt;/span&gt; The test is ruby pseudo code
+def test_creation()
+  # setup
+  params = {title: &amp;quot;hello&amp;quot;, body: &amp;quot;hello world!&amp;quot;, author: &amp;quot;Joe Smith&amp;quot; }
 
-  # &lt;span class="nv"&gt;exercise&lt;/span&gt;
-  &lt;span class="nv"&gt;create_post&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;params&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  # exercise
+  create_post(params)
 
-  # &lt;span class="nv"&gt;verification&lt;/span&gt;
-  &lt;span class="nv"&gt;record&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ORM&lt;/span&gt;.&lt;span class="nv"&gt;find_by&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;: &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;hello&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; 
-  &lt;span class="nv"&gt;assert&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;record&lt;/span&gt;.&lt;span class="nv"&gt;nil&lt;/span&gt;? 
-&lt;span class="k"&gt;end&lt;/span&gt;
+  # verification
+  record = ORM.find_by(title: &amp;quot;hello&amp;quot;) 
+  assert !record.nil? 
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This made us discover that we we have three required parameters. Now we can change our function again with this new information.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now we can think about input violation and ranges. How short can a title be? And how short can a body be? What should happen we send a null value for author? What if the inputs are too big? Is it okay to have no author?&lt;/p&gt;
@@ -280,16 +307,16 @@
 &lt;li&gt;Write the body of the function&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now we are ready to write the body of the function. The process has made it clear what we need to do. Now we can execute.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;creates&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create_post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Blog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;save&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;ORM&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;save&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In the book they have created a whole library of templates for the find of work it is needed to do. Some functions require looping, so they have template looping code. If you have time, explore that library. It most likely will speed up coding if you think in those terms.&lt;/p&gt;</content><category term="article"></category></entry></feed>

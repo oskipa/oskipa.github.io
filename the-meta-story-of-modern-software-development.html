@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>The meta story of modern software development</h2>
+  <h3>How we don't know and we don't trust ourselves</h3>
+  <label>17 October, 2022</label>
+  <p>tl/dr: Writing software is facing our ignorance and faillability. Our practices mean that we don't know what to do, and when we do, we don't trust ourselves</p>
+<p>Stories are the main way in which we communicate with each other. We want stories. We want them history, yes, but we also want them in video games, business presentation, technical writing. We even prefer code that is written as a story.  Stories are so important that we even have specialists in reading and understanding stories: literary criticism. And literary criticism has many techniques on how to understand stories.</p>
+<p>What I want to do is to use those techniques to understand our modern software practices. </p>
+<p>To get there, I want to do a quick summary of some literary criticism techniques and then apply them to software development. We will examine two stories. First, we will follow a fairy tale plot, which will illustrate the literary criticism technique we will use to analyze our software development practices.</p>
+<p>As children, we learn to follow stories as a sequence of events. You see this behavior in the playground, where the kid will tell you the blow-by-blow story.  Hansel and Gretel are guided into the woods. They are giving a loave of bread. They use it to drop a trail so that they can go home. When they try to go back, birds have eaten the trail. They wander alone, hungry, in the forest until they find a gingerbread house. There, a kind old lady brings them in and offers to feed them. Once inside she puts them in cages, so that she can eat them. Gretel pushes woman into the fire. After rescuing Hans, they find the woman's money. With the money, they can safely return home. </p>
+<p>As we get older, we learn to find identify and share the plot. "Children run into danger, and overcome it." </p>
+<p>Sometime in middleschool or highschool we learn that stories can have some deeper meaning. That characters and episodes can stand for something else. We use what is found in the story as symbols to find some greater meaning, its greater themes. Hansel and Gretel is a lot about hunger. Hunger is usually associated with poverty. Another theme is how the poor are easily exploited with visions of riches, when in reality the person posing as a kind person attempts to exploit them. </p>
+<p>In university we will be taught to go one step further. We are told that this simple comic book stories is telling another story silently. One that is told by what is not in the story. What are the assumptions that are not discussed, which do not rise as a problem the characters have to solve?</p>
+<p>This question forces us to think a little. A sequence of events requires memory. A plot requires being able to summarize. Spotting out themes requires us to think about the story and create a more abstract story about it. Finding hidden assumptions require us to look at the negative space in a the story. What is not there. We need to outline that negative space.</p>
+<p>Let's try it with Hansel and Gretal. The parents are abanding their children, against their wishes, and there isn't much talk about that. The audience listening to Hansel and Gretal must have known of extreme poverty and hunger. The gingerbread house is a trap to lure abandoned children. So there must have been a lot of parents leaving their children in the forest. So it isn't that Hansel and Gretal's parents are uniquely poor; there must have been a wide hunger going on at the time. There is another unsaid fact about the story. The parents don't ask for food from neighbors. They don't see help from local government. They don't go to a church for help. Their only option is leaving them alone in the forest.  </p>
+<p>Now that we have the outlines, we can tell this greater story. Hansel and Gretal tells about deep poverty and hunger that is tolerated in their society. No one can help. The ones who appear to help, are trying to harm you.  </p>
+<p>Now that we have either learned or reviewed the technique, we can apply to software development. We will go through the same stages: give a sequential narrative, give the plot, find themes, and then find the negative space narrative.</p>
+<p>Modern software development is born out of the frustrations of 20th century waterfall process. There was a lot of specs and documents written that no one read. The development cycles were long, taking months, sometimes years. A team of architects would write specs, give these to software developers who would write code, they would give it to quality assurance to test and assert that the code was written to spec, and then it was presented to the client. The software dilevered often wasn't what they wanted in the first place or they had changed their mind. Most software projects failed to deliver a working product.</p>
+<p>Then came Agile. With Agile, we got rid of documentation. We got rid of complex architectural systems. We work in short prints lasting 2 weeks each. We delivery often. We write a lot of tests. We use typing. We use scrum and kanban to guide our practices. Clients can see what we are doing and accept the directly or change it early on.</p>
+<p>The plot of the story is that we gave up a highly bureaucratic process that ended up with a lot of failed projects for a spunky, fast, iterative process that allows for quick feedback.</p>
+<p>Let's explore the themes. The first one is speed. Software developers are working faster because we are focusing on the right things. We avoid work that is not necessary, such as creating extensive requirements and documentations. We have infrastructure that allows for continuous integretation and deployment. This increase speed because we can quickly check that our changes can be merged along, a usually slow and difficult process. Continous deployments allows for quick feedback, either from clients or performance.<br>
+Another theme is adaptabilty. This is a reality in some teams and an aspiration in others. The ideal is that teams are constantly thinking about the process. Identifying what can be changed and improved. Acknowleding what is working.</p>
+<p>Currently there are people, some of them the ones that brought agile into software development, who are criticizing how agile has been implemented. Yet their main criticism is usually that the spirit of continuous improvement is not followed. Like mystics, they denouce the rituals and demand the deep, spiritual following of the spirit of the teaching, not its forms.</p>
+<p>Now let's get to the point of this piece. Let's outline the negative space from this story.</p>
+<p>We need frequent feedback from the client. Why? Usually this happens because it is well known that clients may have a need, but they don't know what actually need. Or they can express it. Or they can only express it once they see a mock up design, or a working prototype, or a delivered product. Frequent feedback is meant to guard developers from the client not knowing.</p>
+<p>There is an emphasis on speed. Why? Software development is slow. After decades of attempting to turn it into something akin to building construction, we keep finding that it doesn't work like that. Clients not knowing what they want or how to express their needs is a big reason for the slowness. But even straightforward changes often take a lot longer than we expect. Software development often involves learning. At its core, we are learning about a business problem and solving it within our existing solutions. Learning is slow. It gets worse if while we are solving a problem we are learning a new technology. Learning becomes slower. Our story emphasizes speed because we know how slow writing software is.</p>
+<p>We talk a lot about tests and their benefits. They catch early bugs. They guide design. They are useful to catch unintentional bugs while creating other features. But why? We know that we make mistakes. A lot of mistakes. Software development is, to a large extent, of getting things wrong and slowly removing errors until we have a working program. This is perhaps one of aspects of programming that many people find difficut: we are in a constant state of getting the feedback that we are wrong.</p>
+<p>The modern discussion of static types are a variation on tests. Proponents say that it is imperitive that a compiler must tease out type errors.</p>
+<p>Now we can put together a full narrative.</p>
+<p>Software development is the process where we don't know what we want and we don't trust ourselves of doing well.</p>
+<p>In stronger words, we know that we are ignorant and incompentent. 
+In terms of ignorance, not knowing what we want, this may be unsolvale problem. There have been many attempts to solve it. We had tried to solve it via extensive requirements and legal contracts, where we attempt to outline what we need to do. Modern smart contracts attempt a similar way to tease out ambiguity. All of these attempts fail. It is a basic problem of communication, limited knowledge, and changing opinions. People can be poor at communicating. Or after creating the requirements, we discover something new that makes us change our requirements. Or the client could have changed their mind. Frequent feedback from the client may be the only way to solve this issue.</p>
+<p>To our credit, we have tried our best to solve these two problems. To our despair, what we can do can be limited. We still try our best, though. </p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Ruby, Elixir, Python, C#, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
