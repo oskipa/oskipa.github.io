@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2023-11-16T00:00:00-05:00</updated><entry><title>Try Vim and Emacs: Personal History</title><link href="https://oskipa.github.io/try-vim-and-emacs-personal-history.html" rel="alternate"></link><published>2023-11-16T00:00:00-05:00</published><updated>2023-11-16T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-11-16:/try-vim-and-emacs-personal-history.html</id><summary type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2023-12-01T00:00:00-05:00</updated><entry><title>General Notes on Developer Documentation</title><link href="https://oskipa.github.io/general-notes-on-developer-documentation.html" rel="alternate"></link><published>2023-12-01T00:00:00-05:00</published><updated>2023-12-01T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-12-01:/general-notes-on-developer-documentation.html</id><summary type="html">&lt;p&gt;Aphorism for better developer documentation&lt;/p&gt;
+&lt;!--breakpoint--&gt;
+
+&lt;p&gt;You write documentation for a single audience.&lt;/p&gt;
+&lt;p&gt;A single document for all audiences is bad documentation.&lt;/p&gt;
+&lt;p&gt;Developers are the audience of developer documentation. Not users. Not managers. Not project managers. Developers maintaining the system. You write for developers.&lt;/p&gt;
+&lt;p&gt;Your goal is to write clues to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Aphorism for better developer documentation&lt;/p&gt;
+&lt;!--breakpoint--&gt;
+
+&lt;p&gt;You write documentation for a single audience.&lt;/p&gt;
+&lt;p&gt;A single document for all audiences is bad documentation.&lt;/p&gt;
+&lt;p&gt;Developers are the audience of developer documentation. Not users. Not managers. Not project managers. Developers maintaining the system. You write for developers.&lt;/p&gt;
+&lt;p&gt;Your goal is to write clues to help the developer discover the system themselves. &lt;/p&gt;
+&lt;p&gt;Documentation are clues because it is impossible to describe the system in its entirely.&lt;/p&gt;
+&lt;p&gt;All projects that attempt to capture it all, will always fail.&lt;/p&gt;
+&lt;p&gt;Write documentation for yourself, reading it at 3 AM, fixing production.&lt;/p&gt;
+&lt;p&gt;Self-documented code is not enough documentation. Code describes what is happening. It can't tell you what the intention was.&lt;/p&gt;
+&lt;p&gt;Unit tests are not enough documentation. Tests encode requirements at a moment in time. Requirements change. &lt;/p&gt;
+&lt;p&gt;If your code is correct, but it looks like a mistake, write a comment explaining why it is correct and the danger of changing it.&lt;/p&gt;
+&lt;p&gt;Document intent. Code can be self-documenting, and appear correct, but it might do the wrong thing. Add a comment describing what you intended to do.&lt;/p&gt;
+&lt;p&gt;Notice when you explain verbally your system to a coworker. That is what you need to write down as documentation.&lt;/p&gt;
+&lt;p&gt;Describe your system in short articles. These articles should live in your repo, under a documentation folder.&lt;/p&gt;
+&lt;p&gt;Include the history of the project, especially when the history explains an architecture and code that look like a mistake.&lt;/p&gt;
+&lt;p&gt;Keep old documentation. Mark it "HISTORIC". Move it to a "history" folder if you wish. These documents give clues to the history of the system.&lt;/p&gt;
+&lt;p&gt;If someone asked you to explain some part of your documentation, that is a signal that you need to update that part of your documentation.&lt;/p&gt;
+&lt;p&gt;You grow documentation like a garden. You are never done.&lt;/p&gt;
+&lt;p&gt;If you prefer bullets for the main points of this entry, then
+* Write for developers
+* Share intent
+* Describe your system
+* Explain what looks like mistakes
+* Tell the system's history&lt;/p&gt;</content><category term="log"></category><category term="documentation"></category></entry><entry><title>Try Vim and Emacs: Personal History</title><link href="https://oskipa.github.io/try-vim-and-emacs-personal-history.html" rel="alternate"></link><published>2023-11-16T00:00:00-05:00</published><updated>2023-11-16T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-11-16:/try-vim-and-emacs-personal-history.html</id><summary type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
 &lt;p&gt;I wanted to be a real programmer, so I set off to learn them. I recall …&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
 &lt;p&gt;I wanted to be a real programmer, so I set off to learn them. I recall working through the tutorials for both vim and emacs during the 1990s. It was fun; it felt like I was learning a lot. Then I would close the program and keep it closed for month. My heart was initially with emacs, but my computers at the time had problems running it, so vim it was! &lt;/p&gt;
 &lt;p&gt;Vim was free. Vim was small. After learning how to enter edit mode, how to write to file, and how to exit, I used vim mostly like notepad. I used it mainly for syntax highlighting and search and replace text. It also was useful for matching curly brakets. I used it like this for years. Then I learned how to navigate with the keyboard. Navigating via keystrokes was so useful, that I would install vim plugins in all IDEs that I have used over the years.&lt;/p&gt;
