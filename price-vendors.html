@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>The Price of Renting Software</h2>
+  <h3>Reminding ourselves of what we give up when we choose to rent software</h3>
+  <label>02 January, 2024</label>
+  <p>Renting software is considered the correct solution when we face the build vs rent question. There is an army of sales and marketing teams pushing the narrative that renting is going to be cheaper and better, allowing you to focus on your core busiess. As the common right answer, it is safer to adopt it. Without knowing anything about you or your situation, it probably is the correct answer.</p>
+<p>But. Is it?</p>
+<p>Rules are thumb are good to guide our decisions. We still need to make a decision. We should verify that renting is the best to solve our problem. Verifying is critical thinking's core practice. Each problem is unique, and we need to confirm that we are making the right decision. Usually all what this means is being aware of your problem and its constraints and doing some basic arithmetic.</p>
+<p>We know what the pro-arguments for renting are. So let me list what you are giving up when renting software.</p>
+<ol>
+<li>Loss of control</li>
+</ol>
+<p>You don't control rented software. If it does what you want, you are fine. If it doesn't have a feature that you need, effectively you have no say on whether that feature will be added or not.</p>
+<p>The vendor will encourage you to make a feature request. If you are lucky, your request coincides with their roadmap. Then they will tell you when the feature will be released. If it is not in the roadmap, it is likely that it is never going to be there. The more clients the vendor has, the less say you will have in features. Along with features, your ability to customize the software will be limited or nonexisting. It all depends on the vendor.</p>
+<p>This lack of control can be fine. If you support a real estate company, you can live with whatever features WordPress gives you for their blog. A blog is not a core part of a real estate business.</p>
+<p>If control over the software is necessary, because being able to add new feature is crucial for your business, then seriously consider building or running it.</p>
+<ol>
+<li>Slower Software Development Cycles </li>
+</ol>
+<p>As long as the vendor's sofware works, you will save a lot of time and money by renting. If you need custom integration, there is a problem, or you need support from the vendor, the tasks that depend on the cycles will be slower.</p>
+<p>Support varies from company to company. In most cases, it will be mediocre. This mediocrity has to do with the nature of SAAS: the less support offered, the more profit the product makes. There is usually a small support team that helps hundreds or thousands of customers. The more customers they have, the less reponsive they will be.</p>
+<p>When support is easy, like sending people to a website, it will be done quickly. If it is a hard problem, in the best of cases it will take time, sometimes a long time. In some cases they may even ghost you. This happened to me. Twice.</p>
+<p>It matters what capabilities you need. If you are getting weather updates from a weather API, you are safe renting; you won't run into these kinds of problems. If integrating the rented software is necessary for a key feature, you must accept that it will take longer.</p>
+<p>If you need fast development, you want to consider building it.</p>
+<ol>
+<li>Vendor Lock-In</li>
+</ol>
+<p>Many vendors will attempt to lock you as a customer. They will encourage you to mix your business rules with their product. Once you are sufficently locked-in, you lose negotiating power. You become more profitable to the vendor. </p>
+<p>This is a game. You develop in such a way that you don't get locked in. This is acheived via careful planning and mindful execution. In turn, the vendors will offer custom capabilities that are so cheap that it is hard to resist not using it.</p>
+<p>Vendors are counting that you, the client, don't want to pay for the above defensive programming. Small teams, small budgets, and tight deadlines will organicly encourage one to reach out to the cheap, easy to use features. </p>
+<p>This vendor lock-in may not matter. If you are running a low traffic app on AWS, the low cost services may justify the lock in. If at some point it becomes too expensive, you are ready to rebuild somewhere else.</p>
+<p>If vendor lock-in is a threat to your business, you should consider running it yourself or building. Think of it as business protection.</p>
+<ol>
+<li>Costs</li>
+</ol>
+<p>This may be surprising because the main selling point for SAAS is that it is going to be cheaper. You don't have to hire a software engineer to write it. You don't have to hire an operations engineer to run it. No licensing fees. No security team.</p>
+<p>"Pay only for what you use" is a great idea if you barely ever use a service. For example, if you only go on a car trip once a year, renting the car for that trip is cheaper than buying a car, paying insurance, maintenance, and fuel. This "pay as go" model changes if you are using that car on a daily basis.</p>
+<p>Spend 30 to 40 minutes running the numbers. How much would the total cost of running a Redmine server be vs buying Jira licenses for the whole company if you only have 30 employees? How much if your company has 1,000? Get rough estimates and look at the numbers.</p>
+<p>If the cost of renting is about the same or higher than the cost for  building and running it yourself, it doesn't mean that you must build. You may still rent. You may decide to deliberately pay not build or run that service. The importance here is that it is a deliberate decision. Maybe it is more expensive to use Github than run your own gitlab instance, but you are fine paying the price so you don't do that drudgery.</p>
+<p>If you decide to rent, you still have to carefully monitor your costs. Maybe you miscalculated your usage. Maybe they change the price. Or maybe you crossed some usage threshold and now the price is unacceptable. Especially today, when interest ratings are rising and SAAS companies need to pay their debts and deliver profits, you may see increases that no longer justify renting the product.</p>
+<p>When we rent software we lose control over features and price. We must be willing to accept these as part of the costs of renting. Being aware of these costs helps us to make mindful decisions. A mindless decision to build is just as bad as a mindless decision to rent. The problem is not building or renting; the problem is the mindlessness. Let us all work towards thoughtful decisions. </p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
