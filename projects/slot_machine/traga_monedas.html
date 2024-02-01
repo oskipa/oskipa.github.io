@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./vendors/jquery.js"></script>
+    <script src="./vendors/biwascheme-0.8.0.js"></script>
+
+
+    <script type="text/biwascheme">
+      ;; initialize
+      (define total 20)
+      (define winnings 0)
+      (define difficulty (element-read-attribute "input[name='setting-difficulty']:checked" "value"))
+
+      (define game-mode 
+        (if (eq? difficulty "lucky")
+            "digital"
+            "mechanical")) 
+
+      (define sound-mode "on") 
+
+      (set-content! "#total" (number->string total))
+      (set-content! "#wins" (number->string winnings))
+      (element-hide! "#restart")
+
+      (define (start-over)
+        (set! total (random-integer 20))
+        (set!  winnings 0)
+        (set-content! "#total" (number->string total))
+        (set-content! "#wins" (number->string winnings))
+        (element-hide! "#restart")
+        (element-show! "#spin-button"))
+
+      (define max-reel 20)
+
+      (define historic-reel-1 '(
+        bell orange cherry lemon cherry 
+        plum bell bar lemon cherry 
+        plum bell lemon orange plum 
+        bar bell orange bell plum))
+
+      (define historic-reel-2 '(
+        plum orange bell cherry orange
+        bar lemon orange bell cherry
+        bell cherry orange bar bell 
+        bar orange bell plum lemon))
+
+      (define historic-reel-3 '(
+        lemon bar orange plum bell 
+        orange plum lemon bar plum
+        lemon bar plum orange plum
+        orange lemon bar plum orange))
+
+
+      (define better-reel-1 '(
+        bell orange cherry bell cherry 
+        plum bell bar bell cherry 
+        orange bell bar orange plum 
+        bar bell orange bell plum))
+
+      (define better-reel-2 '(
+        plum orange bar cherry orange
+        bell bar orange bell cherry
+        bell cherry orange bar bell 
+        bar orange bar plum bar))
+
+      (define better-reel-3 '(
+        bell  bar orange plum bell 
+        orange plum lemon bell bar
+        lemon bar plum orange plum
+        orange bell bar plum orange))
+
+      (define reel-sets (make-eq-hashtable))
+
+      (hashtable-set! reel-sets "historic" (list historic-reel-1 historic-reel-2 historic-reel-3))
+      (hashtable-set! reel-sets "better" (list better-reel-1 better-reel-2 better-reel-3))
+
+      (define reels (hashtable-ref reel-sets difficulty (hashtable-ref reel-sets "historic" "")))
+
+    ;; Sound
+
+    (define end-sound (js-new  "Audio" "sounds/lost.wav"))
+    (define jackpot-sound (js-new  "Audio" "sounds/jackpot.wav"))
+    (define spin-sound (js-new  "Audio" "sounds/spins2.wav"))
+    (define beep-sound (js-new  "Audio" "sounds/beep2.wav"))
+
+    (js-set! spin-sound "defaultPlaybackRate" "1.5")
+
+    (define (play-sound sound-name)
+      (when (eq? sound-mode "on")      
+      (js-invoke sound-name "play")))
+
+    ;; We start 
+      (define (get-stops) 
+        (list (random-integer max-reel)
+              (random-integer max-reel)
+              (random-integer max-reel)))
+
+      (define (get-symbol reel position)
+        (list-ref reel position))
+
+      (define (get-symbols spots)
+        (map get-symbol reels spots))
+
+      (define (get-reel reel)
+        (list-ref reel (random-integer max-reel)))
+
+      (define (same list)
+        (let ((first (car list)))
+        (fold-right (lambda (e a) (and e a)) #t (map (lambda (x) (eq? first x)) list))))
+
+      (define (payout line)
+        (let ((one (car line))
+              (two (cadr line))
+              (three (caddr line))
+              (three-of-kind (same line))
+              (two-of-kind (eq? (car line) (cadr line))))
+              (cond 
+                    ((and three-of-kind (eq? one 'bar)) 25)
+                    ((and three-of-kind (eq? one 'bell)) 16)
+                    ((and three-of-kind (eq? one 'plum)) 12)
+                    ((and three-of-kind (eq? one 'orange)) 8)
+                    ((and two-of-kind (eq? one 'bell) (eq? three 'bar)) 16)
+                    ((and two-of-kind (eq? one 'plum) (eq? three 'bar)) 12)
+                    ((and two-of-kind (eq? one 'orange) (eq? three 'bar)) 8)
+                    ((and two-of-kind (eq? one 'cherry) (eq? three 'lemon)) 4)
+                    ((and two-of-kind (eq? one 'cherry) (eq? three 'bell)) 4)
+                    ((and two-of-kind (eq? one 'cherry)) 2)
+                   (else 0)
+              )))
+  
+      (define (face-to-string line)
+        (fold-right (lambda (e a) (string-append (string-append (symbol->string e) " ") a )) "" line))
+
+
+      (define fruits-markup (make-eq-hashtable))
+
+      (hashtable-set! fruits-markup 'bar "<img src=\"images/bar.png\"  alt=\"bar\"></img>" ) 
+      (hashtable-set! fruits-markup 'bell "<img src=\"images/bell.png\"  alt=\"bell\"></img>" ) 
+      (hashtable-set! fruits-markup 'cherry "<img src=\"images/cherry.png\"  alt=\"cherry\"></img>" ) 
+      (hashtable-set! fruits-markup 'lemon "<img src=\"images/lemon.png\"  alt=\"lemon\"></img>" ) 
+      (hashtable-set! fruits-markup 'orange "<img src=\"images/orange.png\"  alt=\"orange\"></img>" ) 
+      (hashtable-set! fruits-markup 'plum "<img src=\"images/plum.png\"  alt=\"plum\"></img>" ) 
+
+      (define (get-markup key)
+        (hashtable-ref fruits-markup key ""))
+
+      (define (face-to-image line)
+        (let (
+              (first (car line))
+              (second (cadr line))
+              (third (caddr line))
+             )
+          (string-append "<td>" (get-markup first) "</td><td>" (get-markup second) "</td><td>" (get-markup third) "</td>" )))
+
+      (define (spinning-reel)
+        "<td><img src='images/spinning-reel.apng' alt='spinning reel'></img></td><td><img src='images/spinning-reel-2.apng' alt='spinning reel'></img></td><td><img src='images/spinning-reel-3.apng' alt='spinning reel'></img></td>")
+
+      (define (clear-row)
+        "<td></td><td></td><td></td>")
+
+     (define (hide-winning-border)
+        (element-remove-class-name! "#winning-wheels" "winning-winning-wheels")
+        (element-add-class-name! "#winning-wheels" "spinning-winning-wheels"))
+
+      (define (show-winning-border)
+              (element-remove-class-name! "#winning-wheels" "spinning-winning-wheels")
+              (element-add-class-name! "#winning-wheels" "stopped-winning-wheels"))
+
+      (define (winning-feedback amount)
+        (cond 
+            ((> amount 0) (list "Ganaste " (number->string amount) " Euros!!!"))
+            (else '())))
+
+
+      (define (message-board list-of-messages content-style)
+        (when (> (length list-of-messages) 0) 
+          (element-add-class-name! "#payout" content-style)
+          (for-each (lambda (message) 
+                        (set-content! "#status" message)
+                        (sleep 1)) 
+                      list-of-messages)
+          (set-content! "#status" "")
+          (element-remove-class-name! "#payout" content-style)))
+
+      (define (shift-up series)
+        (map (lambda (x) (mod (+ 1 x) max-reel)) series))
+
+      (define (negative-rollover x)
+        (cond
+          ((> x -1) x)
+          (else 19)))
+
+      (define (shift-down series)
+        (map (lambda (x) (negative-rollover (- x 1))) series))
+
+      (define (show-reels line above below)
+          (set-content! "#above-wheels" (face-to-image above))
+          (set-content! "#winning-wheels" (face-to-image line))
+          (set-content! "#below-wheels" (face-to-image below)))
+    
+      (define (coin-ui times)
+        (let ((coin "<img src='images/coin.png' alt='coin'></img>")
+              (coins "")
+              (displayed-coins  0))
+                (element-add-class-name! "#payout" "coins")
+                (dotimes (i times)
+                   (play-sound beep-sound)
+                   (set! coins (string-append coins coin))
+                   (set! displayed-coins  (+ displayed-coins 1))
+                   (console-log (string-append "coin" coins))
+                   (set-content! "#status" coins)
+                   (sleep 0.5)
+                   (when (= 0 (mod displayed-coins 4))
+                    (set-content! "status" "")
+                    (set! coins "")))
+                (set-content! "#status" "")
+                (element-remove-class-name! "#payout" "coins")))
+
+      (define (winning-behavior coins)
+          (element-hide! "#spin-button")
+          (play-sound jackpot-sound)
+          (message-board (winning-feedback coins) "won")
+          (coin-ui coins)
+          (element-show! "#spin-button"))
+
+      (define (update-ui above line below win total)
+          (show-winning-border)
+          (show-reels line above below)
+          (when (> win 0) (winning-behavior win))
+          (set-content! "#wins" (number->string  winnings))
+          (set-content! "#total" (number->string total)))
+
+      (define (get-reels action)
+        (let ((spots (get-stops)))
+          (let ((line (get-symbols spots))
+                (above (get-symbols (shift-down spots))) 
+                (below (get-symbols (shift-up spots))) 
+            )
+          (action line above below))))
+
+      (define (game-over)
+        (element-hide! "#spin-button")
+        (play-sound end-sound)
+        (message-board (list (number->string winnings) "Puntos"  "El Juego" "Terminó")  "game-over" )
+        (element-hide! "#spin-button")
+        (element-show! "#restart"))
+
+      (define (check-game-over)
+        (when (<= total 0) (game-over)))
+
+
+      (define (adjudicate-mechanical)
+        (get-reels (lambda (line above below)
+                    (let ((win (payout line)))
+                      (set! total (- total 1))
+                      (set! winnings (+ winnings win))
+                      (update-ui above line below win total)
+                      (check-game-over)))))
+
+      (define (randomly-pick a b)
+        (let ((toss (random-integer 2)))
+          (if (= toss 1)
+              a
+              b)))
+
+      (define fruits '(bar bell plum orange cherry lemon ))
+
+      (define (random-fruit excluded)
+        (let ((available (filter (lambda (x) (not (eq? x excluded))) fruits)))
+            (list-ref available (random-integer (length available)))))
+
+      (define (get-digital-stops)
+        (let ((roll (random-integer 500)))
+          (cond
+              ((> roll 499) '(bar bar bar))
+              ((> roll 497) (randomly-pick '(bell bell bell) '(bell bell bar)))
+              ((> roll 494) (randomly-pick '(plum plum plum) '(plum plum bar)))
+              ((> roll 490) (randomly-pick '(orange orange orange) '(orange orange bar)))
+              ((> roll 485) (randomly-pick '(cherry cherry lemon) '(cherry cherry bell)))
+              ((> roll 478) (list 'cherry 'cherry (random-fruit 'blank)))
+              (else (list (random-fruit 'blank) (random-fruit 'blank) (random-fruit 'blank)))
+                  )))
+     
+      (define (get-line-digital line) 
+        (map (lambda (exclude) (random-fruit exclude)) line))
+
+      (define (get-reels-digital action)
+        (let ((line (get-digital-stops)))
+          (let ((above (get-line-digital line))
+                (below (get-line-digital line)))
+            (action line above below))))
+
+      (define (adjudicate-digital)
+        (get-reels-digital (lambda (line above below) 
+                            (let ((win (payout line)))
+                            (set! total (- total 1))
+                            (set! winnings (+ winnings win))
+                            (update-ui above line below win total)
+                            (check-game-over)))))
+
+
+      (define (spin)
+        (hide-winning-border)
+        (element-hide! "#spin-button")
+        (set-content! "#status" "")
+        (set-content! "#above-wheels" (clear-row))
+        (set-content! "#below-wheels" (clear-row))
+        (set-content! "#winning-wheels" (spinning-reel))
+        (play-sound spin-sound)
+        (sleep 3)
+        (element-show! "#spin-button")
+        (if (eq? game-mode "digital")
+            (adjudicate-digital)
+            (adjudicate-mechanical)))
+
+      (define (transfer-money)
+        (when (> winnings 0)
+          (set! winnings (- winnings 1))
+          (set! total (+ total 1))
+          (set-content! "#wins" (number->string  winnings))
+          (set-content! "#total" (number->string total))
+        ))
+
+      (define (change-difficulty)
+        (let ((difficulty (element-read-attribute "input[name='setting-difficulty']:checked" "value")))
+              (define reels (hashtable-ref reel-sets difficulty "historic"))
+              (if (eq? difficulty "lucky")
+                (set! game-mode "digital")
+                (set! game-mode "mechanical"))))
+
+      (define (change-audio-setting)
+        ( let ((audio-on  (element-read-attribute "#audio-setting" "checked")))
+          (if (eq? audio-on #t)
+            (set! sound-mode "on")
+            (set! sound-mode "off"))))
+  
+      ;; final initializations
+      (define (spin-backup)
+        (if (eq? game-mode "mechanical")
+          (spin-mechanical)
+          (spin-digital)))
+
+      (get-reels (lambda (line above below)
+          (show-reels line above below)))
+
+      (define handler (add-handler! "#spin-button" "click" (lambda (ev) (spin))))
+      (define handler (add-handler! "#transfer" "click" (lambda (ev) (transfer-money))))
+      (define handler (add-handler! "#restart" "click" (lambda (ev) (start-over))))
+      (define handler (add-handler! "#leave" "click" (lambda (ev) (game-over))))
+      (define handler (add-handler! "input[name='setting-difficulty']" "change" (lambda (ev) (change-difficulty))))
+
+      (define handler (add-handler! "#audio-setting" "change" (lambda (ev) (change-audio-setting))))
+    </script>
+
+    <style>
+        body {
+          font-family: Courier, monospace;
+        }
+
+        #payout-table img {
+          width: 50px
+        }
+
+        .stopped-winning-wheels {
+          border: 5px solid red;
+        }
+
+        .spinning-winning-wheels {
+          border: 0px;
+        }
+
+
+        #display {
+          width: 365px;
+          border-collapse: collapse;
+        }
+
+        #payout {
+          height: 100px;
+          width: 365px;
+          border: 10px solid black;
+          font-size: 80px;
+          text-align: center;
+          align-items: center; 
+        }
+
+        .won {
+          background-color: blue;
+          color: white;
+        }
+
+        .coins {
+          background-color: green;
+          color: white;
+        }
+
+        .game-over {
+          background-color: black;
+          color: white;
+        }
+
+        #wheels {
+          width: 365px;
+          border: 10px solid green;
+        }
+        
+        #player-panel {
+          max-width: 365px;
+          font-size: 26px;
+        }
+
+        .play-button {
+          font-size: 28px;
+          width: 195px;
+        }
+
+        .leave-button {
+          font-size: 28px;
+          width: 365px;
+        }
+
+        #machine {
+          width: 365px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <div id="machine">
+      <h1>Máquina de Casino</h1>
+      <div id="player-panel">
+        <table>
+          <tr>
+            <td>$</td>
+            <td><span id="total"></span></td>
+            <td><input id="transfer" type="button" value="<-"  /></td>
+            <td>Frutos:</td>
+            <td><span id="wins"></span></td>
+            <td>
+              <input id="spin-button" class="play-button" type="button" value="gira" />
+              <input id="restart" class="play-button"  type="button" value="empieza" />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="payout">
+        <span id="status"></span>
+      </div>
+
+      <div id="wheels">
+        <table id="display">
+          <tr id="above-wheels"></tr>
+          <tr id="winning-wheels"></tr>
+          <tr id="below-wheels"></tr>
+        </table>
+      </div>
+
+      <div id="settings">
+        <table>
+          <tr>
+            <td colspan=4>
+                <input id="leave" class="leave-button"  type="button" value="Dejar la Máquina" />
+            <td>
+          </tr>
+
+          <tr>
+              <td>
+                Dificultad 
+              </td>
+               <td>
+                <input id="setting-historic" type="radio" name="setting-difficulty" value="historic" /><label for="historic" checked >histórico</label>
+               </td>
+
+               <td>
+                <input id="setting-better" type="radio" name="setting-difficulty" value="better" /><label for="better">mejor</label>
+              </td>
+              <td>  
+             <input id="setting-lucky" type="radio" name="setting-difficulty" value="lucky" /><label for="lucky">¡Afortunado!</label>
+              </td> 
+          </tr>
+          <tr>
+            <td>
+                <input type="checkbox" id="audio-setting" checked ><label for="audio-setting">Audio</label>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <div id="payout-table">
+        <h3>Combinaciones con Premio</h3>
+        <table>
+          <tr>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+            <td>o</td>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td><img src="images/plum.png" alt="plum"></img></td>
+            <td><img src="images/plum.png" alt="plum"></img></td>
+            <td><img src="images/plum.png" alt="plum"></img></td>
+            <td>o</td>
+            <td><img src="images/plum.png" alt="plum"></img></td>
+            <td><img src="images/plum.png" alt="plum"></img></td>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td>12</td>
+          </tr> 
+          <tr>
+            <td><img src="images/orange.png" alt="orange"></img></td>
+            <td><img src="images/orange.png" alt="orange"></img></td>
+            <td><img src="images/orange.png" alt="orange"></img></td>
+            <td>o</td>
+            <td><img src="images/orange.png" alt="orange"></img></td>
+            <td><img src="images/orange.png" alt="orange"></img></td>
+            <td><img src="images/bar.png" alt="bar"></img></td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td><img src="images/lemon.png" alt="lemon"></img></td>
+            <td>o</td>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td><img src="images/bell.png" alt="bell"></img></td>
+
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td><img src="images/cherry.png" alt="cherry"></img></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>2</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>
