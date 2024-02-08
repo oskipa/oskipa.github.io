@@ -53,31 +53,49 @@ Write functions that are  </p>
 <p>This is a gross simplification of functional programming. Yet if you start building up this habit, it will take you a long way towards functional programming. And it might make your OOP code easier to test as well.</p>
 <h2>Write methods that return a result</h2>
 <p>A common pattern in a class is to have object variables that we modify in methods.</p>
-<p>#!python
-  class Spaceship:
-     def <strong>init</strong>(self):
-        this.shields = 10</p>
-<div class="highlight"><pre><span></span><code> def tick(self):
-    if self.is_collision():
-        self.damage(1)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Spaceship</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">this</span><span class="o">.</span><span class="n">shields</span> <span class="o">=</span> <span class="mi">10</span>
 
- def damage(self, hit_points):
-    self.shields -= hit_points
-</code></pre></div>
+   <span class="k">def</span> <span class="nf">tick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_collision</span><span class="p">():</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">damage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">damage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hit_points</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">shields</span> <span class="o">-=</span> <span class="n">hit_points</span>
+</code></pre></div></td></tr></table></div>
 
 <p>This is common OOP code. <code>.damage()</code> doesn't return a value. The pros for this style is small, understandable code.</p>
 <p>Now, let's make it more functional. </p>
-<p>#!python
-  class Spaceship:
-     def <strong>init</strong>(self):
-        this.shields = 10</p>
-<div class="highlight"><pre><span></span><code> def tick(self):
-    if self.is_collision():
-        this.shields = self.damage(this.shields, 1)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Spaceship</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">this</span><span class="o">.</span><span class="n">shields</span> <span class="o">=</span> <span class="mi">10</span>
 
- def damage(self, shields, hit_points):
-    return shields - hit_points
-</code></pre></div>
+   <span class="k">def</span> <span class="nf">tick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_collision</span><span class="p">():</span>
+          <span class="n">this</span><span class="o">.</span><span class="n">shields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">damage</span><span class="p">(</span><span class="n">this</span><span class="o">.</span><span class="n">shields</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">damage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shields</span><span class="p">,</span> <span class="n">hit_points</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">shields</span> <span class="o">-</span> <span class="n">hit_points</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Now <code>damage()</code> only does a calculation and returns the result. It doesn't depend on the object's current state. We can use <code>damage()</code> for anything. It should be easy to test.</p>
 <p>The dicerning reader will notice that we are still updating state. You are right! Most programs work on state, and you will always have some methods that updates state using the pure methods. These kind of methods are often called procedures.</p>
