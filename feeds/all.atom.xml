@@ -285,7 +285,7 @@ Write functions that are  &lt;/p&gt;
 &lt;p&gt;This is a gross simplification of functional programming. Yet if you start building up this habit, it will take you a long way towards functional programming. And it might make your OOP code easier to test as well.&lt;/p&gt;
 &lt;h2&gt;Write methods that return a result&lt;/h2&gt;
 &lt;p&gt;A common pattern in a class is to have object variables that we modify in methods.&lt;/p&gt;
-&lt;p&gt;#python
+&lt;p&gt;#!python
   class Spaceship:
      def &lt;strong&gt;init&lt;/strong&gt;(self):
         this.shields = 10&lt;/p&gt;
@@ -299,7 +299,7 @@ Write functions that are  &lt;/p&gt;
 
 &lt;p&gt;This is common OOP code. &lt;code&gt;.damage()&lt;/code&gt; doesn't return a value. The pros for this style is small, understandable code.&lt;/p&gt;
 &lt;p&gt;Now, let's make it more functional. &lt;/p&gt;
-&lt;p&gt;#python
+&lt;p&gt;#!python
   class Spaceship:
      def &lt;strong&gt;init&lt;/strong&gt;(self):
         this.shields = 10&lt;/p&gt;
