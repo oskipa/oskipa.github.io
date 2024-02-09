@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2024-02-07T00:00:00-05:00</updated><entry><title>A set data structure in Racket</title><link href="https://oskipa.github.io/a-set-data-structure-in-racket.html" rel="alternate"></link><published>2024-02-07T00:00:00-05:00</published><updated>2024-02-07T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2024-02-07:/a-set-data-structure-in-racket.html</id><summary type="html">&lt;p&gt;This is a little experiment with &lt;code&gt;racket&lt;/code&gt; I wanted to see how I could implement a set data structure. A set is a collection that can only have one copy of each member. This is the quick code that I came up with&lt;/p&gt;
-&lt;!-- break --&gt;
+&lt;!--break--&gt;
 
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
@@ -9,7 +9,7 @@
 &lt;span class="normal"&gt; 5&lt;/span&gt;
 &lt;span class="normal"&gt; 6&lt;/span&gt;
 &lt;span class="normal"&gt; 7 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;This is a little experiment with &lt;code&gt;racket&lt;/code&gt; I wanted to see how I could implement a set data structure. A set is a collection that can only have one copy of each member. This is the quick code that I came up with&lt;/p&gt;
-&lt;!-- break --&gt;
+&lt;!--break--&gt;
 
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
@@ -117,13 +117,13 @@
 &lt;p&gt;Yes, that is a silly example of completeness, yet I have seen documentation that tries to approximate this. Let's say that you are only documenting your own application, leaving the documentation of the libraries to the library authors. Total documentation of your own system is still impossible. We still have an explosition of combinations of meanings.&lt;/p&gt;
 &lt;p&gt;Let's enumerate how difficult is total documentation of just our custom systems. You need to document architecture and its changes over time. Business requirements, and their changes overtime. Document who the users are. How are they using it. Which features have bugs, but which are bugs that the users are depending on for doing their work. Document the code. Document every variable used; every piece of data. The database schemas used. The reason why we encode a Decimal as Numberic when exporting to JSON. The APIs that we are connecting to. And so and and so on.&lt;/p&gt;
 &lt;p&gt;We can save ourselves time and effort by acknowledging tha total knowledge is impossible due to the Background. Instead of attempting total documentation, we focus on writing documentation that makes our system discoverable. We give hints rather than exhaustive explanations. He point out tricky areas of the code, places that diverge from the conventions (and what are conventions but a technical Background?) explaining why we did so.&lt;/p&gt;</content><category term="log"></category><category term="documentation"></category><category term="philosophy"></category><category term="dreyfus"></category></entry><entry><title>General Notes on Developer Documentation</title><link href="https://oskipa.github.io/general-notes-on-developer-documentation.html" rel="alternate"></link><published>2023-12-01T00:00:00-05:00</published><updated>2023-12-01T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-12-01:/general-notes-on-developer-documentation.html</id><summary type="html">&lt;p&gt;Aphorism for better developer documentation&lt;/p&gt;
-&lt;!--breakpoint--&gt;
+&lt;!--break--&gt;
 
 &lt;p&gt;You write documentation for a single audience.&lt;/p&gt;
 &lt;p&gt;A single document for all audiences is bad documentation.&lt;/p&gt;
 &lt;p&gt;Developers are the audience of developer documentation. Not users. Not managers. Not project managers. Developers maintaining the system. You write for developers.&lt;/p&gt;
 &lt;p&gt;Your goal is to write clues to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Aphorism for better developer documentation&lt;/p&gt;
-&lt;!--breakpoint--&gt;
+&lt;!--break--&gt;
 
 &lt;p&gt;You write documentation for a single audience.&lt;/p&gt;
 &lt;p&gt;A single document for all audiences is bad documentation.&lt;/p&gt;
@@ -360,7 +360,7 @@ Write functions that are  &lt;/p&gt;
     &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;signals&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;break_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;lt;!-- break --&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;lt;!--break--&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
 
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;
 
@@ -1042,7 +1042,7 @@ end
 &lt;p&gt;If you don't, you look at the answer. &lt;/p&gt;
 &lt;p&gt;If this cheating? No. Problem solving is about pattern recognition. If you couldn't find a solution, you couldn't find a pattern. That means you haven't learned that pattern.&lt;/p&gt;
 &lt;p&gt;By spending those earnest five minutes trying to solve the problem, you will understand the problem well. You will understand why your natural solution didn't work. When you look at the solution, it is meaningful. Your emotional reaction to seeing the solution will make it easier for you to remember it, creating that desire pattern for you to recognize the next time you see a similar problem.&lt;/p&gt;
-&lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!-- break --&gt;&lt;/p&gt;
+&lt;p&gt;I also learned this tactic by looking at the solution. I found this strategy in a chess book, which in turn adopted it from what seems to be a math teaching tactic in Russia.&lt;/p&gt;</content><category term="log"></category><category term="learning"></category><category term="comp sci"></category><category term="math"></category></entry><entry><title>Looping in Ruby</title><link href="https://oskipa.github.io/looping-in-ruby.html" rel="alternate"></link><published>2020-04-22T00:00:00-04:00</published><updated>2020-04-22T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-22:/looping-in-ruby.html</id><summary type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!--break--&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -1055,7 +1055,7 @@ end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If you feel functional, then you can use one of the Enumerable methods.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!-- break --&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Looping in Ruby is usually a delight.  &lt;!--break--&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;animals&lt;/span&gt;.&lt;span class="nv"&gt;each&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;beast&lt;/span&gt;.&lt;span class="nv"&gt;roar&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -1111,7 +1111,7 @@ end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here we start with the range. We turn it into an array, and then we call reverse. Wordy? Yes. Does it get the job done? Also yes. &lt;/p&gt;
-&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2020-04-21T00:00:00-04:00</published><updated>2020-04-21T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-21:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!-- break --&gt;&lt;/p&gt;
+&lt;p&gt;The good news is that these are rare scenarios.&lt;/p&gt;</content><category term="log"></category><category term="ruby"></category></entry><entry><title>Getting Started With Byebug</title><link href="https://oskipa.github.io/intro-byebug.html" rel="alternate"></link><published>2020-04-21T00:00:00-04:00</published><updated>2020-04-21T00:00:00-04:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2020-04-21:/intro-byebug.html</id><summary type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!--break--&gt;&lt;/p&gt;
 &lt;h2&gt;Installing byebug&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1121,7 +1121,7 @@ end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;Setting a breakpoint and starting a session&lt;/h2&gt;
-&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!-- break --&gt;&lt;/p&gt;
+&lt;p&gt;To add the point where byebug will start the session in your …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a very quick guide/checklist on how to install and get debugging with Byebug, a Ruby debugger.  &lt;!--break--&gt;&lt;/p&gt;
 &lt;h2&gt;Installing byebug&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gem install byebug
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
