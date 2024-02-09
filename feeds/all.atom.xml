@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/all.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2024-02-07T00:00:00-05:00</updated><entry><title>A set data structure in Racket</title><link href="https://oskipa.github.io/a-set-data-structure-in-racket.html" rel="alternate"></link><published>2024-02-07T00:00:00-05:00</published><updated>2024-02-07T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2024-02-07:/a-set-data-structure-in-racket.html</id><summary type="html">&lt;p&gt;This is a little experiment with &lt;code&gt;racket&lt;/code&gt; I wanted to see how I could implement a set data structure. A set is a collection that can only have one copy of each member. This is the quick code that I came up with&lt;/p&gt;
-&lt;!--break--&gt;
+&lt;!--breakpoint--&gt;
 
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
@@ -9,7 +9,7 @@
 &lt;span class="normal"&gt; 5&lt;/span&gt;
 &lt;span class="normal"&gt; 6&lt;/span&gt;
 &lt;span class="normal"&gt; 7 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;This is a little experiment with &lt;code&gt;racket&lt;/code&gt; I wanted to see how I could implement a set data structure. A set is a collection that can only have one copy of each member. This is the quick code that I came up with&lt;/p&gt;
-&lt;!--break--&gt;
+&lt;!--breakpoint--&gt;
 
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
 &lt;span class="normal"&gt; 2&lt;/span&gt;
