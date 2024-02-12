@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Reflections on Writing a Slot Machine game in Scheme</h2>
+  <h3>It feels surprisingly easy and liberating</h3>
+  <label>11 February, 2024</label>
+  <p>This is a quick reflection on my experience writing a Slot Machine game using scheme. Specifically, I used <a href="https://www.biwascheme.org/doc/features.html">biwascheme</a> 
+All in all, I am so pleased with the experience. Here is a summary of what I have learned making this game</p>
+<!--break-->
+
+<ul>
+<li>I learned a lot of scheme</li>
+<li>Small <em>is</em> beautiful</li>
+<li>Writing my own support functions is not a problem</li>
+<li>Coding was so much fun</li>
+<li>I got done with coding so quickly that I could create assets and create different game settings</li>
+</ul>
+<p>I wanted to write a game using a lisp. I wanted to share it using the internet. I didn't want to use web assembly. I didn't want to use a transpiler. So I found <a href="https://www.biwascheme.org/doc/features.html">biwascheme</a>, which allows one to write scheme directly in html.</p>
+<p><code>Biwascheme</code> implements most of r7rs small scheme, and it includes a number of handy functions, both to make programming easier and to interact with the DOM and JavaScript. It was so, so good. It took me a while to figure out how to understand the error messages, which were a bit cryptic, but soon I got the hang of it.</p>
+<p>I had heard people in the 90s and 2000s complain about troubleshooting parentheses. Yes, it is a minor issue. Yet a combination of using Vim's parentheses matching feature along with some careful code reading helped a lot. Compared with having something going wrong with your Docker image, the problem is so trivial that it makes one feel that it is a first-world problem.</p>
+<p>In my professional life I usually have a huge set of libraries to choose <a href="functionality">functionality</a> from. Python, .Net, Ruby, Elixir offer a solution for most problems with their libraries. I thought that maybe I would run into an issue with <code>scheme</code>, which lacks these libraries. Surprisingly, there wasn't an issue. Writing missing functions was easy. So easy. </p>
+<p>This made me think of the current state of software development. The dependency jenga that we live with is a maintenance and security problem. My small game has none of these problems because it doesn't have any external dependencies beside the language and the browser. </p>
+<p>I am currently repeating the experience creating an elevator simulation.</p>
+<p>Let's see how it goes. I will report in about a month.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python, Lisp, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>
