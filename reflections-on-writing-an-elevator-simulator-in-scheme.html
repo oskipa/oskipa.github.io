@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Reflections on Writing an elevator simulator in Scheme</h2>
+  <h3>I learned a lot more about scheme and its tools</h3>
+  <label>29 February, 2024</label>
+  <p>This is another reflection on working with Scheme. <a href="scheme_retro_writing_a_slot_machine.md">I previously wrote one on writing a slot machine in scheme</a>
+This time I tried to write an elevator simulation game. Here is what I learned.</p>
+<!--break-->
+
+<ul>
+<li>Using emacs to develop in scheme</li>
+<li>Using the repl</li>
+<li>Debugging in scheme</li>
+<li>Jumping around different scheme implementations, like chez scheme and racket</li>
+<li>More practice writing my own functions when some of them were missing</li>
+<li>Using r7rs's pdf as a reference while working</li>
+<li>Using html canvas</li>
+</ul>
+<p>The month-long project was my February entry for the "One game a month challenge.". The initial vision was creating a builiding business simulator game with income, competition, and music. At the end, it ended up as a simple animated demo.</p>
+<p>Why the downgrade? I ran out of time. Due to starting with a complicated idea that took me three weeks to build before I could test at all. When I wrote the slot machine, I started with a line giving me a random number. I then built it up from there. In contrast, the simulator took me three weeks to get to the point where I could debug. Once there, debugging was taking a long time. So at mid-month, I deleted everything and started over again, this time being deliberately simple. I was able to finish an animated demo in the last two weeks that, although primitive, it is a full simulation with an animated visualization.</p>
+<p>A highlight of the month was using emacs for scheme development. While working on my complicated code, I had to move away from running it in the browser so that I could have a better debugging experience. As with many emacs packages, setting them up and learning how to use them takes some time and can be bumpy. Once one gets the basics, one is super productive.</p>
+<p>Understanding repl development was a big revelation. I had heard people talk about how great the experience is. I have seen some videos. These didn't seem that different from using the ruby or python repl. Working directly in the repl made me realized what the excitement is about. I will try my best to share it, knowing that this must be one of those things everyone must experience ourselves to fully appreciate it.</p>
+<p>Being able to update a single function while the rest of the system is still running is mind-blowing. After we come down from the religious experience, we discover that this little feature makes development very productive.</p>
+<p>Another interesting discovery was how having different scheme implementations, which I initially saw as a weakness, is actually a strength. The language is pretty much the same in all of them. Having different implementations available allows us to pick the one that helps us achieve our goals with minimum ramping up time.</p>
+<p>Next month I am planning on writing three small scheme projects. One is a game, of course. One is a small web app and the other one will be a small web server. Let's see what I learn next.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python, Lisp, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a></p>
+      </footer>
+
+</body>
+</html>

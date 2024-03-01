@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - log</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/log.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2024-02-11T00:00:00-05:00</updated><entry><title>Reflections on Writing a Slot Machine game in Scheme</title><link href="https://oskipa.github.io/reflections-on-writing-a-slot-machine-game-in-scheme.html" rel="alternate"></link><published>2024-02-11T00:00:00-05:00</published><updated>2024-02-11T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2024-02-11:/reflections-on-writing-a-slot-machine-game-in-scheme.html</id><summary type="html">&lt;p&gt;This is a quick reflection on my experience writing a Slot Machine game using scheme. Specifically, I used &lt;a href="https://www.biwascheme.org/doc/features.html"&gt;biwascheme&lt;/a&gt; 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dada Structures and Algorithms - log</title><link href="https://oskipa.github.io/" rel="alternate"></link><link href="https://oskipa.github.io/feeds/log.atom.xml" rel="self"></link><id>https://oskipa.github.io/</id><updated>2024-02-29T00:00:00-05:00</updated><entry><title>Reflections on Writing an elevator simulator in Scheme</title><link href="https://oskipa.github.io/reflections-on-writing-an-elevator-simulator-in-scheme.html" rel="alternate"></link><published>2024-02-29T00:00:00-05:00</published><updated>2024-02-29T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2024-02-29:/reflections-on-writing-an-elevator-simulator-in-scheme.html</id><summary type="html">&lt;p&gt;This is another reflection on working with Scheme. &lt;a href="scheme_retro_writing_a_slot_machine.md"&gt;I previously wrote one on writing a slot machine in scheme&lt;/a&gt;
+This time I tried to write an elevator simulation game. Here is what I learned.&lt;/p&gt;
+&lt;!--break--&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using emacs to develop in scheme&lt;/li&gt;
+&lt;li&gt;Using the repl&lt;/li&gt;
+&lt;li&gt;Debugging in scheme&lt;/li&gt;
+&lt;li&gt;Jumping around different scheme …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;This is another reflection on working with Scheme. &lt;a href="scheme_retro_writing_a_slot_machine.md"&gt;I previously wrote one on writing a slot machine in scheme&lt;/a&gt;
+This time I tried to write an elevator simulation game. Here is what I learned.&lt;/p&gt;
+&lt;!--break--&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using emacs to develop in scheme&lt;/li&gt;
+&lt;li&gt;Using the repl&lt;/li&gt;
+&lt;li&gt;Debugging in scheme&lt;/li&gt;
+&lt;li&gt;Jumping around different scheme implementations, like chez scheme and racket&lt;/li&gt;
+&lt;li&gt;More practice writing my own functions when some of them were missing&lt;/li&gt;
+&lt;li&gt;Using r7rs's pdf as a reference while working&lt;/li&gt;
+&lt;li&gt;Using html canvas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The month-long project was my February entry for the "One game a month challenge.". The initial vision was creating a builiding business simulator game with income, competition, and music. At the end, it ended up as a simple animated demo.&lt;/p&gt;
+&lt;p&gt;Why the downgrade? I ran out of time. Due to starting with a complicated idea that took me three weeks to build before I could test at all. When I wrote the slot machine, I started with a line giving me a random number. I then built it up from there. In contrast, the simulator took me three weeks to get to the point where I could debug. Once there, debugging was taking a long time. So at mid-month, I deleted everything and started over again, this time being deliberately simple. I was able to finish an animated demo in the last two weeks that, although primitive, it is a full simulation with an animated visualization.&lt;/p&gt;
+&lt;p&gt;A highlight of the month was using emacs for scheme development. While working on my complicated code, I had to move away from running it in the browser so that I could have a better debugging experience. As with many emacs packages, setting them up and learning how to use them takes some time and can be bumpy. Once one gets the basics, one is super productive.&lt;/p&gt;
+&lt;p&gt;Understanding repl development was a big revelation. I had heard people talk about how great the experience is. I have seen some videos. These didn't seem that different from using the ruby or python repl. Working directly in the repl made me realized what the excitement is about. I will try my best to share it, knowing that this must be one of those things everyone must experience ourselves to fully appreciate it.&lt;/p&gt;
+&lt;p&gt;Being able to update a single function while the rest of the system is still running is mind-blowing. After we come down from the religious experience, we discover that this little feature makes development very productive.&lt;/p&gt;
+&lt;p&gt;Another interesting discovery was how having different scheme implementations, which I initially saw as a weakness, is actually a strength. The language is pretty much the same in all of them. Having different implementations available allows us to pick the one that helps us achieve our goals with minimum ramping up time.&lt;/p&gt;
+&lt;p&gt;Next month I am planning on writing three small scheme projects. One is a game, of course. One is a small web app and the other one will be a small web server. Let's see what I learn next.&lt;/p&gt;</content><category term="log"></category><category term="scheme"></category><category term="lisp"></category></entry><entry><title>Reflections on Writing a Slot Machine game in Scheme</title><link href="https://oskipa.github.io/reflections-on-writing-a-slot-machine-game-in-scheme.html" rel="alternate"></link><published>2024-02-11T00:00:00-05:00</published><updated>2024-02-11T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2024-02-11:/reflections-on-writing-a-slot-machine-game-in-scheme.html</id><summary type="html">&lt;p&gt;This is a quick reflection on my experience writing a Slot Machine game using scheme. Specifically, I used &lt;a href="https://www.biwascheme.org/doc/features.html"&gt;biwascheme&lt;/a&gt; 
 All in all, I am so pleased with the experience. Here is a summary of what I have learned making this game&lt;/p&gt;
 &lt;!--break--&gt;
 

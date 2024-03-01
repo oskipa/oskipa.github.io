@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./vendors/biwascheme-0.8.0.js"></script>
+
+    <script type="text/biwascheme">
+      ;; utilities
+      (define (list-2-string lst acc)
+        (cond
+          ((null? lst) acc)
+          (else (list-2-string (cdr lst) (string-append acc (number->string (car lst))  " " )))))
+
+
+      (define (sort op lst)
+        (cond
+          ((< (length lst) 2 ) lst)
+          (else (let ((pivot (car lst))
+                (left '())
+                (right '()))
+            (map
+             (lambda (x)
+               (if (op pivot x)
+                   (set! left (cons x left))
+                   (set! right (cons x right))))
+             lst)
+             (append (sort op left) (sort op right))))))
+
+      (define (remove x lst acc)
+        (cond
+          ((null? lst) acc)
+          ((eq? x (car lst)) (remove x (cdr lst) acc))
+          (else (remove x (cdr lst) (cons (car lst) acc)))))
+
+      ;; visualization
+
+      (define canvas (dom-element "#screen"))
+      (define context (js-invoke canvas "getContext" "2d"))
+    
+      (define building-color "rgb(153 153 153)")
+
+      ;; building
+      (define building-position '(10 10 100 200))
+
+      (define (draw-building)
+        (js-set! context "fillStyle" building-color)
+        (js-invoke context "fillRect" 10 10 100 200))
+
+      ;; elevator
+      (define elevator-color "rgb(0 0 0)")
+      (define elevator-width 20)
+      (define elevator-height 20)
+      (define elevator-x-position 30)
+      (define floor-zero 190)
+
+      (define (draw-elevator floor color)
+        (let ((y (- floor-zero (* elevator-height floor))))
+        (js-set! context "fillStyle" color)
+        (js-invoke context "fillRect" elevator-x-position y elevator-width elevator-height)))
+
+      (define (animate-elevator from to)
+        (draw-elevator from building-color)
+        (draw-elevator to elevator-color))
+
+      (define (open-doors floor)
+        (js-set! context "fillStyle" "white")       
+         (dotimes (n 9)
+          (js-invoke 
+            context 
+            "fillRect" 
+            (+ elevator-x-position (- (/ elevator-width 2) n))
+             (- floor-zero (* elevator-height floor))
+             (* n 2)
+             elevator-height)
+           (sleep 0.2)))
+
+
+     (define (close-door x n)
+        (js-invoke 
+          context 
+          "fillRect" 
+          x
+          (- floor-zero (* elevator-height floor))
+          n
+          elevator-height))
+
+      (define (close-doors floor)
+        (js-set! context "fillStyle" "black")  
+        (dotimes (n 10)
+          (close-door (+ elevator-x-position 1) n)
+          (close-door (- (+ elevator-x-position elevator-width -1)  n) n)
+           (sleep 0.1)))
+
+      ;; initialize visualization
+      (draw-building)
+      (draw-elevator 0 elevator-color)
+      (sleep 1)
+
+      ;; Simulation
+      (define floor 0)
+      (define max-floor 10)
+      (define requests '())
+      (define time 0)
+      (define direction -1)
+      (define ground-people 1)
+      (define people-in-floors '())
+
+      (define (console-status tick floor requests people next direction)
+        (console-log tick)
+        (console-log floor)
+        (console-log requests)
+        (console-log people)
+        (console-log direction)
+        (console-log  next))
+
+      (define (ui-status tick state floor requests people direction next floor-people)
+        (set-content! "#output" (string-append tick "\n" state "\n" floor "\n" direction "\n"  requests "\n" people "\n" next "\n" floor-people)))
+
+      (define (status time state)
+        (let ((tick (string-append "tick: " (number->string time)))
+              (floor (string-append "floor: " (number->string floor)))
+              (people (string-append "ground people: " (number->string ground-people)))
+              (requests (string-append "requests: " (list-2-string requests "")))
+              (direction (string-append "direction: " (number->string direction)))
+              (next (string-append "max: " (number->string (max-in-requests))))
+              (floor-people (string-append "floor-people: " (list-2-string people-in-floors ""))))
+          (console-status tick floor requests people next direction)
+          (ui-status tick (symbol->string state) floor requests people direction next floor-people)))
+
+      (define (requests-unique-add floor requests)
+        (if (not (member floor requests))
+          (cons floor requests)
+          requests))
+
+      (define (request-floor floor)
+        (set! requests (sort > (requests-unique-add floor requests))))
+
+      (define (change-in-direction? floor)
+        (let ((last (max-in-requests)))
+          (cond
+            ((= floor (- max-floor 1)) #t)
+            ((= floor 0) #t)
+            ((and (> direction 0) (> floor last)) #t)
+            ((and (< direction 0) (< floor last)) #t)
+            (else #f))))
+
+      (define (set-direction floor)
+        (if (change-in-direction? floor)
+            (* direction -1)
+            direction))
+
+      (define (generate-ground-people)
+        (let ((generate-more? (= (random-integer 10) 0)))
+          (when (eqv? generate-more? #t)
+            (request-floor 0)
+            (set! ground-people (+ ground-people (random-integer 3))))))
+    
+      (define (generate-floor-people)
+        (for-each 
+          (lambda (floor)
+            (let ((go-back? (= (random-integer 10) 0)))
+              (when (eqv? go-back? #t)
+                (request-floor floor)
+                (request-floor 0)
+                (set! people-in-floors (remove floor people-in-floors '())))))
+          people-in-floors))
+
+      (define (generate-requests)
+        (dotimes (n ground-people)
+          (request-floor (+ (random-integer 9) 1))
+          (set! ground-people 0)))
+
+      (define (max-in-requests)
+        (if (null? requests)
+          '()
+          (if (= (length requests) 1)
+            (car requests)
+            (if (> direction 0)
+              (apply max requests)
+              (apply min requests))
+            )))
+            
+      (define (tick)
+        (let ((floor-from floor))
+          (set! time (+ time 1))
+          (status time 'running)
+          (when (not (null? requests))
+            (set! direction (set-direction floor))
+            (set! floor (+ floor direction))
+            (animate-elevator floor-from floor)
+            (when (member floor requests)
+              (set! requests (remove floor requests '()))
+              (open-doors floor)
+              (close-doors floor)
+              (when (not (= floor 0))
+                (set! people-in-floors (cons floor people-in-floors)))
+              (console-log "--* open doors *--")))
+          (when (= floor 0)
+                (generate-requests))
+          (generate-ground-people)
+          (generate-floor-people)
+          (sleep 1)))
+
+      ;; run
+      (status time 'starting)
+
+      (dotimes (n 80)
+        (tick)) 
+     
+      (status time 'done)
+
+    </script>
+
+    <style>
+      #console {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #explanation {
+        width: 400px; 
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="console">
+    <h1>Elevator Simulator</h1>
+      <p>
+      <canvas id="screen" width="500"  height="250">
+        An animated canvas that simulates an elevator
+      </canvas>
+      </p>
+      <p id="text-ui">
+        <span id="output"></span>
+      </p>
+
+       <section id="explanation">
+      <p>This is a simple elevator simulator demo. It creates people at the ground level to go to different floors. Then it takes people from those floors down to ground floor.</p>
+    </section>
+
+    </div>
+   
+  </body>
+</html>
