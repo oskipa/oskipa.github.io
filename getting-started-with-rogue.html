@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Getting Started with Rogue</h2>
+  <h3>A quick guide</h3>
+  <label>01 April, 2024</label>
+  <p>As my entry for April Cool, I share a quick guide on getting started playing <a href="https://en.wikipedia.org/wiki/Rogue_(video_game)">Rogue</a>, the 1980s ascii adventure game.</p>
+<p>I got into Rogue by playing <a href="https://rogule.com/">Rogule</a>, a daily minature roguelike online game. Sometimes I would end the daily dungeon, only to want more. I found more in the original 1980s game. I played Rogue almost daily through the late Spring and Summer of 2023. It is a great game, I have had a lot of fun with it, and I am inviting you to have some fun too.</p>
+<h2>What is Rogue about?</h2>
+<p>Rogue is set in a Tolkienean world. You are a rogue character that has entered a dungeon to find the Amulet of Yendor and bring it back to the surface. As you explore the dungeons, you fight different monsters, find food, weapons, potions, and magic scrolls. If you die, however, you are dead. There are no lives; there are no respawning.</p>
+<p>How could a 1980s game pack so many graphics in a game, you wonder? They didn't. The user interface is rendered in ascii characters, although if this is too jarring for you, you may find newer clients that render the game with images. I do encourage you to at least give the ascii UI a try.</p>
+<h2>Trying out Rogue through Rogule</h2>
+<p>Play <a href="https://rogule.com/">Rogule</a> first. Rogule gives you the essense of Rogue in an easy to understand and a pleasant UI. If you like it and the one maze is not enough, you are ready for the next step.</p>
+<h2>Install Rogue</h2>
+<p>If you use a Mac, you can install Rogue via</p>
+<div class="highlight"><pre><span></span><code>brew install rogue
+</code></pre></div>
+
+<p>If you use another kind of OS, you will need to investigate how to install it. </p>
+<p>I found these instructions on <a href="https://www.linuxquestions.org/questions/blog/telengard-339516/how-to-install-rogue-in-ubuntu-34319/">how to install Rogue on linux</a> and this link for <a href="https://www.prankster.com/winrogue/">how to install Rogue on windows</a> . I haven't tried them, but I offer these as a starting point for looking for the program.</p>
+<h2>Playing the game</h2>
+<p>Once installed, start a game by openning a terminal and typing</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c">% rogue</span>
+</code></pre></div>
+
+<p>You will get a screen that looks something like this</p>
+<div class="highlight"><pre><span></span><code>                           -------------------
+                           |.................+
+                           +.................|
+                           |K...*...........@|
+                           ----+--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Arm: 4   Exp: 1/0
+</code></pre></div>
+
+<p>The status bar should be familiar to people who have played D&amp;D or any role playing game inspired byt it. We have the current dungeon level that our character is crawling, how much gold we have, the current and max hit points and strength, our armor level, and experience.</p>
+<p>Our character is the at symbol <code>@</code>.  Monsters are letters and different symbols represent food, weapons, scrolls, potions, traps and staircases.</p>
+<p>We navigate using the letters <code>hjkl</code>, although the arrow keys may work too.</p>
+<p>You fight monsters by moving your character into the monster symbols. You automatically pick up items as you walk into them, as long as you have carrying capacity. If after a right you find your HP low, you can replenish it by resting, using the dot command <code>.</code>.</p>
+<p>There are a lot of actions that your character can do. Type <code>?</code> to bring up the menu. You will gets instructions on how to get help for everything by typing <code>*</code> type star and hit enter, and you will find the help page.</p>
+<div class="highlight"><pre><span></span><code><span class="p">?</span><span class="w">       </span><span class="nx">prints</span><span class="w"> </span><span class="nx">help</span><span class="w">                                       </span><span class="nx">r</span><span class="w">     </span><span class="nx">read</span><span class="w"> </span><span class="nx">scroll</span>
+<span class="o">/</span><span class="w">       </span><span class="nx">identify</span><span class="w"> </span><span class="nx">object</span><span class="w">                                   </span><span class="nx">e</span><span class="w">     </span><span class="nx">eat</span><span class="w"> </span><span class="nx">food</span>
+<span class="nx">h</span><span class="w">       </span><span class="nx">left</span><span class="w">                                              </span><span class="nx">w</span><span class="w">     </span><span class="nx">wield</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">weapon</span>
+<span class="nx">j</span><span class="w">       </span><span class="nx">down</span><span class="w">                                              </span><span class="nx">W</span><span class="w">     </span><span class="nx">wear</span><span class="w"> </span><span class="nx">armor</span>
+<span class="nx">k</span><span class="w">       </span><span class="nx">up</span><span class="w">                                                </span><span class="nx">T</span><span class="w">     </span><span class="nx">take</span><span class="w"> </span><span class="nx">armor</span><span class="w"> </span><span class="nx">off</span>
+<span class="nx">l</span><span class="w">       </span><span class="nx">right</span><span class="w">                                             </span><span class="nx">P</span><span class="w">     </span><span class="nx">put</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">ring</span>
+<span class="nx">y</span><span class="w">       </span><span class="nx">up</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">left</span><span class="w">                                         </span><span class="nx">R</span><span class="w">     </span><span class="nx">remove</span><span class="w"> </span><span class="nx">ring</span>
+<span class="nx">u</span><span class="w">       </span><span class="nx">up</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">right</span><span class="w">                                        </span><span class="nx">d</span><span class="w">     </span><span class="nx">drop</span><span class="w"> </span><span class="nx">object</span>
+<span class="nx">b</span><span class="w">       </span><span class="nx">down</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">left</span><span class="w">                                       </span><span class="nx">c</span><span class="w">     </span><span class="nx">call</span><span class="w"> </span><span class="nx">object</span>
+<span class="nx">n</span><span class="w">       </span><span class="nx">down</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">right</span><span class="w">                                      </span><span class="nx">a</span><span class="w">     </span><span class="nx">repeat</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="nx">command</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nx">SHIFT</span><span class="p">&gt;&lt;</span><span class="nx">dir</span><span class="p">&gt;:</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">way</span><span class="w">                        </span><span class="p">)</span><span class="w">     </span><span class="nx">print</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="nx">weapon</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nx">CTRL</span><span class="p">&gt;&lt;</span><span class="nx">dir</span><span class="p">&gt;:</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">till</span><span class="w"> </span><span class="nx">adjacent</span><span class="w">                    </span><span class="p">]</span><span class="w">     </span><span class="nx">print</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="nx">armor</span>
+<span class="nx">f</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">  </span><span class="nx">fight</span><span class="w"> </span><span class="nx">till</span><span class="w"> </span><span class="nx">death</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">near</span><span class="w"> </span><span class="nx">death</span><span class="w">                    </span><span class="p">=</span><span class="w">     </span><span class="nx">print</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="nx">rings</span>
+<span class="nx">t</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">  </span><span class="nx">throw</span><span class="w"> </span><span class="nx">something</span><span class="w">                                   </span><span class="err">@</span><span class="w">     </span><span class="nx">print</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="nx">stats</span>
+<span class="nx">m</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">  </span><span class="nx">move</span><span class="w"> </span><span class="nx">onto</span><span class="w"> </span><span class="nx">without</span><span class="w"> </span><span class="nx">picking</span><span class="w"> </span><span class="nx">up</span><span class="w">                      </span><span class="nx">D</span><span class="w">     </span><span class="nx">recall</span><span class="w"> </span><span class="nx">what</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">been</span><span class="w"> </span><span class="nx">discovered</span>
+<span class="nx">z</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">  </span><span class="nx">zap</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">wand</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">direction</span><span class="w">                         </span><span class="nx">o</span><span class="w">     </span><span class="nx">examine</span><span class="o">/</span><span class="nx">set</span><span class="w"> </span><span class="nx">options</span>
+<span class="o">^</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">  </span><span class="nx">identify</span><span class="w"> </span><span class="nx">trap</span><span class="w"> </span><span class="k">type</span><span class="w">                                </span><span class="o">^</span><span class="nx">R</span><span class="w">    </span><span class="nx">redraw</span><span class="w"> </span><span class="nx">screen</span>
+<span class="nx">s</span><span class="w">       </span><span class="nx">search</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">trap</span><span class="o">/</span><span class="nx">secret</span><span class="w"> </span><span class="nx">door</span><span class="w">                       </span><span class="o">^</span><span class="nx">P</span><span class="w">    </span><span class="nx">repeat</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="nx">message</span>
+<span class="p">&gt;</span><span class="w">       </span><span class="nx">go</span><span class="w"> </span><span class="nx">down</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">staircase</span><span class="w">                               </span><span class="o">^</span><span class="p">[</span><span class="w">    </span><span class="nx">cancel</span><span class="w"> </span><span class="nx">command</span>
+<span class="p">&lt;</span><span class="w">       </span><span class="nx">go</span><span class="w"> </span><span class="nx">up</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">staircase</span><span class="w">                                 </span><span class="nx">S</span><span class="w">     </span><span class="nx">save</span><span class="w"> </span><span class="nx">game</span>
+<span class="p">.</span><span class="w">       </span><span class="nx">rest</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">turn</span><span class="w">                                   </span><span class="nx">Q</span><span class="w">     </span><span class="nx">quit</span>
+<span class="p">,</span><span class="w">       </span><span class="nx">pick</span><span class="w"> </span><span class="nx">something</span><span class="w"> </span><span class="nx">up</span><span class="w">                                 </span><span class="p">!</span><span class="w">     </span><span class="nx">shell</span><span class="w"> </span><span class="nx">escape</span>
+<span class="nx">i</span><span class="w">       </span><span class="nx">inventory</span><span class="w">                                         </span><span class="nx">F</span><span class="p">&lt;</span><span class="nx">dir</span><span class="p">&gt;</span><span class="w">        </span><span class="nx">fight</span><span class="w"> </span><span class="nx">till</span><span class="w"> </span><span class="nx">either</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">dies</span>
+<span class="nx">I</span><span class="w">       </span><span class="nx">inventory</span><span class="w"> </span><span class="nx">single</span><span class="w"> </span><span class="nx">item</span><span class="w">                             </span><span class="nx">v</span><span class="w">     </span><span class="nx">print</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="nx">number</span>
+<span class="nx">q</span><span class="w">       </span><span class="nx">quaff</span><span class="w"> </span><span class="nx">potion</span>
+<span class="o">--</span><span class="nx">Press</span><span class="w"> </span><span class="nx">space</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="k">continue</span><span class="o">--</span>
+</code></pre></div>
+
+<p>As you play the game and gather different items, you will want to consult this help often. Eventually one ends up remembering a lot of these commands.</p>
+<h3>Dungeon Goals</h3>
+<p>You want to do the following tasks on each level. Find the staircase. Find food. Level up through fighting monsters. Rest to replenish HP.</p>
+<p>You need to find the staircase because that the way how you will leave the current level and progress in the game. The staircase is represented wit the symbol <code>%</code>. You go down the staircase by putting your character on top of it, and then executting the walk down the staircase command <code>&gt;</code>.</p>
+<div class="highlight"><pre><span></span><code>           #                 ######
+            -+--           ---------+------------
+            |..|           |....................|
+            |..|           |....................|
+            |..|           |....................|     -----------------------
+            |..|           |.......@............| ####+.....................|
+            --+-           |.........%..........+##   |.....................|
+              #            ----------+-----------     -----------------------
+</code></pre></div>
+
+<p>You need to be at the lookout for food. Your character will get hungry with the passing of time and as a result of fighting creatures. Every so often, you get hungry. Each character starts with some rations of food. You can check how many you have by looking at the inventory view by using the command <code>i</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="ss">)</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">rations</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">food</span>
+<span class="nv">b</span><span class="ss">)</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="nv">ring</span><span class="w"> </span><span class="nv">mail</span><span class="w"> </span>[<span class="mi">4</span>]<span class="w"> </span><span class="ss">(</span><span class="nv">being</span><span class="w"> </span><span class="nv">worn</span><span class="ss">)</span>
+<span class="nv">c</span><span class="ss">)</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>,<span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="nv">mace</span><span class="w"> </span><span class="ss">(</span><span class="nv">weapon</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">hand</span><span class="ss">)</span>
+<span class="nv">d</span><span class="ss">)</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>,<span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="nv">short</span><span class="w"> </span><span class="nv">bow</span>
+<span class="nv">e</span><span class="ss">)</span><span class="w"> </span><span class="mi">36</span><span class="w"> </span><span class="o">+</span><span class="mi">0</span>,<span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="nv">arrows</span>
+<span class="nv">f</span><span class="ss">)</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="nv">diamond</span><span class="w"> </span><span class="nv">ring</span>
+<span class="nv">g</span><span class="ss">)</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="nv">scroll</span><span class="w"> </span><span class="nv">titled</span><span class="w"> </span><span class="s1">&#39;trol turswahbek orn sri&#39;</span>
+<span class="nv">h</span><span class="ss">)</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="nv">scroll</span><span class="w"> </span><span class="nv">titled</span><span class="w"> </span><span class="s1">&#39;eepala gan trol&#39;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="o">--</span><span class="nv">Press</span><span class="w"> </span><span class="nv">space</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="k">continue</span><span class="o">--</span>
+</code></pre></div>
+
+<p>The inventory will also show you what weapons and armor you have, what are you wearing, and what other items you are carrying. We see that my character started with two rations.</p>
+<p>Food is important because once you get hungry, your abilities to walk and fight are diminished. A monster can come and easily kill you. You can also die of hunger. So it is best to look through a dungeon for food. This means that even if you found the staircase quickly in a new level, you want to explore all the rooms before leaving, so that we can find food.</p>
+<p>As you play, you will find the Hungry indicator appear in your status bar </p>
+<div class="highlight"><pre><span></span><code><span class="n">Level</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="n">Gold</span><span class="o">:</span><span class="w"> </span><span class="mi">273</span><span class="w">    </span><span class="n">Hp</span><span class="o">:</span><span class="w"> </span><span class="mi">24</span><span class="o">(</span><span class="mi">24</span><span class="o">)</span><span class="w">  </span><span class="n">Str</span><span class="o">:</span><span class="w"> </span><span class="mi">16</span><span class="o">(</span><span class="mi">16</span><span class="o">)</span><span class="w">  </span><span class="n">Arm</span><span class="o">:</span><span class="w"> </span><span class="mi">4</span><span class="w">   </span><span class="n">Exp</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">25</span><span class="w">  </span><span class="n">Hungry</span>
+</code></pre></div>
+
+<p>You eat by using the eat command, <code>e</code>, and then picking available food. If you can't rrecall what the eating command is, remember that you can bring the help screen by typing <code>?</code> and consulting the help doc. </p>
+<div class="highlight"><pre><span></span><code>                               ---------------
+                               |.....@...:...|
+                               |.............|
+                               ------+--------
+</code></pre></div>
+
+<p>Food is represented by a colon <code>:</code> symbol. Here our hero has found some rations.</p>
+<p>Levelling up is important so that you won't die. The monsters become increasingly more difficult as one gets deeper in the dungeon. It is in our best interest to fight most of the monster on whatever level we find ourselves, so that as we go in the lower levels we might have a better chance to survive.</p>
+<p>To increase your survival chances, you need to rest. The rest command <code>.</code> is a turn where you don't do anything. This gives you a chance to let turns pass so that you can heal without risking running into other monsters. Find a safe corner to rest, and hit that period command. Sometimes wandering monsters will come into the room that you are resting in. Fight them, and then keep resting. Once you feel that you have recovered enough, you can begin exploring again. As long as you are not injured, healing will continue, even if you are walking.</p>
+<h3>No where to go</h3>
+<p>Some rooms don't have doors, like in the example in the room to the left, in the diagram below. </p>
+<div class="highlight"><pre><span></span><code>                                        #
+                                          #
+     ---------------                 ######
+     |             |       ----------+------------
+     |             +#######|.....................+
+     |          @  |      #+.....................|
+     |             |       -----------------+-----
+     ---------------
+</code></pre></div>
+
+<p>Sometimes there are hidden doors. One finds them by using the searching command <code>s</code>. To use it, put your character near a wall and press <code>s</code>. It will look around its position. If successful, the game will make a door, <code>+</code>, appear.  </p>
+<h3>Using items</h3>
+<p>You will find yourself in situations where your armor or weapons are damaged. Or where everything seems lost. This is when you want to start using the different items that you have gathered.</p>
+<p>You can read the scrolls that you have collected. These are magic scrolls that cast different spells. You can quaff a potion, and see what it does to your body. You can put on different armors, weapons, or rings. They may be better items. Or they may be cursed. Use <code>?</code> to find the specific commands that you need so that you can use the different items.</p>
+<p>I usually save the items for desperate situations, but you are free to experiment with them as you wish. One warning though: don't bother writing down what a gold potion does or what the nonsense name of a scroll is. This works in many modern games; it doesn't work for Rogue. As you try things out, Rogue will tell you that the gold potion is for restoring strength or the scroll is for flying. This stays the same as long a you don't die. After you die, the gold potion can make you drunk in the next game.</p>
+<h3>Death</h3>
+<p>You will die a lot, so don't stress about it. A lot of games only last a few minutes. Some of my longest sessions lasted between 10 to 15 minutes. This is actually a nice feature. You can easily play a game even if you have only a few minutes free.</p>
+<h2>What is next?</h2>
+<p>If you played Rogue and liked the mechanics, you may want to try out other similar games. You may try <a href="https://www.nethack.org/">NetHack</a>, which is a Roguelike game that takes the basic mechanics of Rogue, and adds a lot, lot more. While Rogue is a finished game from another era, NetHack is a game in active development with a big community of players. Many of the skills that you learn in Rogue are transferable to NetHack. That said, be prepared to spend some time learning how to play NetHack, if you decide to give it a try.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python, Lisp, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <a href="http://github.com/oskipa/">github</a>
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a>. All hallucinations are human. 100% AI Free.</p>
+      </footer>
+
+</body>
+</html>
