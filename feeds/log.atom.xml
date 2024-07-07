@@ -342,12 +342,24 @@ All in all, I am so pleased with the experience. Here is a summary of what I hav
 &lt;p&gt;Keep old documentation. Mark it "HISTORIC". Move it to a "history" folder if you wish. These documents give clues to the history of the system.&lt;/p&gt;
 &lt;p&gt;If someone asked you to explain some part of your documentation, that is a signal that you need to update that part of your documentation.&lt;/p&gt;
 &lt;p&gt;You grow documentation like a garden. You are never done.&lt;/p&gt;
-&lt;p&gt;If you prefer bullets for the main points of this entry, then
-* Write for developers
-* Share intent
-* Describe your system
-* Explain what looks like mistakes
-* Tell the system's history&lt;/p&gt;</content><category term="log"></category><category term="documentation"></category></entry><entry><title>Try Vim and Emacs: Personal History</title><link href="https://oskipa.github.io/try-vim-and-emacs-personal-history.html" rel="alternate"></link><published>2023-11-16T00:00:00-05:00</published><updated>2023-11-16T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-11-16:/try-vim-and-emacs-personal-history.html</id><summary type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
+&lt;p&gt;If you prefer bullets for the main points of this entry, then&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Write for developers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Share intent&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Describe your system&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explain what looks like mistakes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tell the system's history&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="log"></category><category term="documentation"></category></entry><entry><title>Try Vim and Emacs: Personal History</title><link href="https://oskipa.github.io/try-vim-and-emacs-personal-history.html" rel="alternate"></link><published>2023-11-16T00:00:00-05:00</published><updated>2023-11-16T00:00:00-05:00</updated><author><name>Hugo Estrada</name></author><id>tag:oskipa.github.io,2023-11-16:/try-vim-and-emacs-personal-history.html</id><summary type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
 &lt;p&gt;I wanted to be a real programmer, so I set off to learn them. I recall …&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I started programming, a lot of the experienced developers would encourage people to use vim or emacs. Some were so enthusiastic that they made it into a badge for being a real developer. &lt;/p&gt;
 &lt;p&gt;I wanted to be a real programmer, so I set off to learn them. I recall working through the tutorials for both vim and emacs during the 1990s. It was fun; it felt like I was learning a lot. Then I would close the program and keep it closed for month. My heart was initially with emacs, but my computers at the time had problems running it, so vim it was! &lt;/p&gt;
 &lt;p&gt;Vim was free. Vim was small. After learning how to enter edit mode, how to write to file, and how to exit, I used vim mostly like notepad. I used it mainly for syntax highlighting and search and replace text. It also was useful for matching curly brakets. I used it like this for years. Then I learned how to navigate with the keyboard. Navigating via keystrokes was so useful, that I would install vim plugins in all IDEs that I have used over the years.&lt;/p&gt;
