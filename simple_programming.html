@@ -46,22 +46,30 @@
 <p>Let's use design by contracts as an example.</p>
 <p>The basic idea is that you check conditions before and after calling a function. This is somehting that we can implement easily. </p>
 <p>Let's start with a simple function that we want to add contracts to. Here is a function that adds two unsignged bytes.</p>
-<div class="highlight"><pre><span></span><code>def unsigned_byte_sum(a, b)
-  a + b
-end
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">unsigned_byte_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Let's add a precondition that the sum should be of integers.</p>
-<div class="highlight"><pre><span></span><code>def unsigned_byte_sum(a, b)
-  unless a.is_a?(Integer) &amp;&amp; b.is_a?(Integer) 
-    raise &quot;Precondition Violation&quot;
-  end
-  a + b
-end
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">unsigned_byte_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">  </span><span class="k">unless</span><span class="w"> </span><span class="n">a</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">raise</span><span class="w"> </span><span class="s2">&quot;Precondition Violation&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
 
 <p>Now let's add a postcondition. Let's say that the return should be an integer that fits within a C byte range. So we need to take the result, do a modulo operation and get a value that fits.</p>
-<div class="highlight"><pre><span></span><code>  def unsigned_byte_sum(a, b)
+<div class="highlight"><pre><span></span><code>  #!ruby
+  def unsigned_byte_sum(a, b)
     unless a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
       raise &quot;Precondition Violation&quot;
     end
@@ -77,25 +85,46 @@ end
 </code></pre></div>
 
 <p>At this point we have done the basics of Design By Contract. Yet looking at it, it is hard to read. We don't have any indicator of what we are doing. Let's abstract the conditional lines.</p>
-<p>def condition(&amp;block)
-      raise "Precondition violation" unless block.call
-  end</p>
-<p>def unsigned_byte_sum(a, b)
-    condition do
-      a.is_a?(Integer) &amp;&amp; b.is_a?(Integer)
-    end</p>
-<div class="highlight"><pre><span></span><code>result = a + b
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">condition</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+<span class="w">    </span><span class="k">raise</span><span class="w"> </span><span class="s2">&quot;Precondition violation&quot;</span><span class="w"> </span><span class="k">unless</span><span class="w"> </span><span class="n">block</span><span class="o">.</span><span class="n">call</span>
+<span class="k">end</span>
 
-condition do
-  result.is_a?(Integer) &amp;&amp; result &lt;= 127 &amp;&amp; result &gt;= -128
-end
 
-result
-</code></pre></div>
+<span class="k">def</span><span class="w"> </span><span class="nf">unsigned_byte_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">  </span><span class="n">condition</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">a</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
 
-<p>end</p>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+
+<span class="w">  </span><span class="n">condition</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">result</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">127</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">-</span><span class="mi">128</span>
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="n">result</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+
 <p>This is a good step. It is cleaner. I would like to clearly point out when it is a precondition or postcondition. Especially, we want the error message to let us know immediately.</p>
-<div class="highlight"><pre><span></span><code>  def pre_condition(&amp;block)
+<div class="highlight"><pre><span></span><code>  #!ruby
+  def pre_condition(&amp;block)
       condition(&quot;Precondition violation&quot;, &amp;block)
   end
 
@@ -126,7 +155,8 @@ result
 </code></pre></div>
 
 <p>This is a lot better. It is clear that we are writing a contract for this function. There is one last item that bothers me, which is having to repeat <code>result</code> a second time. We can make it slightly easier with the following modifications.</p>
-<div class="highlight"><pre><span></span><code>  # it will return the result if the conditions are true
+<div class="highlight"><pre><span></span><code>  #!ruby
+  # it will return the result if the conditions are true
   def post_condition(result, &amp;block)
       condition(&quot;Postcondition violation&quot;, &amp;block)
       result
