@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Dada Structures and Algorithms - One Hundred Sites in Phoenix, 2025 edition</title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/pages/now.html">now</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<article>
+  <header>
+    <h2>One Hundred Sites in Phoenix, 2025 edition</h2>
+  </header>
+    
+
+    <p>I tried this challenge five years ago. I am trying it again. The idea is to quickly create 100 sitesfrom scratch and to slowly build up knowledge about Phoenix this way. </p>
+<h2>App 6: Vox Populi</h2>
+<p>A Site where anyone can post a message.</p>
+<h2>App 5: JavaScript Loto Numbers</h2>
+<h3>What I learned</h3>
+<p>It is easier to add jquery into the app.</p>
+<ol>
+<li>Download the library and save it under <code>assets/vendor/jquery.js</code></li>
+<li>Add it under <code>assets/js/app.js</code> via typscript</li>
+</ol>
+<p>import $ from '../vendor/jquery'
+   window.$ = $
+   window.JQuery = $;</p>
+<p>Then in the main template I had to take out the <code>defer</code> on the script tag. Otherwise it wouldn't know that the library was there.</p>
+<p>And that was it.</p>
+<h2>App 4: Static page Hello world</h2>
+<p>This is a remake of my first go at this challenge. I am going to try to repeat the steps to see if they still work</p>
+<h3>What I learned</h3>
+<p>Things changes a little bit. I needed to add <code>hello.html</code> to the list of static paths found under <code>lib/hello_static_web.ex</code> in the web folder.</p>
+<h2>App 3: A contact system</h2>
+<p>An app that organizes contacts and their addresses</p>
+<h3>What I learned</h3>
+<p>Getting used to the generators again. Understanding how contexts work. Doing a many-to-many. </p>
+<p>iex -S mix </p>
+<p>Will give us a console to experiment with the application.</p>
+<h2>Site 2: Hello World with custom home page</h2>
+<h3>What I learned</h3>
+<p>Where the main page is, and how we can customized that page.</p>
+<h2>Site 1: Hello World</h2>
+<p>Create a simple hello world site. Generate the default site. No modifications</p>
+<h2>What I learned</h2>
+<p>Using phx.new with the options to take away parts that I wasn't planning on using</p>
+<p>mix phx.new --no-assets --no-dashboard --no-ecto --no-live --no-mailer  hello</p>
+
+</article>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python, Ruby, Lisp, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <!-- <a href="http://github.com/oskipa/">github</a> -->
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a>. All hallucinations are human. 100% AI Free.</p>
+      </footer>
+
+</body>
+</html>
