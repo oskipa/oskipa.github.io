@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title></title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta id="keywords" name="keywords" content="">
+        
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/code.css"></link>
+ <link id="stylesheet" rel="stylesheet" type="text/css" href="https://oskipa.github.io/theme/css/site.css"></link>
+
+
+</head>
+<body>
+   <header class="header">
+      <h1 class="site-name"> 
+        <a class="home-link" href="https://oskipa.github.io">Dada</a><br /> 
+        |&gt Structures<br />
+        |&gt Algorithms</h1>
+
+      <nav>
+      <menu class="minimal-menu">
+        <li><a href="https://oskipa.github.io/pages/today-i-learned.html">til</a></li>
+        <li><a href="https://oskipa.github.io/pages/now.html">now</a></li>
+        <li><a href="https://oskipa.github.io/short_index.html">index</a></li>
+          <!--
+        <li><a href="category/log.html">web log<a></li>
+        <li><a href="">about<a></li>
+        <li><a href="">site map<a></li>
+          -->
+      </menu>
+    </nav>
+
+
+    </header>
+    
+ <div class="container">
+<div class="row">
+ <div class="col-md-8">
+  <h2>Number Representation, Peano Numbers, and Platonic Forms</h2>
+  <h3>A little schemer exploration: exploring number representation and what ideas it leads us to</h3>
+  <label>29 January, 2026</label>
+  <p>This is another Montaigne-style essay, which I am calling explorations. It is an adventure of thinking, a stroll through a garden. It is an attempt or a try to think something, and we sometimes fall when we first try</p>
+<p>Recently <a href="link here">I reviewed "The Little Schemer"</a> by Friendman and Matthias Felleisen. I said that I wanted to go back to the book and to further explore many of the topics that they gently present. I interpreted these mentions as an invitation to explore these topics more. I will start for exploring number representation.</p>
+<p>"Shadows", chapter 8 in "The Little Schemer", covers the topic of representations. Towards the end of the chapter, on page 107 of the fourth edition, one of the cells say,</p>
+<p>"Numbers are representations? </p>
+<p>Yes. For example, 4 stands for the concept of four. We chose that symbol because we are accustomed to arabic representations."</p>
+<p>The next cell says that we could have represented the concept of four in some other way, such as a list of empty lists, (() () () ()), or ((((())))), or (I V). The chapter concludes with implementing basic arithmetic operations functions that can work with the first representation, the lists containing a number of empty lists.</p>
+<p>There is an interesting connection between representing four as (() () () ()) and ((((())))) in that the second representation, the one with the recursive list, hints at how we would represent numbers in Scheme following Peano axioms.</p>
+<p><a href="https://en.wikipedia.org/wiki/Giuseppe_Peano">Guiseppe Peano</a> was an Italian mathematician and linguist. He may have introduced the modern set symbols for union and intersection. He published his work in Latin. Finding Latin too inconsistent, he created his own constructed langauge called <em>Latin sine flexione</em>, which was the precursor for the constructed language interlingua. This was a simplified latin that didn't have inflections with a simplified and minimalistic grammar. He introduced his language in a mathematical journal, rather than one for linguists or for the auxiliary language movements that existed at a time.</p>
+<p>Peano also participated in the late 19th century efforts to build mathematics from the ground up, with solid logical rigor. European mathematicians and philosophers knew and admired Euclid and his geometry. Euclid begins giving lists of known facts, known as axioms, and through the use of logic, he proves further statements about geometry. We can then use those proven statements to prove other ones. It is a simple logical system, a game, but one that gives us certainty that once we prove a statement, that statement is true.</p>
+<p>If one is interested in discovering how the world works, what is true, Euclid's axiomatic method is the gold standard, stronger than the scientific method. The scientific method relies on our perceptions and measurements of the world. Yet both our perceptions and our measurements can be wrong. For example, as a child, the sun appears to rotate around the world. It is only later that we are taught that it is the earth that is rotating. In contrast, once a statement is proven in geometry, it is true. It will be true in ancient Greece, in modern times, 5,000 years into the future, and in other planets.</p>
+<p>European philosophy has been strongly influenced by Euclid. Socrates' method of finding definitions can be seen as an attempt to find those geometrical axioms applied to morals, art, and any other subject. The famous "Let no one ignorant of geometry enter" sign in Plato's academy points to the importance of being exposed to Euclid's method to Plato. Century later Descartes builds his philosophy by starting with the "I think, therefore I am" to buid up an argument for an objective reality. Spinoza also uses Euclid's method to write this ethics. Once a philosophy student is exposed to Euclid, once starts seeing the mathematical foundation for European philosophy.</p>
+<p>By the 19th century many mathematicians realized that although geometry had this rigourous method applied to it, and even though mathematicians used proofs for a lot of their work, the foundations of mathematics had not been established on a firm, axiomatic ground. The proofs had been built on our intuitive and experiential understanding of numbers and arithmetic. So many mathematicians started working on building that solid foundation.</p>
+<p>Peano was one of these mathematicians. He is mainly remembered for his contributions to set theory and his work on natural numbers. At one point he presented a paper on "how do you define a definition?" Answering this questions became his life work and obsession. Yet most of us learn about his through his peano axioms to define natural numbers.</p>
+ </div>
+</div>
+ </div> 
+ 
+ <footer class="footer">
+
+   <!-- <p class="about"><a href="http://hugoestr.github.io/blog/manifesto.html">About</a> --> <a href="https://oskipa.github.io/pages/about.html" >I am</a> a software developer. I code in Python, Ruby, Lisp, and many other languages.  I like poetry, museums, and ukuleles. I try to guide my life on  principles of dadaism and nonviolence.</p>
+        <p>
+          <a href="feeds/all.atom.xml">atom</a>
+          <!-- <a href="http://github.com/oskipa/">github</a> -->
+        </p> 
+
+        <p>Artisanally built with <a href="https://blog.getpelican.com/">Pelican</a>. Content handcrafted in <a href="https://www.vim.org/" >Vim</a>. All hallucinations are human. 100% AI Free.</p>
+      </footer>
+
+</body>
+</html>
